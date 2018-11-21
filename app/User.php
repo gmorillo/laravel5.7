@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Role;
+use App\Slideshow;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable implements MustVerifyEmail
@@ -18,6 +19,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function role()
     {
         return $this -> belongsToMany(Role::class);
+    }
+
+    public function slideshow()
+    {
+        return $this -> belongsToMany(Slideshow::class);
     }
 
     use Notifiable;

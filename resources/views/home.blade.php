@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    @if(Auth::getUser()->role_id == 2)
+                    @if(Auth::getUser()->role_id == 3)
                         <p>Escort User</p>
                     @endif
 
