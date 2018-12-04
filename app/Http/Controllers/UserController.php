@@ -4,32 +4,42 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Image;
-use Auth;
+use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use Carbon\Carbon;
+use DB;
 
 
 class UserController extends Controller
 {
     public function profile_img()
     {
-        return view('auth.profile', array('user' => Auth::user()));
+        return view('sections.profile.profile', array('user' => Auth::user()));
     }
 
     public function updateProfileImg(Request $request)
     {
-    	if ($request->hasFile('profile_img')) 
-    	{
-    		$profile_img = $request->file('profile_img');
-    		$filename = time() . '.' . $profile_img->getClientOriginalExtension();
-    		Image::make($profile_img)
-    		->resize(150, null, function ($constraint) {
-    			$constraint->aspectRatio();
-			})->save(public_path('/img/profiles/' . $filename));
+        $hasImage =   Auth::user()->profile_img;
+        $ImageRoute = public_path('/img/profiles/' . $hasImage);
 
-    		$user = Auth::user();
-    		$user->profile_img = $filename;
-    		$user->save();
-    	}
+        if($request->hasFile('profile_img')) 
+        {
+            $profile_img = $request->file('profile_img');
+            $filename = time() . '.' . $profile_img->getClientOriginalExtension();
+            
+            Image::make($profile_img)
+            ->resize(150, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(public_path('/img/profiles/' . $filename));
 
-    	return view('auth.profile', array('user' => Auth::user()));
+            $user = Auth::user();
+            $user->profile_img = $filename;
+            $user->save();
+        }
+
+        if(\File::exists(public_path('/img/profiles/' . $hasImage))){\File::delete(public_path('/img/profiles/' . $hasImage));}
+
+    	return view('sections.profile.profile', array('user' => Auth::user()));
     }
 }
