@@ -38,8 +38,10 @@ class UserController extends Controller
             $user->save();
         }
 
-        if(\File::exists(public_path('/img/profiles/' . $hasImage))){\File::delete(public_path('/img/profiles/' . $hasImage));}
-
+        if($hasImage != 'default-user.png'){
+            if(\File::exists(public_path('/img/profiles/' . $hasImage))){\File::delete(public_path('/img/profiles/' . $hasImage));}
+        }
         return view('sections.profile.profile', array('user' => Auth::user()));
     }
+    
 }

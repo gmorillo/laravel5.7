@@ -15,10 +15,10 @@ class CreateSlideshowsTable extends Migration
     {
         Schema::create('slideshows', function (Blueprint $table) {
             $table->increments('id');
-            $table->boolean('status')->nullable();
+            $table->boolean('status')->default(0);
             $table->integer('user_id')->nullable();
             $table->integer('category_id')->nullable();
-            $table->integer('country_id')->nullable();
+            $table->integer('country_id')->default(1);
             $table->integer('city_id')->nullable();
             $table->string('title')->nullable();
             $table->integer('phone')->nullable();
@@ -26,11 +26,10 @@ class CreateSlideshowsTable extends Migration
             $table->string('langues')->nullable();
             $table->text('description')->nullable();
             $table->string('principal_img')->nullable();
-            $table->string('secondaries_img')->nullable();
             $table->date('creation_date')->nullable();
             $table->date('unpublish_date')->nullable(); // fecha en la que se dará de baja la publicación
             $table->time('time_activated')->nullable(); //hora en la que se activo la publicación
-            $table->timestamps();
+            $table->timestamps()->nullable();
         });
     }
 
