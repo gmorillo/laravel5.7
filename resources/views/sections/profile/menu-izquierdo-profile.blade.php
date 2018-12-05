@@ -30,7 +30,7 @@
             @endif
         </div>
         <div class="list-group pt-2" id="list-tab" role="tablist">
-            <a class="list-group-item list-group-item-action" id="pincipal" data-toggle="list" role="tab" aria-controls="home"><i class="fas fa-chart-pie"></i> Principal</a>
+            <a href="{{ url('/profile') }}" class="list-group-item list-group-item-action" id="pincipal" data-toggle="list" role="tab" aria-controls="home"><i class="fas fa-chart-pie"></i> Anúnciate</a>
             <a class="list-group-item list-group-item-action" id="mi-cuenta" data-toggle="list" role="tab" aria-controls="profile"><i class="far fa-user"></i> Mi cuenta</a>
             <a class="list-group-item list-group-item-action" id="mis-anuncios" data-toggle="list" role="tab" aria-controls="messages"><i class="fas fa-check-circle"></i> Mis anuncios activos</a>
             <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" role="tab" aria-controls="settings"><i class="fas fa-calendar-times"></i> Mis anuncios caducados</a>

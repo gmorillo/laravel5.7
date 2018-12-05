@@ -12,8 +12,9 @@
 			<div class="card">
 				<div class="card-body">
 					<h5 class="card-title text-danger"><strong>Comprar anuncio en Rotador Principal</strong></h5>
+					<div class="col-1 p-0 bg-danger"><hr></div>
 					<p class="card-text">Lleva tus anuncios a otro nivel, aumenta tus visitas hasta en <strong class="text-danger">100%.</strong></p>
-					<a href="#" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Comprar anuncio Rotador Principal</a>
+					<a href="#" class="btn btn-danger shadow-button" data-toggle="modal" data-target="#exampleModalCenter">Comprar anuncio Rotador Principal</a>
 				</div>
 			</div>
 		</div>
@@ -26,8 +27,9 @@
 			<div class="card">
 				<div class="card-body">
 					<h5 class="card-title text-danger"><strong>Comprar anuncio Premium</strong></h5>
+					<div class="col-2 p-0 bg-danger"><hr></div>
 					<p class="card-text">Tu anuncio aparece en las primeras posiciones de nuestra sección premium. Aumenta tus visitas en un <strong class="text-danger">90%.</strong></p>
-					<a href="#" class="btn btn-danger">Comprar anuncio Premium</a>
+					<a href="#" class="btn btn-danger shadow-button">Comprar anuncio Premium</a>
 				</div>
 			</div>
 		</div>
@@ -35,8 +37,9 @@
 			<div class="card">
 				<div class="card-body">
 					<h5 class="card-title text-danger"><strong>Comprar anuncio Basic</strong></h5>
+					<div class="col-2 p-0 bg-danger"><hr></div>
 					<p class="card-text">Tu anuncio aparece cada 1 hora en las primeras posiciones de nuestra sección basic. Aumenta tus visitas en un <strong class="text-danger">80%.</strong></p>
-					<a href="#" class="btn btn-danger">Comprar anuncio Basic</a>
+					<a href="#" class="btn btn-danger shadow-button">Comprar anuncio Basic</a>
 				</div>
 			</div>
 		</div>
@@ -80,5 +83,6 @@
 	    background-clip: border-box;
 	    border: 1px solid rgba(255, 0, 0, 0.23);
 	    border-radius: 0.25rem;
+	    box-shadow: 0 0 20px rgba(38,38,38,.2);
 	}
 </style>
