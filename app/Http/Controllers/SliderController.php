@@ -56,7 +56,7 @@ class SliderController extends Controller
             'principal_img' => $filename,
         ]);
 
-        return redirect('/profile')->with('slider', 'Rotador principal creado con exito, proceda a realizar el pago para así activar el anuncio.');;
+        return redirect('/profile')->with('slider', 'Rotador principal creado con exito, proceda a realizar el pago para así activar el anuncio.');
     }
 
     /**

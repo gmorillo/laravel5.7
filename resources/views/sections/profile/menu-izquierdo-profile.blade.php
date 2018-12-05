@@ -19,8 +19,17 @@
                 </div>
                 {{$errors->has('name')}}
             </form>
+            <br>
+            @if (session('profileImg'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <small><strong>{{ session('profileImg') }}</strong></small>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
         </div>
-        <div class="list-group pt-5" id="list-tab" role="tablist">
+        <div class="list-group pt-2" id="list-tab" role="tablist">
             <a class="list-group-item list-group-item-action" id="pincipal" data-toggle="list" role="tab" aria-controls="home"><i class="fas fa-chart-pie"></i> Principal</a>
             <a class="list-group-item list-group-item-action" id="mi-cuenta" data-toggle="list" role="tab" aria-controls="profile"><i class="far fa-user"></i> Mi cuenta</a>
             <a class="list-group-item list-group-item-action" id="mis-anuncios" data-toggle="list" role="tab" aria-controls="messages"><i class="fas fa-check-circle"></i> Mis anuncios activos</a>
