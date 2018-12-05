@@ -19,5 +19,11 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 Route::resource('/task', 'TaskController')->middleware('verified');
-Route::get('profile', 'UserController@profile_img');
-Route::post('profile', 'UserController@updateProfileImg');
+
+
+Route::prefix('profile')->group(
+    function () {
+    	Route::get('/', 'UserController@profile_img');
+		Route::post('/', 'UserController@updateProfileImg');
+    }
+);

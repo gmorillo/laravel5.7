@@ -40,6 +40,6 @@ class UserController extends Controller
 
         if(\File::exists(public_path('/img/profiles/' . $hasImage))){\File::delete(public_path('/img/profiles/' . $hasImage));}
 
-    	return view('sections.profile.profile', array('user' => Auth::user()));
+        return view('sections.profile.profile', array('user' => Auth::user()));
     }
 }

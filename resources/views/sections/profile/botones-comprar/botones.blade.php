@@ -1,35 +1,55 @@
-<div class="row justify-content-between">
-	<div class="col bg-white p-3 mx-1">
-		<h3 class="text-center py-2"><strong>Rotador Principal</strong></h3>
-		<ul class="py-3 text-center">
-			<li class="py-3">Publica tu anuncio en la <strong>sección mas grande</strong> de nuestra web.</li>
-			<li class="py-3"><strong>Elige los días y las horas</strong> en las que quieres que aparezca tu anuncio.</li>
-			<li class="py-3">Date a conocer en <strong>Ciudad.</strong></li>
-			<li class="py-3">Agrega hasta 10 fotos en tu anuncio</li>
-			<li class="py-3">Tu anuncio se actualiza <strong>cada hora para aparecer en las primeras posiciones.</strong></li>
-			<li class="py-3">Aumenta visitas en un <strong>100%</strong></li>
-		</ul>
-	</div>
-	<div class="col bg-white p-3 mx-1">
-		<h3 class="text-center py-2"><strong>Plan Premium</strong></h3>
-		<ul class="py-3 text-center">
-			<li class="py-3">Publica tu anuncio en la <strong>sección premium</strong> de nuestra web.</li>
-			<li class="py-3"><strong>Elige los días y las horas</strong> en las que quieres que aparezca tu anuncio.</li>
-			<li class="py-3">Tienes el privilegio de aparecer entre las <strong>primeras publicaciones cada minuto.</strong></li>
-			<li class="py-3">Agrega hasta 5 fotos en tu anuncio</li>
-			<li class="py-3">Sólo pagarás por el tiempo que este activo tu anuncio.</li>
-			<li class="py-3">Aumenta visitas en un <strong>90%</strong></li>
-		</ul>
-	</div>
-	<div class="col bg-white p-3 mx-1">
-		<h3 class="text-center py-2"><strong>Plan Basic</strong></h3>
-		<ul class="py-3 text-center">
-			<li class="py-3">Lorem ipsum dolor sit amet, consectetur.</li>
-			<li class="py-3">Lorem ipsum dolor sit.</li>
-			<li class="py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-			<li class="py-3">Lorem ipsum dolor.</li>
-			<li class="py-3">Lorem ipsum dolor sit amet.</li>
-			<li class="py-3">Lorem ipsum dolor sit.</li>
-		</ul>
+<div class="mb-4">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title text-danger"><strong>Comprar anuncio en Rotador Principal</strong></h5>
+					<p class="card-text">Lleva tus anuncios a otro nivel, aumenta tus visitas hasta en <strong class="text-danger">100%.</strong></p>
+					<a href="#" class="btn btn-danger">Comprar anuncio Rotador Principal</a>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
+
+<div class="mb-4">
+	<div class="row">
+		<div class="col-sm-6 mb-4">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title text-danger"><strong>Comprar anuncio Premium</strong></h5>
+					<p class="card-text">Tu anuncio aparece en las primeras posiciones de nuestra sección premium. Aumenta tus visitas en un <strong class="text-danger">90%.</strong></p>
+					<a href="#" class="btn btn-danger">Comprar anuncio Premium</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title text-danger"><strong>Comprar anuncio Basic</strong></h5>
+					<p class="card-text">Tu anuncio aparece cada 1 hora en las primeras posiciones de nuestra sección basic. Aumenta tus visitas en un <strong class="text-danger">80%.</strong></p>
+					<a href="#" class="btn btn-danger">Comprar anuncio Basic</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+	.card {
+	    position: relative;
+	    display: -webkit-box;
+	    display: -ms-flexbox;
+	    display: flex;
+	    -webkit-box-orient: vertical;
+	    -webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	    flex-direction: column;
+	    min-width: 0;
+	    word-wrap: break-word;
+	    background-color: #fff;
+	    background-clip: border-box;
+	    border: 1px solid rgba(255, 0, 0, 0.23);
+	    border-radius: 0.25rem;
+	}
+</style>

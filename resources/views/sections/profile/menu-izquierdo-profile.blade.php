@@ -1,7 +1,7 @@
 <div class="user-profile-box">
     <div class="header clearfix">
         <h2>Bienvenido, </h2>
-        <h4 class="ng-binding">Guillermo Morillo</h4>
+        <h4 class="ng-binding">{{ Auth::user()->name}}</h4>
         <img src="/img/profiles/{{ Auth::user()->profile_img}}" alt="avatar" class="img-fluid profile-img">
     </div>
     <div class="detail clearfix">
@@ -10,23 +10,21 @@
                 @csrf
                 <p class="m-0">Cambiar imágen de perfil</p>
                 <div class="input-group">
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input bnn btn-outline-secondary" name="profile_img" id="profile_img" required="required">
-                        <label class="custom-file-label" for="profile_img"></label>
-                    </div>
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-danger" type="submit">Enviar</button>
-                    </div>
+                        <div class="custom-file btn-sm p-0" style="font-size: 11px">
+                            <input type="file" class="" name="profile_img" id="profile_img" required="required">
+                        </div>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-danger" type="submit">Enviar</button>
+                        </div>
                 </div>
                 {{$errors->has('name')}}
             </form>
         </div>
         <div class="list-group pt-5" id="list-tab" role="tablist">
-            <a class="list-group-item list-group-item-action  MenuLeft" id="dashboard-list" data-toggle="list" role="tab" aria-controls="home"><i class="fas fa-chart-pie"></i>Principal</a>
-            <a class="list-group-item list-group-item-action MenuLeft" id="list-profile-list" data-toggle="list" role="tab" aria-controls="profile"><i class="far fa-user"></i>Mi cuenta</a>
-            <a class="list-group-item list-group-item-action MenuLeft" id="list-messages-list" data-toggle="list" role="tab" aria-controls="messages"><i class="fas fa-plus"></i>Agregar una propiedad</a>
-            <a class="list-group-item list-group-item-action MenuLeft" id="list-settings-list" data-toggle="list" role="tab" aria-controls="settings"><i class="fas fa-home"></i>Mis propiedades</a>
-            <a class="list-group-item list-group-item-action MenuLeft" id="password-change" target="_blank"><i class="fas fa-key"></i>Cambiar contraseña</a>
+            <a class="list-group-item list-group-item-action" id="pincipal" data-toggle="list" role="tab" aria-controls="home"><i class="fas fa-chart-pie"></i> Principal</a>
+            <a class="list-group-item list-group-item-action" id="mi-cuenta" data-toggle="list" role="tab" aria-controls="profile"><i class="far fa-user"></i> Mi cuenta</a>
+            <a class="list-group-item list-group-item-action" id="mis-anuncios" data-toggle="list" role="tab" aria-controls="messages"><i class="fas fa-check-circle"></i> Mis anuncios activos</a>
+            <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" role="tab" aria-controls="settings"><i class="fas fa-calendar-times"></i> Mis anuncios caducados</a>
         </div>
     </div>
 </div>
@@ -45,7 +43,7 @@
             background-repeat: no-repeat;
             border: none;
             margin: 0;
-            background:linear-gradient( to bottom, rgba(0, 42, 104, 0.69), rgba(2, 146, 252, 0.51) ), url(http://tartanhomes.com/wp-content/uploads/2015/03/980x480_homes_Newburgh_A-480x260.jpg) top left repeat;
+            background:linear-gradient( to bottom, rgba(239, 0, 0, 0.69), rgba(252, 2, 2, 0.11) ), url(https://static.brusheezy.com/system/resources/previews/000/011/459/non_2x/rose-quartz-tiling-pattern-texture-photoshop-textures.jpg) top left repeat;
             background-size: cover;
             color: #fff;
         }
