@@ -26,7 +26,7 @@ Route::prefix('profile')->group(
     	Route::get('/', 'UserController@profile_img');
 		Route::post('/', 'UserController@updateProfileImg');
 		Route::get('/', 'FormsController@getFormsInfo');
-		Route::post('/create-slider', 'SliderController@create');
+        Route::post('/create-slider', 'SliderController@create');
     }
 );
 

@@ -29,7 +29,7 @@ class CreateSlideshowsTable extends Migration
             $table->date('creation_date')->nullable();
             $table->date('unpublish_date')->nullable(); // fecha en la que se dará de baja la publicación
             $table->time('time_activated')->nullable(); //hora en la que se activo la publicación
-            $table->timestamps()->nullable();
+            $table->timestamps();
         });
     }
 

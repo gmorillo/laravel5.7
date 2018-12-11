@@ -8,7 +8,7 @@ use App\Slideshow;
 class Photo extends Model
 {
     protected $fillable = [
-        'slideshow_id',
+        'slideshow_id', 'img',
     ];
 
 

@@ -6,11 +6,13 @@ use Illuminate\Http\Request;
 use Image;
 use App\User;
 use App\Slideshow;
+use App\Photo;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Carbon\Carbon;
 use DB;
-
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
 class SliderController extends Controller
 {
     /**
@@ -56,6 +58,26 @@ class SliderController extends Controller
             'principal_img' => $filename,
         ]);
 
+        if($request->hasFile('secondary_img')) 
+        {
+            // getting all of the post data
+            $files = $request->file('secondary_img');
+            $destinationPath = public_path('/img/rotador-principal/imagenes_secundarias/');
+            
+            // recorremos cada archivo y lo subimos individualmente
+            foreach($files as $file) {
+                
+                $random_number = intval( "0" . rand(1,9) . rand(0,9) . rand(0,9) . rand(0,9) . rand(0,9) );
+                $filename = $data->id."-".$random_number.time().'.'.$file->getClientOriginalExtension();
+                $upload_success = $file->move($destinationPath,$filename);
+
+                $img_data = [];
+                $img_data = Photo::create([
+                    'slideshow_id' => $data->id,
+                    'img' => $filename,
+                ]);
+            }
+        }
         return redirect('/profile')->with('slider', 'Rotador principal creado con exito, proceda a realizar el pago para así activar el anuncio.');
     }
 
@@ -67,7 +89,7 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        
+
     }
 
     /**

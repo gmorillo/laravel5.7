@@ -58,33 +58,21 @@
 	    	</div>
 	  	</div>
 	  	<div class="form-group py-3 dashborad-box" style="overflow: hidden;">
-			<h4 class="py-3">Agregar más imágenes</h4>
+			<!--<h4 class="py-3">Agregar más imágenes</h4>-->
     		<div class="row">
-	            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-	            	<div class="custom-file">
-	            	    <input type="file" class="" name="secondary_img1" id="secondary_img1">
-	            	</div>
-	            </div>
-	            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-	            	<div class="custom-file">
-	            	    <input type="file" class="" name="secondary_img2" id="secondary_img2">
-	            	</div>
-	            </div>
-	            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-	            	<div class="custom-file">
-	            	    <input type="file" class="" name="secondary_img3" id="secondary_img3">
-	            	</div>
-	            </div>
-	            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-	            	<div class="custom-file">
-	            	    <input type="file" class="" name="secondary_img4" id="secondary_img4">
-	            	</div>
-	            </div>
-	            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-	            	<div class="custom-file">
-	            	    <input type="file" class="" name="secondary_img5" id="secondary_img5">
-	            	</div>
-	            </div>
+    			<div class="uploader__box js-uploader__box l-center-box">
+            
+                <div class="uploader__contents">
+                    <label class="button button--secondary" for="fileinput">Select Files</label>
+                    <input id="fileinput" class="uploader__file-input" type="file" multiple name="secondary_img[]">
+                </div>
+               
+            
+        </div>
+	            <!--<div class="mx-3">
+	            	<input type="file" name="secondary_img[]" multiple id="gallery-photo-add" max="2">
+					<div class="gallery"></div>
+	            </div>-->
     		</div>
 	  	</div>
 	  	<div class="form-group dashborad-box py-3">
@@ -99,9 +87,43 @@
 
 <style>
 	.dashborad-box {
-    padding: 12px;
-    margin-bottom: 30px;
-    -webkit-box-shadow: 0 0 20px rgba(38,38,38,.2);
-    box-shadow: 0 0 20px rgba(38,38,38,.2);
-}
+	    padding: 12px;
+	    margin-bottom: 30px;
+	    -webkit-box-shadow: 0 0 20px rgba(38,38,38,.2);
+	    box-shadow: 0 0 20px rgba(38,38,38,.2);
+	}
+
 </style>
+<script>
+$(function(){
+            var options = {};
+            $('.js-uploader__box').uploader(options);
+        }());
+</script>
+<script>
+	
+    /*$(function() {
+    // Multiple images preview in browser
+    var imagesPreview = function(input, placeToInsertImagePreview) {
+
+        if (input.files) {
+            var filesAmount = input.files.length;
+
+            for (i = 0; i < filesAmount; i++) {
+                var reader = new FileReader();
+
+                reader.onload = function(event) {
+                    $($.parseHTML('<img>')).attr('src', event.target.result).addClass('w-25 mx-1 my-2').appendTo(placeToInsertImagePreview);
+                }
+
+                reader.readAsDataURL(input.files[i]);
+            }
+        }
+
+    };
+
+    $('#gallery-photo-add').on('change', function() {
+        imagesPreview(this, 'div.gallery');
+    });
+});*/
+</script>
