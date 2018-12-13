@@ -15,15 +15,6 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Pagination\LengthAwarePaginator;
 class SliderController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -38,7 +29,7 @@ class SliderController extends Controller
             $filename = time() . '.' . $principal_img->getClientOriginalExtension();
             
             Image::make($principal_img)
-            ->resize(1920, null, function ($constraint) {
+            ->resize(null, 500, function ($constraint) {
                 $constraint->aspectRatio();
             })->save(public_path('/img/rotador-principal/' . $filename));
         }
@@ -100,7 +91,7 @@ class SliderController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**

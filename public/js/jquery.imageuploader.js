@@ -240,6 +240,7 @@
                     console.log(state.fileBatch[i].id);
                     console.log(parseInt(id));
                     if (state.fileBatch[i].id === parseInt(id)) {
+                        $imageFile.val('');
                         state.fileBatch.splice(i, 1);
                         break;
                     }

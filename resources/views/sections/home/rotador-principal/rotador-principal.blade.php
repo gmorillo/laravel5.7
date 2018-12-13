@@ -1,19 +1,15 @@
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    @foreach($sliders as $slider)
+      <li data-target="#carouselExampleIndicators" data-slide-to="{{$slider->id}}" class="active"></li>
+    @endforeach
   </ol>
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="https://i2.wp.com/www.cashbackloans.com/wp-content/uploads/chalkboard-slider-bg.jpg?ssl=1" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="https://i2.wp.com/www.cashbackloans.com/wp-content/uploads/chalkboard-slider-bg.jpg?ssl=1" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="https://i2.wp.com/www.cashbackloans.com/wp-content/uploads/chalkboard-slider-bg.jpg?ssl=1" alt="Third slide">
-    </div>
+    @foreach($sliders as $slider)
+      <div class="carousel-item @if ($loop->first) active @endif">
+        <img class="d-block w-100" src="img/rotador-principal/{{$slider->principal_img}}" alt="Second slide">
+      </div>
+    @endforeach
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -24,3 +20,9 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+
+
+
+
+

@@ -18,15 +18,16 @@ Route::get('/', function () {
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+Route::get('/home', 'HomeController@getSliders')->name('sliderinfo')->middleware('verified');
 Route::resource('/task', 'TaskController')->middleware('verified');
 
 
 Route::prefix('profile')->group(
     function () {
-    	Route::get('/', 'UserController@profile_img');
-		Route::post('/', 'UserController@updateProfileImg');
-		Route::get('/', 'FormsController@getFormsInfo');
-        Route::post('/create-slider', 'SliderController@create');
+    	Route::get('/', 'UserController@profile_img')->middleware('verified');
+		Route::post('/', 'UserController@updateProfileImg')->middleware('verified');
+		Route::get('/', 'FormsController@getFormsInfo')->middleware('verified');
+        Route::post('/create-slider', 'SliderController@create')->middleware('verified');
     }
 );
 

@@ -7,29 +7,29 @@
 			<div class="row ">
 				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
 					<div class="form-group">
-				            	<label for="title" class="col-form-label">Título del anuncio</label>
-				            	<input type="text" class="form-control" id="title" name="title" required="required">
-				          	</div>
+		            	<label for="title" class="col-form-label">Título del anuncio</label>
+		            	<input type="text" class="form-control" id="title" name="title" required="required">
+		          	</div>
 				</div>
 				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
 					<div class="form-group">
-				            	<label for="mail" class="col-form-label">Correo electronico <small>(Opcional)</small></label>
-				            	<input type="email" class="form-control" id="mail" name="mail" required="required">
-				          	</div>
+		            	<label for="mail" class="col-form-label">Correo electronico <small>(Opcional)</small></label>
+		            	<input type="email" class="form-control" id="mail" name="mail" required="required">
+		          	</div>
 				</div>
 				<div class="col-xl-6 col-lg-6 col-md-6 col-xs-12">
 					<label for="category_id" class="col-form-label">¿Sexualidad donde quieres que aparezca tu anuncio?</label>
-				        	<select class="custom-select" id="category_id" name="category_id" required="required">
-				    			<option selected>Seleccionar sexualidad</option>
-				    			@foreach($category as $categories)
+		        	<select class="custom-select" id="category_id" name="category_id" required="require">
+		    			<option></option>
+		    			@foreach($category as $categories)
 							<option value="{{$categories->id}}">{{$categories->name}}</option>
 						@endforeach
-				  			</select>
+		  			</select>
 				</div>
 				<div class="col-xl-6 col-lg-6 col-md-6 col-xs-12">
 					<label for="city_id" class="col-form-label">¿Ciudad donde quieres que aparezca tu anuncio?</label>
-				        	<select class="custom-select" id="city_id" name="city_id" required="required">
-				    			<option selected>Seleccionar ciudad.</option>
+				        	<select class="custom-select" id="city_id" name="city_id" required="require">
+				    			<option></option>
 				    			@foreach($city as $cities)
 							<option value="{{$cities->id}}">{{$cities->name}}</option>
 						@endforeach
@@ -52,8 +52,10 @@
 		<div class="form-group py-3 dashborad-box" style="overflow: hidden;">
 			<h4 class="py-3">Imagen principal de tu anuncio</h4>
 	    	<div class="input-group">
-	            <div class="custom-file">
-	                <input type="file" class="" name="principal_img" id="principal_img" required="required">
+	            
+	            <div class="mx-3">
+	            	<input type="file" name="principal_img"  id="gallery-photo-add" max="2">
+					<div class="gallery"></div>
 	            </div>
 	    	</div>
 	  	</div>
@@ -102,7 +104,7 @@ $(function(){
 </script>
 <script>
 	
-    /*$(function() {
+    $(function() {
     // Multiple images preview in browser
     var imagesPreview = function(input, placeToInsertImagePreview) {
 
@@ -125,5 +127,5 @@ $(function(){
     $('#gallery-photo-add').on('change', function() {
         imagesPreview(this, 'div.gallery');
     });
-});*/
+});
 </script>

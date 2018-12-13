@@ -6,6 +6,7 @@
 	
 @endsection
 @section('content')
+ 
 	@include('sections.home.rotador-principal.rotador-principal')
 @endsection
 
