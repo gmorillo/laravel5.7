@@ -1,0 +1,1 @@
+nuevas-publicaciones-basicas.blade.php

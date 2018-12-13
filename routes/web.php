@@ -28,6 +28,11 @@ Route::prefix('profile')->group(
 		Route::post('/', 'UserController@updateProfileImg')->middleware('verified');
 		Route::get('/', 'FormsController@getFormsInfo')->middleware('verified');
         Route::post('/create-slider', 'SliderController@create')->middleware('verified');
+        Route::prefix('/administracion')->group(
+            function () {
+                Route::get('/nuevas-publicaciones', 'AdminController@getNewPublishData')->middleware('verified');
+            }
+        );
     }
 );
 
@@ -36,4 +41,6 @@ Route::prefix('rotador-principal')->group(
     	
     }
 );
+
+
 

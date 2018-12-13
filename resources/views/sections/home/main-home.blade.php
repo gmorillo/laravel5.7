@@ -6,8 +6,8 @@
 	
 @endsection
 @section('content')
- 
 	@include('sections.home.rotador-principal.rotador-principal')
+	@include('sections.home.premium.premium')
 @endsection
 
 @section('stylesheet')
