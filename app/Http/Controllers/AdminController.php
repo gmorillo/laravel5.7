@@ -16,7 +16,7 @@ class AdminController extends Controller
         $city = City::get();
         $country = Country::get();
         $category = Category::get();
-        $slideshow = Slideshow::where('status', 0)->get();
+        $slideshow = Slideshow::where('status', 0)->paginate(4);
         
         return view('sections.profile.administracion.nuevas-publicaciones.main-nuevas-publicaciones',compact('city','country', 'category', 'slideshow'));
     }

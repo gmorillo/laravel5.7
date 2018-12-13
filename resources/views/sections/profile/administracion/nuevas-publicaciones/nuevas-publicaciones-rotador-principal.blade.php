@@ -27,6 +27,7 @@
 					@endforeach
 				</tbody>
 			</table>
+			<div class="align-content-end">{{ $slideshow->links() }}</div>
 		</div>
 	</div>
 </div>
