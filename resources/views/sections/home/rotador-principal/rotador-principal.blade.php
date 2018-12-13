@@ -7,7 +7,7 @@
   <div class="carousel-inner">
     @foreach($sliders as $slider)
       <div class="carousel-item @if ($loop->first) active @endif">
-        <img class="d-block w-100" src="img/rotador-principal/{{$slider->principal_img}}" alt="Second slide">
+        <img class="d-block w-100 img-fluid" src="img/rotador-principal/{{$slider->principal_img}}" alt="Second slide">
       </div>
     @endforeach
   </div>

@@ -28,10 +28,11 @@ class SliderController extends Controller
             $principal_img = $request->file('principal_img');
             $filename = time() . '.' . $principal_img->getClientOriginalExtension();
             
-            Image::make($principal_img)
-            ->resize(null, 500, function ($constraint) {
-                $constraint->aspectRatio();
-            })->save(public_path('/img/rotador-principal/' . $filename));
+            $img = Image::make($principal_img);
+            $img->crop(1920, 650)->save(public_path('/img/rotador-principal/' . $filename));
+            /*->resize(1920, 500, function ($constraint) {
+                //$constraint->aspectRatio();
+            })->save(public_path('/img/rotador-principal/' . $filename));*/
         }
 
         $data = [];
