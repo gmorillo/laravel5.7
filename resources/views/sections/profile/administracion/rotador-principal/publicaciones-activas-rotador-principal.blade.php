@@ -18,12 +18,21 @@
 				<tr>
 					<td scope="row"><strong>{{$slider_active->id}}</strong></td>
 
-					<td scope="row">@if($slider_active->status) <a href="#active" title="Hacer click para desactivar publicación" style="text-decoration: none;" class="text-success"><i class="fas fa-check"></i></a> @else <a href="#inactive" title="Hacer click para activar publicación" style="text-decoration: none;" class="text-danger"><i class="fas fa-times" ></i></a> @endif</td>
+					<td scope="row">
+						@if($slider_active->status) 
+							<a href="#active" title="Hacer click para desactivar publicación" style="text-decoration: none;" class="text-success">
+								<i class="fas fa-check"></i>
+							</a> 
+							@else 
+							<a href="#inactive" title="Hacer click para activar publicación" style="text-decoration: none;" class="text-danger">
+								<i class="fas fa-times" ></i></a> 
+						@endif
+					</td>
 					<td scope="row">{{$slider_active->category_id}}</td>
 					<td scope="row">{{$slider_active->city_id}}</td>
 					<td scope="row">{{$slider_active->creation_date}}</td>
 					<td scope="row">
-						<a href="#" title="Editar anuncio"><i class="fas fa-edit"></i></a>&nbsp;&nbsp;&nbsp;
+						<a href="{{ url('profile/administracion/editar-rotador-principal/') }}/{{$slider_active->id}}" title="Editar anuncio"><i class="fas fa-edit"></i></a>&nbsp;&nbsp;&nbsp;
 						<a href="#" title="Eliminar anuncio"><i class="fas fa-trash-alt"></i></a>
 					</td>
 				</tr>

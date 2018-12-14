@@ -31,6 +31,7 @@ Route::prefix('profile')->group(
         Route::prefix('/administracion')->group(
             function () {
                 Route::get('/nuevas-publicaciones', 'AdminController@getNewPublishData')->middleware('verified');
+                Route::get('/editar-rotador-principal/{id}', 'AdminController@getRotadorData')->middleware('verified');
             }
         );
     }

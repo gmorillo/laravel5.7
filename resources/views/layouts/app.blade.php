@@ -14,7 +14,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="{{ asset('js/jquery.imageuploader.js') }}"></script>
-
+    
     @yield('script')
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">

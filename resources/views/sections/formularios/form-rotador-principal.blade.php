@@ -63,14 +63,11 @@
 			<!--<h4 class="py-3">Agregar más imágenes</h4>-->
     		<div class="row">
     			<div class="uploader__box js-uploader__box l-center-box">
-            
                 <div class="uploader__contents">
                     <label class="button button--secondary" for="fileinput">Select Files</label>
                     <input id="fileinput" class="uploader__file-input" type="file" multiple name="secondary_img[]">
                 </div>
-               
-            
-        </div>
+        	</div>
 	            <!--<div class="mx-3">
 	            	<input type="file" name="secondary_img[]" multiple id="gallery-photo-add" max="2">
 					<div class="gallery"></div>
