@@ -1,8 +1,8 @@
 <div class="card-body align-self-center border">
-	<span class="text-right"><medium ><strong>{{$inactive_count_slideshow}} nuevas publicaciones.</strong></medium></span>
-	<h3 class="py-3">Nuevas publicaciones <span class="bg-danger text-white px-2 rounded">Rotador Premium</span></h3>
-	<div class="w-100"><input type="text" id="searchRotadorPremium" onkeyup="myFunctionPremium()" placeholder="Buscar por número de referencia..." title="Número de referencia"></div>
-	<table class="table table-hover table-responsive" id="myTableRotadorPremium">
+	
+	<h3 class="py-3">Existen  {{$inactive_count_slideshow}} <span class="bg-danger text-white px-2 rounded">Publicaciones Inactivas</span></h3>
+	<div class="w-100"><input type="text" id="myInputInactiveRotadorPrincipal" onkeyup="myFunctionInactiveRotadorPrincipal()" placeholder="Buscar por número de referencia..." title="Número de referencia"></div>
+	<table class="table table-hover table-responsive" id="myTableInactiveRotadorPrincipal">
 		<thead>
 			<tr>
 				<th scope="col">Referencia</th>
@@ -18,7 +18,7 @@
 				<tr>
 					<td scope="row"><strong>{{$slider->id}}</strong></td>
 
-					<td scope="row">@if($slider->status) <a href="#active" title="Hacer click para desactivar publicación" style="text-decoration: none;" class="text-success"><i class="fas fa-check"></i></a> @else <a href="#inactive" title="Hacer click para activar publicación" style="text-decoration: none;" class="text-danger"><i class="fas fa-times" ></i></a> @endif</td>
+					<td scope="row">@if($slider->status) <a href="#Inactive" title="Hacer click para desactivar publicación" style="text-decoration: none;" class="text-success"><i class="fas fa-check"></i></a> @else <a href="#inInactive" title="Hacer click para activar publicación" style="text-decoration: none;" class="text-danger"><i class="fas fa-times" ></i></a> @endif</td>
 					<td scope="row">{{$slider->category_id}}</td>
 					<td scope="row">{{$slider->city_id}}</td>
 					<td scope="row">{{$slider->creation_date}}</td>
@@ -39,11 +39,11 @@
 </div>
 
 <script>
-function myFunctionPremium() {
+function myFunctionInactiveRotadorPrincipal() {
   var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("searchRotadorPremium");
+  input = document.getElementById("myInputInactiveRotadorPrincipal");
   filter = input.value.toUpperCase();
-  table = document.getElementById("myTableRotadorPremium");
+  table = document.getElementById("myTableInactiveRotadorPrincipal");
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[0];
@@ -60,7 +60,7 @@ function myFunctionPremium() {
 </script>
 
 <style>
-	#searchRotadorPremium {
+	#myInputInactiveRotadorPrincipal {
 	  background-position: 10px 10px;
 	  background-repeat: no-repeat;
 	  width: 100%;
