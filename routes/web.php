@@ -30,8 +30,9 @@ Route::prefix('profile')->group(
         Route::post('/create-slider', 'SliderController@create')->middleware('verified');
         Route::prefix('/administracion')->group(
             function () {
-                Route::get('/nuevas-publicaciones', 'AdminController@getNewPublishData')->middleware('verified');
+                Route::get('/', 'AdminController@getNewPublishData')->middleware('verified');
                 Route::get('/editar-rotador-principal/{id}', 'AdminController@getRotadorData')->middleware('verified');
+                Route::post('/edit-slider/{id}', 'SliderController@edit')->middleware('verified');
             }
         );
     }

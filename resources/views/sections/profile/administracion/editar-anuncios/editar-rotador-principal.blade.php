@@ -1,9 +1,8 @@
 @extends('layouts.app')
 
-@if(Auth::getUser()->role_id == 2)
+@if(Auth::getUser()->role_id == 2 || Auth::getUser()->role_id == 1)
 	@section('content')
 		<div class="container">
-
 		    <div class="row ">
 		    	<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 mt-4">
 					@include('sections.profile.menu-izquierdo-profile')
@@ -11,11 +10,11 @@
 				<div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-xs-12 mt-4">
 					<div class="container">
 						@foreach($active_slideshow as $slider)
-							<form action="profile/create-slider" method="POST" enctype="multipart/form-data" style="background-color: white;">
+							<form action="/profile/administracion/edit-slider/{{$slider->id}}" method="POST" enctype="multipart/form-data" style="background-color: white;">
 								@csrf
 								<input type="text" class="form-control" hidden="hidden" id="country_id" value="1">
 								<div class="dashborad-box" >
-									<h4 class="py-3">Datos del anuncio</h4>
+									<h4 class="py-3">Editar datos del anuncio</h4>
 									<div class="row ">
 										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
 											<div class="form-group">
@@ -63,11 +62,11 @@
 									</div>
 								</div>
 								<div class="form-group py-3 dashborad-box" style="overflow: hidden;">
-									<h4 class="py-3">Imagen principal de tu anuncio</h4>
+									<h4 class="py-3">Actualizar imagen principal de tu anuncio</h4>
 							    	<div class="input-group">
-							            <div class="mx-3">
-							            	<input type="file" name="principal_img"  id="gallery-photo-add" max="2">
-							            	<img src="/img/rotador-principal/{{$slider->principal_img}}" alt="" class="img-fluid w-75">
+							            <div class="mx-3 ">
+							            	<input type="file" name="principal_img"  id="gallery-photo-add">
+							            	<img src="/img/rotador-principal/{{$slider->principal_img}}" alt="" class="img-fluid w-100 mt-3">
 											<div class="gallery"></div>
 							            </div>
 							    	</div>
@@ -75,29 +74,31 @@
 							  	<div class="form-group py-3 dashborad-box" style="overflow: hidden;">
 						    		<div class="row">
 						    			<div class="uploader__box js-uploader__box l-center-box">
-						    				@foreach($photos_slideshow as $secondary_img)
+						    				
 							    				<ul class="js-uploader__file-list uploader__file-list">
 													<li class="uploader__file-list__item" data-index="0">
 														<span class="uploader__file-list__thumbnail">
+															@foreach($photos_slideshow as $secondary_img)
 															<img src="/img/rotador-principal/imagenes_secundarias/{{$secondary_img->img}}" class="thumbnail">
+															@endforeach
 														</span>
-														<span class="uploader__file-list__text">{{$secondary_img->img}}</span>
-														<span class="uploader__file-list__button">
+														
+														<!--<span class="uploader__file-list__button">
 															<a href="#" class="uploader__icon-button js-upload-remove-button fas fa-trash-alt " data-index="0" style="cursor:pointer;"></a>
-														</span>
+														</span>-->
 													</li>
 												</ul>
-											@endforeach
-							                <div class="uploader__contents">
+											
+							                <!--<div class="uploader__contents">
 							                    <label class="button button--secondary" for="fileinput">Select Files</label>
 							                    <input id="fileinput" class="uploader__file-input" type="file" multiple name="secondary_img[]">
-							                </div>
+							                </div>-->
 						        		</div>
 						    		</div>
 							  	</div>
 							  	<div class="form-group dashborad-box py-3">
-							    	<label for="description" class="col-form-label "><h4>Descripción del anuncio</h4></label>
-							    	<textarea class="form-control" rows="5" id="description" name="description" ></textarea>
+							    	<label for="description" class="col-form-label "><h4>Editar descripción del anuncio</h4></label>
+							    	<textarea class="form-control" rows="5" id="description" name="description">{{$slider->description}}</textarea>
 							  	</div>
 							  	<div class="row justify-content-center">
 							  		<button class="btn btn-success btn-lg" type="submit">Editar</button>

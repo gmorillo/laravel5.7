@@ -32,8 +32,8 @@
 					<td scope="row">{{$slider_active->city_id}}</td>
 					<td scope="row">{{$slider_active->creation_date}}</td>
 					<td scope="row">
-						<a href="{{ url('profile/administracion/editar-rotador-principal/') }}/{{$slider_active->id}}" title="Editar anuncio"><i class="fas fa-edit"></i></a>&nbsp;&nbsp;&nbsp;
-						<a href="#" title="Eliminar anuncio"><i class="fas fa-trash-alt"></i></a>
+						<a href="{{ url('profile/administracion/editar-rotador-principal/') }}/{{$slider_active->id}}" title="Editar anuncio"><i class="fas fa-edit"></i></a>
+						<a href="#" title="Eliminar anuncio"><i class="fas fa-trash-alt ml-3"></i></a>
 					</td>
 				</tr>
 			@endforeach

@@ -23,8 +23,8 @@
 					<td scope="row">{{$slider->city_id}}</td>
 					<td scope="row">{{$slider->creation_date}}</td>
 					<td scope="row">
-						<a href="#" title="Editar anuncio"><i class="fas fa-edit"></i></a>&nbsp;&nbsp;&nbsp;
-						<a href="#" title="Eliminar anuncio"><i class="fas fa-trash-alt"></i></a>
+						<a href="#" title="Editar anuncio"><i class="fas fa-edit"></i></a>
+						<a href="#" title="Eliminar anuncio"><i class="fas fa-trash-alt ml-3"></i></a>
 					</td>
 				</tr>
 			@endforeach

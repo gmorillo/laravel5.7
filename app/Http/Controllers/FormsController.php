@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\City;
 use App\Country;
 use App\Category;
-
+use App\User;
+use Illuminate\Support\Facades\Auth;
 
 
 class FormsController extends Controller
@@ -16,7 +17,12 @@ class FormsController extends Controller
         $city = City::get();
         $country = Country::get();
         $category = Category::get();
-        return view('sections.profile.profile',compact('city','country', 'category'));
+        if(Auth::getUser()->role_id == 2 || Auth::getUser()->role_id == 1){
+            return redirect()->action('AdminController@getNewPublishData');
+        }else{
+            return view('sections.profile.profile',compact('city','country', 'category'));
+        }
+        
     }
 
     /**

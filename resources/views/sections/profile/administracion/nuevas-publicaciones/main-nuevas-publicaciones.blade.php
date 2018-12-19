@@ -7,7 +7,7 @@
 		</div>
 		<div id="collapseOne" class="collapse py-3" aria-labelledby="headingOne" data-parent="#accordion">
 			<div class="row">
-				<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 px-4">
+				<div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-xs-12 px-4">
 					@include('sections.profile.administracion.nuevas-publicaciones.nuevas-publicaciones-rotador-principal')
 				</div>
 				<!--<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 px-4">

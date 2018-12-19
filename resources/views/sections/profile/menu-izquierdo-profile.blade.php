@@ -29,15 +29,16 @@
                 </div>
             @endif
         </div>
-        <div class="list-group pt-2 @if(Auth::getUser()->role_id == 2) d-none @endif" id="list-tab" role="tablist">
+        <div class="list-group pt-2 @if(Auth::getUser()->role_id == 2 || Auth::getUser()->role_id == 1) d-none @endif" id="list-tab" role="tablist">
             <a href="{{ url('/profile') }}" class="list-group-item list-group-item-action" id="pincipal" data-toggle="list" role="tab" aria-controls="home"><i class="fas fa-chart-pie"></i> Anúnciate</a>
             <a class="list-group-item list-group-item-action" id="mi-cuenta" data-toggle="list" role="tab" aria-controls="profile"><i class="far fa-user"></i> Mi cuenta</a>
             <a class="list-group-item list-group-item-action" id="mis-anuncios" data-toggle="list" role="tab" aria-controls="messages"><i class="fas fa-check-circle"></i> Mis anuncios activos</a>
             <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" role="tab" aria-controls="settings"><i class="fas fa-calendar-times"></i> Mis anuncios caducados</a>
         </div>
-        <div class="list-group pt-2 @if(Auth::getUser()->role_id == 2) d-block @endif" id="list-tab" role="tablist">
-            <a href="{{ url('/profile/administracion/nuevas-publicaciones') }}" class="list-group-item list-group-item-action" id="pincipal" ><i class="fas fa-list-ol"></i><strong class="ml-3 text-uppercase">Nuevas publicaciones</strong></a>
-            <a href="{{ url('#') }}" class="list-group-item list-group-item-action" id="mi-cuenta" data-toggle="list" role="tab" aria-controls="profile"><i class="fas fa-plus-square"></i> <strong class="ml-3 text-uppercase">Rotador Principal</strong></a>
+        <div class="list-group pt-2 @if(Auth::getUser()->role_id == 2) d-block @else d-none @endif " id="list-tab" role="tablist">
+            <a href="{{ url('/profile/administracion/') }}" class="list-group-item list-group-item-action"><i class="fas fa-home"></i><strong class="ml-3 text-uppercase">Inicio</strong></a>
+            <a href="{{ url('/profile/administracion/') }}" class="list-group-item list-group-item-action" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" ><i class="fas fa-list-ol"></i><strong class="ml-3 text-uppercase">Nuevas publicaciones</strong></a>
+            <a href="{{ url('#') }}" class="list-group-item list-group-item-action" id="RotadorPrincipal" data-toggle="collapse" data-target="#collapseRotadorPrincipal" aria-expanded="true" aria-controls="collapseRotadorPrincipal"><i class="fas fa-plus-square"></i> <strong class="ml-3 text-uppercase">Rotador Principal</strong></a>
             <a href="{{ url('#') }}" class="list-group-item list-group-item-action" id="mis-anuncios" data-toggle="list" role="tab" aria-controls="messages"><i class="fas fa-certificate"></i> <strong class="ml-3 text-uppercase">Rotador Premium </strong></a>
             <a href="{{ url('#') }}" class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" role="tab" aria-controls="settings"><i class="fas fa-check-square"></i> <strong class="ml-3 text-uppercase">Publicaciones básicas </strong></a>
         </div>
