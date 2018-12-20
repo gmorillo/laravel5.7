@@ -17,6 +17,7 @@ class SlideshowsTableSeeder extends Seeder
             'user_id' => 3,
             'category_id' => 1,
             'country_id' => 1,
+            'publicity_type' => 1,
             'city_id' => 1,
             'title' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam magni quod velit veniam magnam alias voluptas itaque natus odit. Unde?',
             'phone' => '666999988',

@@ -28,13 +28,15 @@ Route::prefix('profile')->group(
 		Route::post('/', 'UserController@updateProfileImg')->middleware('verified');
 		Route::get('/', 'FormsController@getFormsInfo')->middleware('verified');
         Route::post('/create-slider', 'SliderController@create')->middleware('verified');
+        Route::get('/anuncios-activos', 'SliderController@getListSliderActive')->middleware('verified');
+        Route::get('/anuncios-caducados', 'SliderController@getListSliderInactive')->middleware('verified');
+        Route::get('/editar-rotador-principal/{id}', 'SliderController@getRotadorData')->middleware('verified');
         Route::prefix('/administracion')->group(
             function () {
                 Route::get('/', 'AdminController@getNewPublishData')->middleware('verified');
                 Route::get('/editar-rotador-principal/{id}', 'AdminController@getRotadorData')->middleware('verified');
                 Route::post('/edit-slider/{id}', 'SliderController@edit')->middleware('verified');
                 Route::get('/activar-publicacion/{id}', 'SliderController@activarPublicacion')->middleware('verified');
-                Route::get('/detalle-rotador-principal/{id}', 'SliderController@detalleRotadorPrincipal')->middleware('verified');
             }
         );
     }
@@ -42,8 +44,7 @@ Route::prefix('profile')->group(
 
 Route::prefix('detalle')->group(
     function () {
-        
-    	
+        Route::get('/rotador-principal/{id}', 'SliderController@detalleRotadorPrincipal')->middleware('verified');
     }
 );
 

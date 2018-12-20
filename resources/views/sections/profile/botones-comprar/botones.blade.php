@@ -54,21 +54,21 @@
 			<div class="col-xl-4 col-md-6 col-sm-4 col-xs-12">
 				<div class="card">
 					<div class="card-body ">						
-						<a href="#" class="btn btn-danger btn-lg shadow-button w-100" data-toggle="modal" data-target="#exampleModalCenter">Comprar anuncio Rotador Principal</a>
+						<a href="#" class="btn btn-danger btn-lg shadow-button w-100" data-toggle="modal" data-target="#exampleModalCenter">Crear anuncio Rotador Principal</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-xl-4 col-md-6 col-sm-4 col-xs-12">
 				<div class="card">
 					<div class="card-body">
-						<a href="#" class="btn btn-danger btn-lg shadow-button w-100">Comprar anuncio Premium</a>
+						<a href="#" class="btn btn-danger btn-lg shadow-button w-100">Crear anuncio Premium</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-xl-4 col-md-6 col-sm-4 col-xs-12">
 				<div class="card">
 					<div class="card-body">
-						<a href="#" class="btn btn-danger btn-lg shadow-button w-100">Comprar anuncio Basic</a>
+						<a href="#" class="btn btn-danger btn-lg shadow-button w-100">Crear anuncio Basic</a>
 					</div>
 				</div>
 			</div>

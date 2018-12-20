@@ -25,7 +25,7 @@
 								<i class="fas fa-check"></i>
 							</a> 
 						@else 
-							<a href="{{ url('profile/administracion/activar-rotador-principal/') }}/{{$slider->id}}" title="Hacer click para activar publicación" style="text-decoration: none;" class="text-danger">
+							<a href="{{ url('profile/administracion/activar-publicacion/') }}/{{$slider->id}}" title="Hacer click para activar publicación" style="text-decoration: none;" class="text-danger">
 								<i class="fas fa-times" ></i>
 							</a> 
 						@endif

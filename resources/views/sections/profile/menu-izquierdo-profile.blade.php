@@ -30,10 +30,10 @@
             @endif
         </div>
         <div class="list-group pt-2 @if(Auth::getUser()->role_id == 2 || Auth::getUser()->role_id == 1) d-none @endif" id="list-tab" role="tablist">
-            <a href="{{ url('/profile') }}" class="list-group-item list-group-item-action" id="pincipal" data-toggle="list" role="tab" aria-controls="home"><i class="fas fa-chart-pie"></i> Anúnciate</a>
+            <a href="{{ url('/profile') }}" class="list-group-item list-group-item-action" id="pincipal"><i class="fas fa-shopping-cart"></i> Comprar anuncio</a>
             <a class="list-group-item list-group-item-action" id="mi-cuenta" data-toggle="list" role="tab" aria-controls="profile"><i class="far fa-user"></i> Mi cuenta</a>
-            <a class="list-group-item list-group-item-action" id="mis-anuncios" data-toggle="list" role="tab" aria-controls="messages"><i class="fas fa-check-circle"></i> Mis anuncios activos</a>
-            <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" role="tab" aria-controls="settings"><i class="fas fa-calendar-times"></i> Mis anuncios caducados</a>
+            <a href="{{ url('profile/anuncios-activos') }}" class="list-group-item list-group-item-action" id="mis-anuncios"><i class="fas fa-check-circle"></i> Mis anuncios activos</a>
+            <a href="{{ url('profile/anuncios-caducados') }}" class="list-group-item list-group-item-action"><i class="fas fa-calendar-times"></i> Mis anuncios caducados</a>
         </div>
         <div class="list-group pt-2 @if(Auth::getUser()->role_id == 2) d-block @else d-none @endif " id="list-tab" role="tablist">
             <a href="{{ url('/profile/administracion/') }}" class="list-group-item list-group-item-action"><i class="fas fa-home"></i><strong class="ml-3 text-uppercase">Inicio</strong></a>

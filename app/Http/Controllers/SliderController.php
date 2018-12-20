@@ -13,6 +13,9 @@ use Carbon\Carbon;
 use DB;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Pagination\LengthAwarePaginator;
+use App\City;
+use App\Country;
+use App\Category;
 
 class SliderController extends Controller
 {
@@ -34,9 +37,10 @@ class SliderController extends Controller
         }
 
         $data = [];
-
+        
         $data = Slideshow::create([
             'user_id' => Auth::user()->id,
+            'publicity_type' => $request->input('tipo_publicidad'),
             'title' => $request->input('title'),
             'category_id' => $request->input('category_id'),
             'city_id' => $request->input('city_id'),
@@ -82,8 +86,19 @@ class SliderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function getListSliderActive(Request $request)
     {
+        $data = Slideshow::where('user_id', Auth::getUser()->id)->where('status', 1)->paginate(15);
+        return view('sections.profile.anuncios-activos.main-anuncios-activos',compact('data'));
+        //return redirect('/profile');
+
+    }
+
+    public function getListSliderInactive(Request $request)
+    {
+        $data = Slideshow::where('user_id', Auth::getUser()->id)->where('status', 0)->paginate(15);
+        return view('sections.profile.anuncios-caducados.main-anuncios-caducados',compact('data'));
+        //return redirect('/profile');
 
     }
 
@@ -160,7 +175,7 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function activarRotadorPrincipal(Request $request, $id)
+    public function activarPublicacion (Request $request, $id)
     {
         $Activarslider =  Slideshow::where('id', $id)->first();
         $Activarslider->status = '1';
@@ -177,8 +192,14 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function getRotadorData($id)
     {
-        //
+        $city = City::get();
+        $country = Country::get();
+        $category = Category::get();
+        $active_slideshow = Slideshow::where('id', $id)->orderBy('id', 'desc')->paginate(10);
+        $photos_slideshow = Photo::where('slideshow_id', $id)->get();
+        $list_per_user_slider = Slideshow::where('user_id', Auth::getUser()->id)->paginate(15);
+        return view('sections.profile.editar-anuncios.editar-rotador-principal',compact('city','country', 'category', 'active_slideshow', 'photos_slideshow', 'list_per_user_slider'));
     }
 }

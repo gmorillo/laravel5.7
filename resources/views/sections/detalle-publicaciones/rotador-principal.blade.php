@@ -18,7 +18,7 @@
 				<div>
 					<p class=" text-dark py-2 text-uppercase" >
 						<i class="fas fa-phone text-danger"></i> 
-						<strong class="text-danger" style="letter-spacing: 4px;">{{$info->phone}}</strong> - {{$info->description}}
+						<strong class="text-danger" style="letter-spacing: 4px;"><a target="_blank" style="text-decoration: none;" class="text-danger" href="https://wa.me/507{{$info->phone}}?text=Hola,%20te%20he%20visto%20por%20la%20web%20de%20*******">{{$info->phone}}</a></strong> - {{$info->description}}
 					</p>
 				</div>
 				<div>
@@ -43,12 +43,12 @@
 				<div class="bg-success mb-1 text-white text-center rounded">
 					<div class="py-3">
 						<i class="fab fa-whatsapp h4 mb-0"></i>
-						<a style="text-decoration: none;" class="text-white h4" href="https://wa.me/507{{$info->phone}}?text=Hola,%20te%20he%20visto%20por%20la%20web%20de%20*******">Whatsapp</a>
+						<a target="_blank" style="text-decoration: none;" class="text-white h4" href="https://wa.me/507{{$info->phone}}?text=Hola,%20te%20he%20visto%20por%20la%20web%20de%20*******">Whatsapp</a>
 					</div>
 				</div>
-				<div class="bg-secondary my-1 text-white text-center rounded">
+				<div class="bg-secondary my-1 text-center rounded">
 					<div class="py-3">
-						<h4 class="mb-0">Ciudad: {{$info->city_id}}</h4>
+						<h4 class="mb-0"><a class="text-white" href="{{ url('listado-por-ciudad') }}/{{$info->city_id}}">Ciudad: {{$info->city_id}}</a></h4>
 					</div>
 				</div>
 				<div class="bg-danger my-1 text-white text-center rounded">

@@ -32,6 +32,7 @@ class AdminController extends Controller
         $category = Category::get();
         $active_slideshow = Slideshow::where('id', $id)->orderBy('id', 'desc')->paginate(10);
         $photos_slideshow = Photo::where('slideshow_id', $id)->get();
-    	return view('sections.profile.administracion.editar-anuncios.editar-rotador-principal',compact('city','country', 'category', 'active_slideshow', 'photos_slideshow'));
+        $list_per_user_slider = Slideshow::where('user_id', Auth::getUser()->id)->paginate(15);
+    	return view('sections.profile.administracion.editar-anuncios.editar-rotador-principal',compact('city','country', 'category', 'active_slideshow', 'photos_slideshow', 'list_per_user_slider'));
     }
 }

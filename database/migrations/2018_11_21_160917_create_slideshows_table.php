@@ -16,11 +16,12 @@ class CreateSlideshowsTable extends Migration
         Schema::create('slideshows', function (Blueprint $table) {
             $table->increments('id');
             $table->boolean('status')->default(0);
-            $table->integer('user_id')->nullable();
-            $table->integer('category_id')->nullable();
+            $table->integer('publicity_type');
+            $table->integer('user_id');
+            $table->integer('category_id');
             $table->integer('country_id')->default(1);
-            $table->integer('city_id')->nullable();
-            $table->string('title')->nullable();
+            $table->integer('city_id');
+            $table->text('title')->nullable();
             $table->integer('phone')->nullable();
             $table->string('mail')->nullable();
             $table->string('langues')->nullable();
