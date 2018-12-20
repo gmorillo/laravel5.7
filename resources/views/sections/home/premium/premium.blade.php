@@ -2,7 +2,7 @@
 
 <div class="container">
 	<div class="row">
-		<h2>Carrousel Bootstrap 4 with Thumbnails</h2>
+		<h2>Publicaciones Premium</h2>
 	</div>
 </div>
 <!-- .container -->
@@ -10,19 +10,14 @@
 <div class="container-fluid">
   <div class="row">
     <div id="carouselPlus" class="carousel slide multi-carousel" data-ride="carousel">
-      <div class="carousel-inner">       
-        <div class="carousel-grid col-lg-3 col-md-4 col-sm-12"><img class="d-block w-100" src="https://dummyimage.com/720x480/000/fff.png&text=1-1" alt="First slide"></div>
-        <div class="carousel-grid col-lg-3 col-md-4 col-sm-12"><img class="d-block w-100" src="https://dummyimage.com/720x480/000/fff.png&text=1-2" alt="First slide"></div>
-        <div class="carousel-grid col-lg-3 col-md-4 col-sm-12"><img class="d-block w-100" src="https://dummyimage.com/720x480/000/fff.png&text=1-3" alt="First slide"></div>
-        <div class="carousel-grid col-lg-3 col-md-4 col-sm-12"><img class="d-block w-100" src="https://dummyimage.com/720x480/000/fff.png&text=1-4" alt="First slide"></div>
-        <div class="carousel-grid col-lg-3 col-md-4 col-sm-12"><img class="d-block w-100" src="https://dummyimage.com/720x480/000/fff.png&text=2-1" alt="First slide"></div>
-        <div class="carousel-grid col-lg-3 col-md-4 col-sm-12"><img class="d-block w-100" src="https://dummyimage.com/720x480/000/fff.png&text=2-2" alt="First slide"></div>
-        <div class="carousel-grid col-lg-3 col-md-4 col-sm-12"><img class="d-block w-100" src="https://dummyimage.com/720x480/000/fff.png&text=2-3" alt="First slide"></div>
-        <div class="carousel-grid col-lg-3 col-md-4 col-sm-12"><img class="d-block w-100" src="https://dummyimage.com/720x480/000/fff.png&text=2-4" alt="First slide"></div>  
-        <div class="carousel-grid col-lg-3 col-md-4 col-sm-12"><img class="d-block w-100" src="https://dummyimage.com/720x480/000/fff.png&text=3-1" alt="First slide"></div>
-        <div class="carousel-grid col-lg-3 col-md-4 col-sm-12"><img class="d-block w-100" src="https://dummyimage.com/720x480/000/fff.png&text=3-2" alt="First slide"></div>
-        <div class="carousel-grid col-lg-3 col-md-4 col-sm-12"><img class="d-block w-100" src="https://dummyimage.com/720x480/000/fff.png&text=3-3" alt="First slide"></div>
-        <div class="carousel-grid col-lg-3 col-md-4 col-sm-12"><img class="d-block w-100" src="https://dummyimage.com/720x480/000/fff.png&text=3-4" alt="First slide"></div>  
+      <div class="carousel-inner"> 
+      @foreach($premium as $prem)      
+        <div class="carousel-grid col-lg-2 col-md-2 col-sm-12">
+          <a href="#">
+            <img class="d-block w-100" src="{{ url('img/rotador-principal/') }}/{{$prem->principal_img}}" alt="{{$prem->title}}">
+          </a>
+        </div>
+      @endforeach
       </div>
       <a class="carousel-control-prev" href="#carouselPlus" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

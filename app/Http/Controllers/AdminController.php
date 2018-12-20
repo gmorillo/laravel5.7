@@ -8,6 +8,7 @@ use App\Photo;
 use App\City;
 use App\Country;
 use App\Category;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {

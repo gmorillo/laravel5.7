@@ -2,7 +2,7 @@
 	<div class="card">
 		<div class="card-header bg-danger" id="RotadorPrincipal" data-toggle="collapse" data-target="#collapseRotadorPrincipal" aria-expanded="true" aria-controls="collapseRotadorPrincipal" style="cursor: pointer;">
 			<h4 class="mb-0 text-white">
-				Anuncios de rotador principal
+				Anuncios de rotador principal (Todos los anuncios)
 			</h4>
 		</div>
 		<div id="collapseRotadorPrincipal" class="collapse py-3" aria-labelledby="RotadorPrincipal" data-parent="#accordion">

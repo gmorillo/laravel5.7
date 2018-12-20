@@ -35,7 +35,11 @@
 					<td scope="row"><small>{{$slider->city_id}}</small></td>
 					<td scope="row"><small>{{$slider->unpublish_date}}</small></td>
 					<td scope="row">
-						<a href="{{ url('#') }}" title="Si quieres volver a reactivar este anuncio, haz click aqui!!!" class="text-white btn  btn-success"><i class="fas fa-redo-alt text-white"></i> <small>Volver a comprar</small></a>
+						@if($slider->unpublish_date != NULL)
+							<a href="{{ url('#') }}" title="Si quieres volver a reactivar este anuncio, haz click aqui!!!" class="text-white btn  btn-success"><i class="fas fa-redo-alt text-white"></i> <small>Volver a comprar</small></a>
+						@else
+						<p class="badge badge-warning w-100"><span class="py-2 px-1 "><i class="fas fa-pause-circle" ></i> en espera de pago</span></p>
+						@endif
 					</td>
 				</tr>
 			@endforeach

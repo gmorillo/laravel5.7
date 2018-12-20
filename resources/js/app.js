@@ -6,7 +6,7 @@ import 'angular';
 	function multiCarousel(){
 		if ( $( "#lg" ).is( ":visible" ) ) {
 			do {
-				$( "#carouselPlus .carousel-inner" ).children( ".carousel-grid:lt(4)" ).wrapAll( "<div class=\"carousel-item\"><div class=\"row\"></div></div>" );
+				$( "#carouselPlus .carousel-inner" ).children( ".carousel-grid:lt(6)" ).wrapAll( "<div class=\"carousel-item\"><div class=\"row\"></div></div>" );
 				$( "#carouselPlus .carousel-inner .carousel-item:first" ).addClass("active");
 			} while ( $( "#carouselPlus .carousel-inner" ).children( ".carousel-grid" ).length );
 		} else if ( $( "#md" ).is( ":visible" ) ) {
