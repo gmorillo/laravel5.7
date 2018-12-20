@@ -35,7 +35,7 @@
 					<td scope="row"><small>{{$slider->city_id}}</small></td>
 					<td scope="row"><small>{{$slider->unpublish_date}}</small></td>
 					<td scope="row">
-						<a href="{{ url('#') }}" title="Editar anuncio" class="text-success"><i class="fas fa-redo-alt text-success"></i> <small>Volver a comprar</small></a>
+						<a href="{{ url('#') }}" title="Si quieres volver a reactivar este anuncio, haz click aqui!!!" class="text-white btn  btn-success"><i class="fas fa-redo-alt text-white"></i> <small>Volver a comprar</small></a>
 					</td>
 				</tr>
 			@endforeach
@@ -43,7 +43,7 @@
 	</table>
 
 	<div class="row px-1">
-    			<div class="col-md-6 offset-md-3">
+		<div class="col-md-6 offset-md-3">
 			<div >{{ $data->links() }}</div>
 		</div>
 	</div>
