@@ -16,6 +16,8 @@
 						<div class="col-1 p-0 bg-danger"><hr></div>
 						<p class="card-text">Lleva tus anuncios a otro nivel, aumenta tus visitas hasta en <strong class="text-danger">100%.</strong></p>
 						<a href="#" class="btn btn-danger shadow-button" data-toggle="modal" data-target="#exampleModalCenter">Comprar anuncio Rotador Principal</a>
+
+						<a tabindex="0" class="btn btn-md btn-primary" role="button" data-toggle="popover" data-trigger="focus" title="Información adicional" data-content="Las dimensiones de la imágen principal deben ser de 1920px(ancho) X 850px(alto) como mínimo."><i class="fas fa-info"></i></a>
 					</div>
 				</div>
 			</div>
@@ -30,7 +32,7 @@
 						<h5 class="card-title text-danger"><strong>Comprar anuncio Premium</strong></h5>
 						<div class="col-2 p-0 bg-danger"><hr></div>
 						<p class="card-text">Tu anuncio aparece en las primeras posiciones de nuestra sección premium. Aumenta tus visitas en un <strong class="text-danger">90%.</strong></p>
-						<a href="#" class="btn btn-danger shadow-button">Comprar anuncio Premium</a>
+						<a href="#" class="btn btn-danger shadow-button" data-toggle="modal" data-target="#ModalPremium">Comprar anuncio Premium</a>
 					</div>
 				</div>
 			</div>
@@ -61,7 +63,7 @@
 			<div class="col-xl-4 col-md-6 col-sm-4 col-xs-12">
 				<div class="card">
 					<div class="card-body">
-						<a href="#" class="btn btn-danger btn-lg shadow-button w-100">Crear anuncio Premium</a>
+						<a href="#" class="btn btn-danger btn-lg shadow-button w-100" data-toggle="modal" data-target="#ModalPremium">Crear anuncio Premium</a>
 					</div>
 				</div>
 			</div>
@@ -76,7 +78,7 @@
 	</div>
 </div>
 
-<!-- Modal -->
+<!-- Modal Rotador principal-->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   	<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 	    <div class="modal-content">
@@ -88,6 +90,26 @@
 	      	</div>
 	      	<div class="modal-body">
 	        	@include('sections.formularios.form-rotador-principal')
+	      	</div>
+	      	<div class="modal-footer">
+	        	<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+	      	</div>
+	    </div>
+  	</div>
+</div>
+
+<!-- Modal Rotador Premium-->
+<div class="modal fade" id="ModalPremium" tabindex="-1" role="dialog" aria-labelledby="examplePremiumModalCenterTitle" aria-hidden="true">
+  	<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+	    <div class="modal-content">
+	      	<div class="modal-header">
+	        	<h5 class="modal-title" id="exampleModalLongTitle" >Anuncio en Rotador Premium</h5>
+	        	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          		<span aria-hidden="true">&times;</span>
+	        	</button>
+	      	</div>
+	      	<div class="modal-body">
+	        	@include('sections.formularios.form-premium')
 	      	</div>
 	      	<div class="modal-footer">
 	        	<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

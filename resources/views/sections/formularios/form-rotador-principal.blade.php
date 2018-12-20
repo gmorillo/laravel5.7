@@ -38,15 +38,15 @@
 				</div>
 				<div class="col-xl-6 col-lg-6 col-md-6 col-xs-12 pt-2">
 					<div class="form-group">
-				            	<label for="phone" class="col-form-label">Teléfono</label>
-				            	<input type="number" class="form-control" id="phone" name="phone" required="required">
-				          	</div>
+		            	<label for="phone" class="col-form-label">Teléfono</label>
+		            	<input type="number" class="form-control" id="phone" name="phone" required="required">
+		          	</div>
 				</div>
 				<div class="col-xl-6 col-lg-6 col-md-6 col-xs-12 pt-2">
 					<div class="form-group">
-				            	<label for="langues" class="col-form-label">Idiomas </label> <br>
-				            	<input type="text" class="form-control" id="langues" name="langues" placeholder="Español, Ingles, Italiano, Portugues, Etc...">
-				          	</div>
+		            	<label for="langues" class="col-form-label">Idiomas </label> <br>
+		            	<input type="text" class="form-control" id="langues" name="langues" placeholder="Español, Ingles, Italiano, Portugues, Etc...">
+		          	</div>
 				</div>
 			</div>
 		</div>
