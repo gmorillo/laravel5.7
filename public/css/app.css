@@ -10466,6 +10466,10 @@ a.text-dark:focus {
   }
 }
 
+body {
+  background-color: #fff;
+}
+
 .navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -10481,7 +10485,7 @@ a.text-dark:focus {
   position: relative;
   width: 100%;
   overflow: hidden;
-  max-height: 65vh;
+  max-height: 100vh;
   /* object-fit: unset; */
 }
 
@@ -10517,5 +10521,16 @@ a.text-dark:focus {
     float: left;
     width: 20%;
   }
+}
+
+.multi-carousel {
+  opacity: 0;
+  padding: 0 25px;
+}
+
+.multi-carousel .carousel-control-next,
+.multi-carousel .carousel-control-prev {
+  width: 25px;
+  background: gray;
 }
 

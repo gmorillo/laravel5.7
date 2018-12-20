@@ -29,7 +29,7 @@ class HomeController extends Controller
 
     public function getSliders()
     {
-        $sliders = Slideshow::where('status', 0)->select('principal_img', 'id')->take(5)->orderBy('id', 'desc')->get();
+        $sliders = Slideshow::where('status', 1)->select('principal_img', 'id')->take(5)->orderBy('id', 'desc')->get();
         return view('sections.home.main-home',compact('sliders'));
     }
 }

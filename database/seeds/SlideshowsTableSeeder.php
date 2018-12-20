@@ -25,6 +25,7 @@ class SlideshowsTableSeeder extends Seeder
             'principal_img' => '',
             'creation_date' => date("Y-m-d H:i:s"),
             'unpublish_date' => NULL,
+            'publish_date' => NULL,
             'time_activated' => NULL,
         ]);
     }

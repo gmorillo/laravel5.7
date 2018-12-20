@@ -27,8 +27,9 @@ class CreateSlideshowsTable extends Migration
             $table->text('description')->nullable();
             $table->string('principal_img')->nullable();
             $table->date('creation_date')->nullable();
-            $table->date('unpublish_date')->nullable(); // fecha en la que se dará de baja la publicación
             $table->time('time_activated')->nullable(); //hora en la que se activo la publicación
+            $table->date('publish_date')->nullable(); // fecha en la que se dió de alta la publicación
+            $table->date('unpublish_date')->nullable(); // fecha en la que se dará de baja la publicación
             $table->timestamps();
         });
     }

@@ -8,6 +8,10 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+body {
+  background-color: #fff;
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -21,7 +25,7 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    max-height: 65vh;
+    max-height: 100vh;
     /* object-fit: unset; */
 }
 
@@ -82,4 +86,14 @@
 
   }
 
+}
+
+.multi-carousel {
+  opacity: 0;
+  padding: 0 25px;
+}
+.multi-carousel .carousel-control-next,
+.multi-carousel .carousel-control-prev {
+  width: 25px;
+  background: gray;    
 }

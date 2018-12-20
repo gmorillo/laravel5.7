@@ -21,11 +21,11 @@
 
 					<td scope="row">
 						@if($slider->status) 
-							<a href="#active" title="Hacer click para desactivar publicación" style="text-decoration: none;" class="text-success">
+							<a href="" title="Hacer click para desactivar publicación" style="text-decoration: none;" class="text-success">
 								<i class="fas fa-check"></i>
 							</a> 
 						@else 
-							<a href="#inactive" title="Hacer click para activar publicación" style="text-decoration: none;" class="text-danger">
+							<a href="{{ url('profile/administracion/activar-rotador-principal/') }}/{{$slider->id}}" title="Hacer click para activar publicación" style="text-decoration: none;" class="text-danger">
 								<i class="fas fa-times" ></i>
 							</a> 
 						@endif
@@ -34,7 +34,7 @@
 					<td scope="row">{{$slider->city_id}}</td>
 					<td scope="row">{{$slider->creation_date}}</td>
 					<td scope="row">
-						<a href="#" title="Editar anuncio"><i class="fas fa-edit"></i></a>
+						<a href="{{ url('profile/administracion/editar-rotador-principal/') }}/{{$slider->id}}" title="Editar anuncio"><i class="fas fa-edit"></i></a>
 						<a href="#" title="Eliminar anuncio "><i class="fas fa-trash-alt ml-3"></i></a>
 					</td>
 				</tr>
@@ -43,7 +43,7 @@
 	</table>
 
 	<div class="row px-1">
-    			<div class="col-md-6 offset-md-3">
+		<div class="col-md-6 offset-md-3">
 			<div >{{ $inactive_slideshow->links() }}</div>
 		</div>
 	</div>

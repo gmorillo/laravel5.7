@@ -13,6 +13,7 @@ use Carbon\Carbon;
 use DB;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Pagination\LengthAwarePaginator;
+
 class SliderController extends Controller
 {
 
@@ -29,7 +30,7 @@ class SliderController extends Controller
             $filename = time() . '.' . $principal_img->getClientOriginalExtension();
             
             $img = Image::make($principal_img);
-            $img->crop(1920, 650)->save(public_path('/img/rotador-principal/' . $filename));
+            $img->crop(1920, 850)->save(public_path('/img/rotador-principal/' . $filename));
         }
 
         $data = [];
@@ -92,9 +93,11 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function detalleRotadorPrincipal($id)
     {
-        
+        $info = Slideshow::where('id', $id)->first();
+        $secondary_photos = Photo::where('slideshow_id', $id)->get();
+        return view('sections.detalle-publicaciones.rotador-principal',compact('info', 'secondary_photos'));
     }
 
     /**
@@ -123,7 +126,7 @@ class SliderController extends Controller
             }
 
             Image::make($profile_img)
-            ->crop(1920, 650)
+            ->crop(1920,850)
             ->save(public_path('/img/rotador-principal/' . $filename));
 
             $user = Slideshow::where('id', $id)->first();
@@ -157,9 +160,15 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function activarRotadorPrincipal(Request $request, $id)
     {
-        //
+        $Activarslider =  Slideshow::where('id', $id)->first();
+        $Activarslider->status = '1';
+        $Activarslider->time_activated = date("Y-m-d H:i:s");
+        $Activarslider->publish_date = date("Y-m-d H:i:s");
+        $Activarslider->save();
+
+        return redirect('/profile/administracion')->with('slider', 'Se ha activado la publicación con referencia '. $id . ' exitosamente!!'); 
     }
 
     /**
