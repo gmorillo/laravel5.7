@@ -18,12 +18,16 @@ class AdminController extends Controller
         $city = City::get();
         $country = Country::get();
         $category = Category::get();
-        $inactive_slideshow = Slideshow::where('status', 0)->orderBy('id', 'desc')->paginate(10);
+        $inactive_slideshow = Slideshow::where('status', 0)->where('publicity_type', 1)->orderBy('id', 'desc')->paginate(10);
+        $inactive_publicities = Slideshow::where('status', 0)->orderBy('id', 'desc')->paginate(10);
+        $new_premium_slideshow = Slideshow::where('status', 0)->where('publicity_type', 2)->orderBy('id', 'desc')->paginate(10);
         $active_slideshow = Slideshow::where('status', 1)->orderBy('id', 'desc')->paginate(10);
-        $inactive_count_slideshow = Slideshow::where('status', 0)->count();
+        $inactive_count_slideshow = Slideshow::where('status', 0)->where('publicity_type', 1)->count();
+        $inactive_count_publicities = Slideshow::where('status', 0)->count();
+        $inactive_premium_count_slideshow = Slideshow::where('status', 0)->where('publicity_type', 2)->count();
         $active_count_slideshow = Slideshow::where('status', 1)->count();
 
-        return view('sections.profile.administracion.main-administracion',compact('city','country', 'category', 'inactive_slideshow', 'inactive_count_slideshow', 'active_slideshow', 'active_count_slideshow'));
+        return view('sections.profile.administracion.main-administracion',compact('city','country', 'category', 'inactive_slideshow', 'new_premium_slideshow', 'inactive_count_slideshow', 'active_slideshow', 'inactive_premium_count_slideshow', 'active_count_slideshow', 'inactive_publicities', 'inactive_count_publicities'));
     }
 
     public function getRotadorData($id)

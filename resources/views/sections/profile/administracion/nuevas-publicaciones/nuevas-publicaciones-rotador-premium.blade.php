@@ -1,5 +1,5 @@
 <div class="card-body align-self-center border">
-	<span class="text-right"><medium ><strong>{{$inactive_count_slideshow}} nuevas publicaciones.</strong></medium></span>
+	<span class="text-right"><medium ><strong>{{$inactive_premium_count_slideshow}} nuevas publicaciones.</strong></medium></span>
 	<h3 class="py-3">Nuevas publicaciones <span class="bg-danger text-white px-2 rounded">Rotador Premium</span></h3>
 	<div class="w-100"><input type="text" id="searchRotadorPremium" onkeyup="myFunctionPremium()" placeholder="Buscar por número de referencia..." title="Número de referencia"></div>
 	<table class="table table-hover table-responsive" id="myTableRotadorPremium">
@@ -14,16 +14,26 @@
 			</tr>
 		</thead>
 		<tbody>
-			@foreach($inactive_slideshow as $slider)
+			@foreach($new_premium_slideshow as $slider)
 				<tr>
 					<td scope="row"><strong>{{$slider->id}}</strong></td>
 
-					<td scope="row">@if($slider->status) <a href="#active" title="Hacer click para desactivar publicación" style="text-decoration: none;" class="text-success"><i class="fas fa-check"></i></a> @else <a href="#inactive" title="Hacer click para activar publicación" style="text-decoration: none;" class="text-danger"><i class="fas fa-times" ></i></a> @endif</td>
+					<td scope="row">
+						@if($slider->status) 
+							<a href="" title="Hacer click para desactivar publicación" style="text-decoration: none;" class="text-success">
+								<i class="fas fa-check"></i>
+							</a> 
+						@else 
+							<a href="{{ url('profile/administracion/activar-publicacion/') }}/{{$slider->id}}" title="Hacer click para activar publicación" style="text-decoration: none;" class="text-danger">
+								<i class="fas fa-times" ></i>
+							</a> 
+						@endif
+					</td>
 					<td scope="row">{{$slider->category_id}}</td>
 					<td scope="row">{{$slider->city_id}}</td>
 					<td scope="row">{{$slider->creation_date}}</td>
 					<td scope="row">
-						<a href="#" title="Editar anuncio"><i class="fas fa-edit"></i></a>&nbsp;&nbsp;&nbsp;
+						<a href="{{ url('profile/administracion/editar-rotador-principal/') }}/{{$slider->id}}" title="Editar anuncio"><i class="fas fa-edit"></i></a>&nbsp;&nbsp;&nbsp;
 						<a href="#" title="Eliminar anuncio"><i class="fas fa-trash-alt"></i></a>
 					</td>
 				</tr>
@@ -33,7 +43,7 @@
 
 	<div class="row px-1">
     			<div class="col-md-6 offset-md-3">
-			<div >{{ $inactive_slideshow->links() }}</div>
+			<div >{{ $new_premium_slideshow->links() }}</div>
 		</div>
 	</div>
 </div>

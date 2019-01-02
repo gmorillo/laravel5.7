@@ -1,6 +1,6 @@
 <div class="card-body align-self-center border">
 	
-	<h3 class="py-3">Existen  {{$inactive_count_slideshow}} <span class="bg-danger text-white px-2 rounded">Publicaciones Inactivas</span></h3>
+	<h3 class="py-3">Existen  {{$inactive_count_publicities}} <span class="bg-danger text-white px-2 rounded">Publicaciones Inactivas</span></h3>
 	<div class="w-100"><input type="text" id="myInputInactiveRotadorPrincipal" onkeyup="myFunctionInactiveRotadorPrincipal()" placeholder="Buscar por número de referencia..." title="Número de referencia"></div>
 	<table class="table table-hover table-responsive" id="myTableInactiveRotadorPrincipal">
 		<thead>
@@ -14,11 +14,21 @@
 			</tr>
 		</thead>
 		<tbody>
-			@foreach($inactive_slideshow as $slider)
+			@foreach($inactive_publicities as $slider)
 				<tr>
 					<td scope="row"><strong>{{$slider->id}}</strong></td>
 
-					<td scope="row">@if($slider->status) <a href="#Inactive" title="Hacer click para desactivar publicación" style="text-decoration: none;" class="text-success"><i class="fas fa-check"></i></a> @else <a href="#inInactive" title="Hacer click para activar publicación" style="text-decoration: none;" class="text-danger"><i class="fas fa-times" ></i></a> @endif</td>
+					<td scope="row">
+						@if($slider->status) 
+							<a href="" title="Hacer click para desactivar publicación" style="text-decoration: none;" class="text-success">
+								<i class="fas fa-check"></i>
+							</a> 
+						@else 
+							<a href="{{ url('profile/administracion/activar-publicacion/') }}/{{$slider->id}}" title="Hacer click para activar publicación" style="text-decoration: none;" class="text-danger">
+								<i class="fas fa-times" ></i>
+							</a> 
+						@endif
+					</td>
 					<td scope="row">{{$slider->category_id}}</td>
 					<td scope="row">{{$slider->city_id}}</td>
 					<td scope="row">{{$slider->creation_date}}</td>
