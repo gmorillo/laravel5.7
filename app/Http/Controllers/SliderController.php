@@ -35,7 +35,7 @@ class SliderController extends Controller
             $img = Image::make($principal_img);
             if($request->input('tipo_publicidad') == 1){
                 $img->crop(1920, 850)->save(public_path('/img/rotador-principal/' . $filename));
-            }elseif($request->input('tipo_publicidad') == 2){
+            }elseif($request->input('tipo_publicidad') == 2 || $request->input('tipo_publicidad') == 3){
                 $img->crop(616, 815)->save(public_path('/img/rotador-principal/' . $filename));
             }
         }

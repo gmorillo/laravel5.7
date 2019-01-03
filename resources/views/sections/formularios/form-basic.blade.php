@@ -2,7 +2,7 @@
 	<form @if(Auth::getUser()->role_id == 2 || Auth::getUser()->role_id == 1) action="create-slider" @else action="profile/create-slider" @endif method="POST" enctype="multipart/form-data">
 		@csrf
 		<input type="text" class="form-control" hidden="hidden" id="country_id" value="1">
-		<input type="text" class="form-control" hidden="hidden" id="tipo_publicidad" name="tipo_publicidad" value="2"> <!-- ROTADOR PRINCIPAL -->
+		<input type="text" class="form-control" hidden="hidden" id="tipo_publicidad" name="tipo_publicidad" value="3"> <!-- ROTADOR PRINCIPAL -->
 		<div class="dashborad-box">
 			<h4 class="py-3">Datos del anuncio</h4>
 			<div class="row ">
