@@ -5,7 +5,7 @@
 				Anuncios de rotador principal (Todos los anuncios)
 			</h4>
 		</div>
-		<div id="collapseRotadorPrincipal" class="collapse py-3" aria-labelledby="RotadorPrincipal" data-parent="#accordion">
+		<div id="collapseRotadorPrincipal" class="collapse py-3 show" aria-labelledby="RotadorPrincipal" data-parent="#accordion">
 			<div class="row">
 				<div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-xs-12 px-4">
 					@include('sections.profile.administracion.rotador-principal.publicaciones-activas-rotador-principal')

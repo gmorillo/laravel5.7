@@ -42,7 +42,7 @@
 						<h5 class="card-title text-danger"><strong>Comprar anuncio Basic</strong></h5>
 						<div class="col-2 p-0 bg-danger"><hr></div>
 						<p class="card-text">Tu anuncio aparece cada 1 hora en las primeras posiciones de nuestra sección basic. Aumenta tus visitas en un <strong class="text-danger">80%.</strong></p>
-						<a href="#" class="btn btn-danger shadow-button">Comprar anuncio Basic</a>
+						<a href="#" class="btn btn-danger shadow-button" data-toggle="modal" data-target="#ModalBasic">Comprar anuncio Basic</a>
 					</div>
 				</div>
 			</div>
@@ -110,6 +110,26 @@
 	      	</div>
 	      	<div class="modal-body">
 	        	@include('sections.formularios.form-premium')
+	      	</div>
+	      	<div class="modal-footer">
+	        	<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+	      	</div>
+	    </div>
+  	</div>
+</div>
+
+<!-- Modal Publicaciones básicas-->
+<div class="modal fade" id="ModalBasic" tabindex="-1" role="dialog" aria-labelledby="exampleBasicModalCenterTitle" aria-hidden="true">
+  	<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+	    <div class="modal-content">
+	      	<div class="modal-header">
+	        	<h5 class="modal-title" id="exampleModalLongTitle" >Anuncio en Publicaciones Basic</h5>
+	        	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          		<span aria-hidden="true">&times;</span>
+	        	</button>
+	      	</div>
+	      	<div class="modal-body">
+	        	@include('sections.formularios.form-basic')
 	      	</div>
 	      	<div class="modal-footer">
 	        	<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

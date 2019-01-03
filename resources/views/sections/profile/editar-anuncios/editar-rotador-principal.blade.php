@@ -80,25 +80,15 @@
 							  	<div class="form-group py-3 dashborad-box" style="overflow: hidden;">
 						    		<div class="row">
 						    			<div class="uploader__box js-uploader__box l-center-box">
-						    				
-							    				<ul class="js-uploader__file-list uploader__file-list">
-													<li class="uploader__file-list__item" data-index="0">
-														<span class="uploader__file-list__thumbnail">
-															@foreach($photos_slideshow as $secondary_img)
-															<img src="/img/rotador-principal/imagenes_secundarias/{{$secondary_img->img}}" class="thumbnail">
-															@endforeach
-														</span>
-														
-														<!--<span class="uploader__file-list__button">
-															<a href="#" class="uploader__icon-button js-upload-remove-button fas fa-trash-alt " data-index="0" style="cursor:pointer;"></a>
-														</span>-->
-													</li>
-												</ul>
-											
-							                <!--<div class="uploader__contents">
-							                    <label class="button button--secondary" for="fileinput">Select Files</label>
-							                    <input id="fileinput" class="uploader__file-input" type="file" multiple name="secondary_img[]">
-							                </div>-->
+						    				<ul class="js-uploader__file-list uploader__file-list">
+												<li class="uploader__file-list__item" data-index="0">
+													<span class="uploader__file-list__thumbnail">
+														@foreach($photos_slideshow as $secondary_img)
+														<img src="/img/rotador-principal/imagenes_secundarias/{{$secondary_img->img}}" class="thumbnail">
+														@endforeach
+													</span>
+												</li>
+											</ul>
 						        		</div>
 						    		</div>
 							  	</div>
