@@ -32,8 +32,24 @@
 						</small>
 					</td>
 					<td scope="row">@if($slider->status)<i class="fas fa-check text-success" title="Activo"></i> @else <i class="fas fa-times text-success" ></i> @endif</td>
-					<td scope="row"><small>{{$slider->category_id}}</small></td>
-					<td scope="row"><small>{{$slider->city_id}}</small></td>
+					<td scope="row">
+						@foreach($category as $cat)
+							<small>
+								@if($slider->category_id == $cat->id)
+									{{$cat->name}}
+								@endif
+							</small>
+						@endforeach
+					</td>
+					<td scope="row">
+						@foreach($city as $ciudad)
+							<small>
+								@if($slider->city_id == $ciudad->id)
+									{{$ciudad->name}}
+								@endif
+							</small>
+						@endforeach
+					</td>
 					<td scope="row"><small>{{$slider->publish_date}}</small></td>
 					<td scope="row"><small>{{$slider->unpublish_date}}</small></td>
 					<td scope="row">

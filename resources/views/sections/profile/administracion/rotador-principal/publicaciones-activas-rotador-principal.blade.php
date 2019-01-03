@@ -28,8 +28,24 @@
 								<i class="fas fa-times" ></i></a> 
 						@endif
 					</td>
-					<td scope="row">{{$slider_active->category_id}}</td>
-					<td scope="row">{{$slider_active->city_id}}</td>
+					<td scope="row">
+						@foreach($category as $cat)
+							<small>
+								@if($slider_active->category_id == $cat->id)
+									{{$cat->name}}
+								@endif
+							</small>
+						@endforeach
+					</td>
+					<td scope="row">
+						@foreach($city as $ciudad)
+							<small>
+								@if($slider_active->city_id == $ciudad->id)
+									{{$ciudad->name}}
+								@endif
+							</small>
+						@endforeach
+					</td>
 					<td scope="row">{{$slider_active->creation_date}}</td>
 					<td scope="row">
 						<a href="{{ url('profile/administracion/editar-rotador-principal/') }}/{{$slider_active->id}}" title="Editar anuncio"><i class="fas fa-edit"></i></a>

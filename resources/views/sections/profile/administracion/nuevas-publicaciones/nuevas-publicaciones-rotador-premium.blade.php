@@ -29,8 +29,24 @@
 							</a> 
 						@endif
 					</td>
-					<td scope="row">{{$slider->category_id}}</td>
-					<td scope="row">{{$slider->city_id}}</td>
+					<td scope="row">
+						@foreach($category as $cat)
+							<small>
+								@if($slider->category_id == $cat->id)
+									{{$cat->name}}
+								@endif
+							</small>
+						@endforeach
+					</td>
+					<td scope="row">
+						@foreach($city as $ciudad)
+							<small>
+								@if($slider->city_id == $ciudad->id)
+									{{$ciudad->name}}
+								@endif
+							</small>
+						@endforeach
+					</td>
 					<td scope="row">{{$slider->creation_date}}</td>
 					<td scope="row">
 						<a href="{{ url('profile/administracion/editar-rotador-principal/') }}/{{$slider->id}}" title="Editar anuncio"><i class="fas fa-edit"></i></a>&nbsp;&nbsp;&nbsp;

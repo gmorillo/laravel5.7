@@ -24,15 +24,31 @@
 									Rotador Principal 
 								@elseif($slider->publicity_type == 2) 
 									Rotador Premium 
-								@elseif($slider->publicity_type == 2) 
+								@elseif($slider->publicity_type == 3) 
 									Básicos 
 								@endif
 							</strong>
 						</small>
 					</td>
 					<td scope="row">@if($slider->status)<i class="fas fa-check text-danger" title="Activo"></i> @else <i class="fas fa-times text-danger" title="Inactivo" ></i> @endif</td>
-					<td scope="row"><small>{{$slider->category_id}}</small></td>
-					<td scope="row"><small>{{$slider->city_id}}</small></td>
+					<td scope="row">
+						@foreach($category as $cat)
+							<small>
+								@if($slider->category_id == $cat->id)
+									{{$cat->name}}
+								@endif
+							</small>
+						@endforeach
+					</td>
+					<td scope="row">
+						@foreach($city as $ciudad)
+							<small>
+								@if($slider->city_id == $ciudad->id)
+									{{$ciudad->name}}
+								@endif
+							</small>
+						@endforeach
+					</td>
 					<td scope="row"><small>{{$slider->unpublish_date}}</small></td>
 					<td scope="row">
 						@if($slider->unpublish_date != NULL)

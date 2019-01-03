@@ -93,7 +93,9 @@ class SliderController extends Controller
     public function getListSliderActive(Request $request)
     {
         $data = Slideshow::where('user_id', Auth::getUser()->id)->where('status', 1)->paginate(15);
-        return view('sections.profile.anuncios-activos.main-anuncios-activos',compact('data'));
+        $category = Category::get();
+        $city = City::get();
+        return view('sections.profile.anuncios-activos.main-anuncios-activos',compact('data', 'category', 'city'));
         //return redirect('/profile');
 
     }
@@ -101,7 +103,9 @@ class SliderController extends Controller
     public function getListSliderInactive(Request $request)
     {
         $data = Slideshow::where('user_id', Auth::getUser()->id)->where('status', 0)->paginate(15);
-        return view('sections.profile.anuncios-caducados.main-anuncios-caducados',compact('data'));
+        $category = Category::get();
+        $city = City::get();
+        return view('sections.profile.anuncios-caducados.main-anuncios-caducados',compact('data', 'category', 'city'));
         //return redirect('/profile');
 
     }
