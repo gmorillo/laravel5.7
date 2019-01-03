@@ -32,18 +32,24 @@
 										<div class="col-xl-6 col-lg-6 col-md-6 col-xs-12">
 											<label for="category_id" class="col-form-label">¿Donde quieres que aparezca tu anuncio?</label>
 								        	<select class="custom-select" id="category_id" name="category_id" >
-								    			<option value="{{$slider->category_id}}">{{$slider->category_id}}</option>
 								    			@foreach($category as $categories)
-													<option value="{{$categories->id}}">{{$categories->name}}</option>
+								    				@if($slider->category_id == $categories->id)
+														<option value="{{$categories->id}}" selected="selected">{{$categories->name}}</option>
+														@else
+														<option value="{{$categories->id}}">{{$categories->name}}</option>
+													@endif
 												@endforeach
 								  			</select>
 										</div>
 										<div class="col-xl-6 col-lg-6 col-md-6 col-xs-12">
 											<label for="city_id" class="col-form-label">¿Ciudad donde quieres que aparezca tu anuncio?</label>
 								        	<select class="custom-select" id="city_id" name="city_id" >
-								    			<option value="{{$slider->city_id}}">{{$slider->city_id}}</option>
 								    			@foreach($city as $cities)
-													<option value="{{$cities->id}}">{{$cities->name}}</option>
+													@if($slider->city_id == $cities->id)
+														<option value="{{$cities->id}}" selected="selected">{{$cities->name}}</option>
+														@else
+														<option value="{{$cities->id}}">{{$cities->name}}</option>
+													@endif
 												@endforeach
 								  			</select>
 										</div>
