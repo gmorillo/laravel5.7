@@ -70,7 +70,7 @@
 			<div class="col-xl-4 col-md-6 col-sm-4 col-xs-12">
 				<div class="card">
 					<div class="card-body">
-						<a href="#" class="btn btn-danger btn-lg shadow-button w-100">Crear anuncio Basic</a>
+						<a href="#" class="btn btn-danger btn-lg shadow-button w-100" data-toggle="modal" data-target="#ModalBasic">Crear anuncio Basic</a>
 					</div>
 				</div>
 			</div>

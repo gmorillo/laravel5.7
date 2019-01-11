@@ -1,19 +1,18 @@
 
 
-<div class="container">
-	<div class="row">
-		<h2>Publicaciones Premium</h2>
-	</div>
+<div class="container-fluid p-0 bg-dark text-white my-5">
+  <div class="container">
+      <h2 class="m-0 py-3 text-center">Publicaciones Premium</h2>
+  </div>
 </div>
 <!-- .container -->
-<br>
 <div class="container-fluid">
   <div class="row">
     <div id="carouselPlus" class="carousel slide multi-carousel" data-ride="carousel">
       <div class="carousel-inner"> 
       @foreach($premium as $prem)      
-        <div class="carousel-grid col-lg-2 col-md-2 col-sm-12">
-          <a href="#">
+        <div class="carousel-grid col-lg-2 col-md-2 col-sm-12 px-1">
+          <a href="{{ url('detalle/rotador-principal/') }}/{{$prem->id}}">
             <img class="d-block w-100" src="{{ url('img/rotador-principal/') }}/{{$prem->principal_img}}" alt="{{$prem->title}}">
           </a>
         </div>

@@ -133,7 +133,7 @@
 .icon--spinner, .uploader__icon--spinner {
   margin: 1em; }
 
-.thumbnail {
+span.uploader__file-list__thumbnail>img {
   max-width: 210px;
   padding: 0.2em; }
 

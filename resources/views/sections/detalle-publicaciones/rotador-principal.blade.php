@@ -27,12 +27,12 @@
 					</p>
 				</div>
 				<div >
-					<div class="imgBox"><img src="{{ url('img/rotador-principal') }}/{{$info->principal_img}}"></div>
+					<div class="imgBox"><img src="{{ url('img/rotador-principal') }}/{{$info->principal_img}}" class="img-fluid mx-auto d-block"></div>
 					<ul class="thumb">
 						@foreach($secondary_photos as $sp)
 							<li>
 								<a href="{{ asset('img/rotador-principal/imagenes_secundarias/') }}/{{$sp->img}}" target="imgBox">
-									<img src="{{ asset('img/rotador-principal/imagenes_secundarias/') }}/{{$sp->img}}" width="120px" class="img-fluid">
+									<img src="{{ asset('img/rotador-principal/imagenes_secundarias/') }}/{{$sp->img}}" width="120px" class="img-fluid mx-auto d-block">
 								</a>
 							</li>
 						@endforeach
@@ -48,12 +48,33 @@
 				</div>
 				<div class="bg-secondary my-1 text-center rounded">
 					<div class="py-3">
-						<h4 class="mb-0"><a class="text-white" href="{{ url('listado-por-ciudad') }}/{{$info->city_id}}">Ciudad: {{$info->city_id}}</a></h4>
+						<h4 class="mb-0">
+							<a class="text-white" href="{{ url('listado-por-ciudad') }}/{{$info->city_id}}">
+								@foreach($city as $ciudad)
+									@if($info->city_id == $ciudad->id)
+										{{$ciudad->name}}
+									@endif
+								@endforeach
+							</a>
+						</h4>
 					</div>
 				</div>
 				<div class="bg-danger my-1 text-white text-center rounded">
 					<div class="py-3">
-						<h4 class="mb-0">Categoría: {{$info->category_id}}</h4>
+						<h4 class="mb-0">
+							<a class="text-white" href="{{ url('listado-por-categoria') }}/{{$info->category_id}}">
+								@foreach($category as $cat)
+									@if($info->category_id == $cat->id)
+										{{$cat->name}} en
+									@endif
+								@endforeach
+								@foreach($city as $ciudad)
+									@if($info->city_id == $ciudad->id)
+										{{$ciudad->name}}
+									@endif
+								@endforeach
+							</a>
+						</h4>
 					</div>
 				</div>
 			</div>
@@ -64,7 +85,7 @@
 
 <style>
 	.imgBox {
-	width: 720px;
+	max-width: 450px;
 	margin: 50px auto 20px;
 }
 .imgBox img {

@@ -119,8 +119,10 @@ class SliderController extends Controller
     public function detalleRotadorPrincipal($id)
     {
         $info = Slideshow::where('id', $id)->first();
+        $category = Category::get();
+        $city = City::get();
         $secondary_photos = Photo::where('slideshow_id', $id)->get();
-        return view('sections.detalle-publicaciones.rotador-principal',compact('info', 'secondary_photos'));
+        return view('sections.detalle-publicaciones.rotador-principal',compact('info', 'secondary_photos', 'category', 'city'));
     }
 
     /**
