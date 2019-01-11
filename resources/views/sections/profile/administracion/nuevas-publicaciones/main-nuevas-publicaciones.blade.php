@@ -13,9 +13,9 @@
 				<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 px-4">
 					@include('sections.profile.administracion.nuevas-publicaciones.nuevas-publicaciones-rotador-premium')
 				</div>
-				<!--<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 px-4 mt-5">
+				<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 px-4 mt-5">
 					@include('sections.profile.administracion.nuevas-publicaciones.nuevas-publicaciones-basicas')
-				</div>-->
+				</div>
 			</div>
 		</div>
 	</div>

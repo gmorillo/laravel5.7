@@ -27,7 +27,10 @@ class AdminController extends Controller
         $inactive_premium_count_slideshow = Slideshow::where('status', 0)->where('publicity_type', 2)->count();
         $active_count_slideshow = Slideshow::where('status', 1)->count();
 
-        return view('sections.profile.administracion.main-administracion',compact('city','country', 'category', 'inactive_slideshow', 'new_premium_slideshow', 'inactive_count_slideshow', 'active_slideshow', 'inactive_premium_count_slideshow', 'active_count_slideshow', 'inactive_publicities', 'inactive_count_publicities'));
+        $new_basic_publicity = Slideshow::where('status', 0)->where('publicity_type', 3)->orderBy('id', 'desc')->paginate(10);
+        $inactive_basic_count_slideshow = Slideshow::where('status', 0)->where('publicity_type', 3)->count();
+
+        return view('sections.profile.administracion.main-administracion',compact('city','country', 'category', 'inactive_slideshow', 'new_premium_slideshow', 'inactive_count_slideshow', 'active_slideshow', 'inactive_premium_count_slideshow', 'active_count_slideshow', 'inactive_publicities', 'inactive_count_publicities', 'new_basic_publicity', 'inactive_basic_count_slideshow'));
     }
 
     public function getRotadorData($id)

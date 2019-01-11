@@ -1,8 +1,8 @@
 <div class="card-body align-self-center border">
-	<span class="text-right"><medium ><strong>{{$inactive_count_slideshow}} nuevas publicaciones.</strong></medium></span>
-	<h3 class="py-3">Nuevas <span class="bg-danger text-white px-2 rounded">Publicaciones Básicas</span></h3>
-	<div class="w-100"><input type="text" id="myInputBasic" onkeyup="myFunctionBasic()" placeholder="Buscar por número de referencia..." title="Número de referencia"></div>
-	<table class="table table-hover table-responsive" id="myTableBasic">
+	<span class="text-right"><medium ><strong>{{$inactive_basic_count_slideshow}} nuevas publicaciones.</strong></medium></span>
+	<h3 class="py-3">Nuevas publicaciones <span class="bg-danger text-white px-2 rounded">Básicas</span></h3>
+	<div class="w-100"><input type="text" id="searchPublicacionesBasicas" onkeyup="myFunctionPremium()" placeholder="Buscar por número de referencia..." title="Número de referencia"></div>
+	<table class="table table-hover table-responsive" id="myTablePublicacionesBasicas">
 		<thead>
 			<tr>
 				<th scope="col">Referencia</th>
@@ -14,16 +14,42 @@
 			</tr>
 		</thead>
 		<tbody>
-			@foreach($inactive_slideshow as $slider)
+			@foreach($new_basic_publicity as $slider)
 				<tr>
 					<td scope="row"><strong>{{$slider->id}}</strong></td>
 
-					<td scope="row">@if($slider->status) <a href="#active" title="Hacer click para desactivar publicación" style="text-decoration: none;" class="text-success"><i class="fas fa-check"></i></a> @else <a href="#inactive" title="Hacer click para activar publicación" style="text-decoration: none;" class="text-danger"><i class="fas fa-times" ></i></a> @endif</td>
-					<td scope="row">{{$slider->category_id}}</td>
-					<td scope="row">{{$slider->city_id}}</td>
+					<td scope="row">
+						@if($slider->status) 
+							<a href="" title="Hacer click para desactivar publicación" style="text-decoration: none;" class="text-success">
+								<i class="fas fa-check"></i>
+							</a> 
+						@else 
+							<a href="{{ url('profile/administracion/activar-publicacion/') }}/{{$slider->id}}" title="Hacer click para activar publicación" style="text-decoration: none;" class="text-danger">
+								<i class="fas fa-times" ></i>
+							</a> 
+						@endif
+					</td>
+					<td scope="row">
+						@foreach($category as $cat)
+							<small>
+								@if($slider->category_id == $cat->id)
+									{{$cat->name}}
+								@endif
+							</small>
+						@endforeach
+					</td>
+					<td scope="row">
+						@foreach($city as $ciudad)
+							<small>
+								@if($slider->city_id == $ciudad->id)
+									{{$ciudad->name}}
+								@endif
+							</small>
+						@endforeach
+					</td>
 					<td scope="row">{{$slider->creation_date}}</td>
 					<td scope="row">
-						<a href="#" title="Editar anuncio"><i class="fas fa-edit"></i></a>&nbsp;&nbsp;&nbsp;
+						<a href="{{ url('profile/administracion/editar-rotador-principal/') }}/{{$slider->id}}" title="Editar anuncio"><i class="fas fa-edit"></i></a>&nbsp;&nbsp;&nbsp;
 						<a href="#" title="Eliminar anuncio"><i class="fas fa-trash-alt"></i></a>
 					</td>
 				</tr>
@@ -33,17 +59,17 @@
 
 	<div class="row px-1">
     			<div class="col-md-6 offset-md-3">
-			<div >{{ $inactive_slideshow->links() }}</div>
+			<div >{{ $new_basic_publicity->links() }}</div>
 		</div>
 	</div>
 </div>
 
 <script>
-function myFunctionBasic() {
+function myFunctionPremium() {
   var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInputBasic");
+  input = document.getElementById("searchPublicacionesBasicas");
   filter = input.value.toUpperCase();
-  table = document.getElementById("myTableBasic");
+  table = document.getElementById("myTablePublicacionesBasicas");
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[0];
@@ -60,7 +86,7 @@ function myFunctionBasic() {
 </script>
 
 <style>
-	#myInputBasic {
+	#searchPublicacionesBasicas {
 	  background-position: 10px 10px;
 	  background-repeat: no-repeat;
 	  width: 100%;
