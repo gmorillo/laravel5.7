@@ -51,4 +51,12 @@ import 'angular';
 //Fin info button
 
 
+$( "div[id^='']" ).mouseover(function() {
+  $( "div[id^='']" ).addClass('shadow')
+});
+
+$( "div[id^='']" ).mouseout(function() {
+  $( "div[id^='']" ).removeClass('shadow')
+});
+
 

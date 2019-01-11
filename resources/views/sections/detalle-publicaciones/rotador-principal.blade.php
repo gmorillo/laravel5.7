@@ -7,7 +7,7 @@
 			<p class=" text-white py-2 text-uppercase" >{{$info->title}}</p>
 		</div>
 		<div class="row">
-			<div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12">
+			<div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12 mb-5">
 				<div class="bg-danger rounded">
 					<p class=" px-2 py-2">
 						<strong class="text-white">
@@ -52,7 +52,7 @@
 							<a class="text-white" href="{{ url('listado-por-ciudad') }}/{{$info->city_id}}">
 								@foreach($city as $ciudad)
 									@if($info->city_id == $ciudad->id)
-										{{$ciudad->name}}
+										Publicaciones en {{$ciudad->name}}
 									@endif
 								@endforeach
 							</a>
@@ -100,12 +100,7 @@ ul.thumb {
 	align-item:center;
 	justify-content:center;
 }
-ul.thumb li {
-	list-style: none;
-	margin: 0 10px;	
-	width:125px;
-	height:100px;
-}
+
 ul.thumb li img {
 	border: 4px solid #fff;
 	box-shadow: 0 5px 25px rgba(0,0,0,.5);

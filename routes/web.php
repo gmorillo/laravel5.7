@@ -1,5 +1,7 @@
 <?php
-
+use App\Slideshow;
+use App\Category;
+use Illuminate\Support\Facades\Input;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,4 +51,17 @@ Route::prefix('detalle')->group(
 );
 
 
+
+Route::any('/search',function(){
+    $q = Input::get ( 'q' );
+    $search = Slideshow::where('title','LIKE','%'.$q.'%')
+                        ->where('status',1)
+                        ->orWhere('description','LIKE','%'.$q.'%')
+                        ->orWhere('langues','LIKE','%'.$q.'%')
+                        ->paginate(50);
+    if(count($search) > 0)
+        return view('sections.home.filterbar.resultado')->withDetails($search)->withQuery($q);
+    else 
+        return view ('sections.home.filterbar.resultado')->withDetails($search)->withQuery($q)->withMessage('No existe ningun elemento que coincida con tu búsqueda, porfavor realiza una nueva búsqueda!');
+});
 

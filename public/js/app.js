@@ -13751,6 +13751,15 @@ $('.popover-dismiss').popover({
 });
 //Fin info button
 
+
+$("div[id^='']").mouseover(function () {
+	$("div[id^='']").addClass('shadow');
+});
+
+$("div[id^='']").mouseout(function () {
+	$("div[id^='']").removeClass('shadow');
+});
+
 /***/ }),
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {

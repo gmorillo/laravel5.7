@@ -10534,3 +10534,52 @@ body {
   background: #e3342f;
 }
 
+ul.thumb li {
+  list-style: none;
+  margin: 0 10px;
+  width: 125px;
+  height: 100px;
+}
+
+@media (max-width: 768px) {
+  ul.thumb li {
+    height: 50px;
+  }
+}
+
+.div-images-zoom {
+  overflow: hidden;
+  padding: 0 0;
+}
+
+.div-images-zoom img {
+  max-width: 100%;
+  -webkit-transition: linear 0.2s;
+  transition: linear 0.2s;
+  padding: 0 0;
+}
+
+.div-images-zoom:hover img {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  padding: 0 0px;
+}
+
+.div-images-zoom-no-overflow {
+  overflow: inherit;
+  padding: 0 0;
+}
+
+.div-images-zoom-no-overflow img {
+  max-width: 100%;
+  -webkit-transition: linear 0.2s;
+  transition: linear 0.2s;
+  padding: 0 0;
+}
+
+.div-images-zoom-no-overflow:hover img {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  padding: 0 0px;
+}
+
