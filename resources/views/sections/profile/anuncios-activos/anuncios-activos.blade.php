@@ -25,7 +25,7 @@
 									Rotador Principal 
 								@elseif($slider->publicity_type == 2) 
 									Rotador Premium 
-								@elseif($slider->publicity_type == 2) 
+								@elseif($slider->publicity_type == 3) 
 									Básicos 
 								@endif
 							</strong>

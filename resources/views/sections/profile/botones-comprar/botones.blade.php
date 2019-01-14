@@ -17,7 +17,7 @@
 						<p class="card-text">Lleva tus anuncios a otro nivel, aumenta tus visitas hasta en <strong class="text-danger">100%.</strong></p>
 						<a href="#" class="btn btn-danger shadow-button" data-toggle="modal" data-target="#exampleModalCenter">Comprar anuncio Rotador Principal</a>
 
-						<a tabindex="0" class="btn btn-md btn-primary" role="button" data-toggle="popover" data-trigger="focus" title="Información adicional" data-content="Las dimensiones de la imágen principal deben ser de 1920px(ancho) X 850px(alto) como mínimo."><i class="fas fa-info"></i></a>
+						<a tabindex="0" class="btn btn-md btn-primary" role="button" data-toggle="popover" data-trigger="focus" title="Información adicional" data-content="La imágen principal debe ser una imágen horizontal para una mejor visualización de la publicacidad. se recomienda que las 5 imágenes secundarias sean verticales. (Opcional)"><i class="fas fa-info"></i></a>
 					</div>
 				</div>
 			</div>
@@ -33,6 +33,7 @@
 						<div class="col-2 p-0 bg-danger"><hr></div>
 						<p class="card-text">Tu anuncio aparece en las primeras posiciones de nuestra sección premium. Aumenta tus visitas en un <strong class="text-danger">90%.</strong></p>
 						<a href="#" class="btn btn-danger shadow-button" data-toggle="modal" data-target="#ModalPremium">Comprar anuncio Premium</a>
+						<a tabindex="0" class="btn btn-md btn-primary" role="button" data-toggle="popover" data-trigger="focus" title="Información adicional" data-content="La imágen principal debe ser una imágen vertical para una mejor visualización de la publicacidad. se recomienda que las 5 imágenes secundarias tambien sean verticales. (Opcional)"><i class="fas fa-info"></i></a>
 					</div>
 				</div>
 			</div>
@@ -43,6 +44,7 @@
 						<div class="col-2 p-0 bg-danger"><hr></div>
 						<p class="card-text">Tu anuncio aparece cada 1 hora en las primeras posiciones de nuestra sección basic. Aumenta tus visitas en un <strong class="text-danger">80%.</strong></p>
 						<a href="#" class="btn btn-danger shadow-button" data-toggle="modal" data-target="#ModalBasic">Comprar anuncio Basic</a>
+						<a tabindex="0" class="btn btn-md btn-primary" role="button" data-toggle="popover" data-trigger="focus" title="Información adicional" data-content="La imágen principal debe ser una imágen vertical para una mejor visualización de la publicacidad. se recomienda que las 5 imágenes secundarias tambien sean verticales. (Opcional)"><i class="fas fa-info"></i></a>
 					</div>
 				</div>
 			</div>

@@ -13,14 +13,11 @@ use Illuminate\Support\Facades\Input;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
-Route::get('/home', 'HomeController@getSliders')->name('sliderinfo')->middleware('verified');
+//Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+Route::get('/', 'HomeController@getSliders')->name('sliderinfo');
 Route::resource('/task', 'TaskController')->middleware('verified');
 
 
