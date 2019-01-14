@@ -11,7 +11,7 @@
 		        @foreach($details as $bas)  
 		            <!-- @if ($loop->iteration == 2) col-md-6 col-sm-6 @else col-md-3 col-sm-6 @endif -->
 		            <div class="item col-xs-6 col-lg-2" style="max-height: 528px; overflow: hidden">
-		                <a href="{{ url('detalle/rotador-principal/') }}/{{$bas->id}}" style="text-decoration: none" class="text-dark">
+		                <a href="{{ url('detalle/anuncios/') }}/{{$bas->id}}" style="text-decoration: none" class="text-dark">
 		                    <div class="thumbnail card">
 		                        <div class="img-event">
 		                            <img class="group list-group-image img-fluid mx-auto d-block" src="{{ url('img/rotador-principal/') }}/{{$bas->principal_img}}" alt="{{$bas->title}}" style="min-height: 370px;object-fit: cover;" />

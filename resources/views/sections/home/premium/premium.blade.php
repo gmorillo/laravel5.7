@@ -12,7 +12,7 @@
       <div class="carousel-inner"> 
       @foreach($premium as $prem)      
         <div class="carousel-grid col-lg-2 col-md-2 col-sm-12 px-1">
-          <a href="{{ url('detalle/rotador-principal/') }}/{{$prem->id}}">
+          <a href="{{ url('detalle/anuncios/') }}/{{$prem->id}}">
             <img class="d-block w-100" src="{{ url('img/rotador-principal/') }}/{{$prem->principal_img}}" alt="{{$prem->title}}">
           </a>
         </div>

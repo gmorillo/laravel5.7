@@ -7,7 +7,7 @@
   <div class="carousel-inner">
     @foreach($sliders as $slider)
       <div class="carousel-item @if ($loop->first) active @endif">
-        <a href="{{ url('detalle/rotador-principal/') }}/{{$slider->id}}">
+        <a href="{{ url('detalle/anuncios/') }}/{{$slider->id}}">
           <img class="d-block w-100 img-fluid" src="img/rotador-principal/{{$slider->principal_img}}" alt="Second slide">
         </a>
       </div>

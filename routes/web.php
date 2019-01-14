@@ -43,7 +43,7 @@ Route::prefix('profile')->group(
 
 Route::prefix('detalle')->group(
     function () {
-        Route::get('/rotador-principal/{id}', 'SliderController@detalleRotadorPrincipal');
+        Route::get('/anuncios/{id}', 'SliderController@detalleRotadorPrincipal');
     }
 );
 

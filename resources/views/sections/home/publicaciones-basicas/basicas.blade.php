@@ -40,7 +40,7 @@
             <div class="product-grid9">
                 <div class="product-image9 thumbnail card">
                     <div class="img-event">
-                        <a href="{{ url('detalle/rotador-principal/') }}/{{$bas->id}}">
+                        <a href="{{ url('detalle/anuncios/') }}/{{$bas->id}}">
                             <img class="pic-1" src="{{ url('img/rotador-principal/') }}/{{$bas->principal_img}}">
                             @foreach($photo as $pic )
                                 @if($pic->slideshow_id == $bas->id)
@@ -49,9 +49,9 @@
                             @endforeach
                         </a>
                     </div>
-                    <a href="{{ url('detalle/rotador-principal/') }}/{{$bas->id}}" class="fa fa-search product-full-view"></a>
+                    <a href="{{ url('detalle/anuncios/') }}/{{$bas->id}}" class="fa fa-search product-full-view"></a>
                     <div class="product-content">
-                    <a class="add-to-cart" href="{{ url('detalle/rotador-principal/') }}/{{$bas->id}}">más imágenes</a>
+                    <a class="add-to-cart" href="{{ url('detalle/anuncios/') }}/{{$bas->id}}">más imágenes</a>
                 </div>
                 </div>
                 

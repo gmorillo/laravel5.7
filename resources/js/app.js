@@ -59,4 +59,3 @@ $( "div[id^='']" ).mouseout(function() {
   $( "div[id^='']" ).removeClass('shadow')
 });
 
-
