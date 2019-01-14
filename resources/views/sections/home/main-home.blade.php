@@ -91,7 +91,7 @@
 
 
 
-/********************* Shopping Demo-9 
+/********************* Shopping Demo-9 **********************/
 .product-grid9,.product-grid9 .product-image9{position:relative}
 .product-grid9{font-family:Poppins,sans-serif;z-index:1}
 .product-grid9 .product-image9 a{display:block}
@@ -116,7 +116,7 @@
 .product-grid9:hover .add-to-cart{opacity:1;bottom:0}
 @media only screen and (max-width:990px){.product-grid9{margin-bottom:30px}
 }
-**********************/
+
 	</style>
 @endsection
 
