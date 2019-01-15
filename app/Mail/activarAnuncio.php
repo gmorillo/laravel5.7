@@ -23,6 +23,6 @@ class activarAnuncio extends Mailable
     {
         return $this->view('emails.activacion-anuncio')
             ->from('info@nombreempresa.com', "Activación de anuncio")
-            ->subject("Tú anuncio con referencia ".$this->referencia." ha sido publicado el día " .$this->fecha_activacion. "");
+            ->subject("Tú anuncio con referencia ".$this->referencia." ha sido publicado en www.nombreempresa.com el día " .$this->fecha_activacion. "");
     }
 }
