@@ -50,7 +50,7 @@
 					<td scope="row">{{$slider->creation_date}}</td>
 					<td scope="row">
 						<a href="{{ url('profile/administracion/editar-rotador-principal/') }}/{{$slider->id}}" title="Editar anuncio"><i class="fas fa-edit"></i></a>&nbsp;&nbsp;&nbsp;
-						<a href="#" title="Eliminar anuncio"><i class="fas fa-trash-alt"></i></a>
+						<a href="{{ url('profile/administracion/eliminar-publicidad/') }}/{{$slider->id}}" title="Eliminar anuncio"><i class="fas fa-trash-alt"></i></a>
 					</td>
 				</tr>
 			@endforeach

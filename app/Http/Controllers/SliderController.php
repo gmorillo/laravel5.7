@@ -212,4 +212,18 @@ class SliderController extends Controller
         $list_per_user_slider = Slideshow::where('user_id', Auth::getUser()->id)->paginate(15);
         return view('sections.profile.editar-anuncios.editar-rotador-principal',compact('city','country', 'category', 'active_slideshow', 'photos_slideshow', 'list_per_user_slider'));
     }
+
+    public function delete($id) {
+        $getPrincipalImageFile =   Slideshow::where('id', $id)->select('principal_img')->first();
+        $getNamePrincipalImgFile = explode(",", $getPrincipalImageFile->principal_img);
+
+        if(\File::exists(public_path('/img/rotador-principal/' . $getPrincipalImageFile->principal_img)))
+        {
+            \File::delete(public_path('/img/rotador-principal/' . $getPrincipalImageFile->principal_img));
+        }
+
+    
+        $deletePublicidadData = Slideshow::where('id', $id)->delete();
+        $deletePhotosData = Photo::where('slideshow_id', $id)->delete();
+    }
 }

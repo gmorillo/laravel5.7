@@ -35,7 +35,7 @@
             <a href="{{ url('profile/anuncios-activos') }}" class="list-group-item list-group-item-action" id="mis-anuncios"><i class="fas fa-check-circle"></i> Mis anuncios activos</a>
             <a href="{{ url('profile/anuncios-caducados') }}" class="list-group-item list-group-item-action"><i class="fas fa-calendar-times"></i> Mis anuncios caducados</a>
         </div>
-        <div class="list-group pt-2 @if(Auth::getUser()->role_id == 2) d-block @else d-none @endif " id="list-tab" role="tablist">
+        <div class="list-group pt-2 @if(Auth::getUser()->role_id == 2 || Auth::getUser()->role_id == 1) d-block @else d-none @endif " id="list-tab" role="tablist">
             <a href="{{ url('/profile/administracion/') }}" class="list-group-item list-group-item-action"><i class="fas fa-home"></i><strong class="ml-3 text-uppercase">Inicio</strong></a>
             <a href="{{ url('/profile/administracion/') }}" class="list-group-item list-group-item-action" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" ><i class="fas fa-list-ol"></i><strong class="ml-3 text-uppercase">Nuevas publicaciones</strong></a>
             <a href="{{ url('#') }}" class="list-group-item list-group-item-action" id="RotadorPrincipal" data-toggle="collapse" data-target="#collapseRotadorPrincipal" aria-expanded="true" aria-controls="collapseRotadorPrincipal"><i class="fas fa-plus-square"></i> <strong class="ml-3 text-uppercase">Todas las publicaciones</strong></a>
@@ -58,7 +58,7 @@
             background-repeat: no-repeat;
             border: none;
             margin: 0;
-            background:linear-gradient( to bottom, rgba(239, 0, 0, 0.69), rgba(252, 2, 2, 0.11) ), url(https://static.brusheezy.com/system/resources/previews/000/011/459/non_2x/rose-quartz-tiling-pattern-texture-photoshop-textures.jpg) top left repeat;
+            background:linear-gradient( to bottom, rgba(239, 6, 6, 0), rgba(0, 0, 0, 0.67) ), url(https://static.brusheezy.com/system/resources/previews/000/011/459/non_2x/rose-quartz-tiling-pattern-texture-photoshop-textures.jpg) top left repeat;
             background-size: cover;
             color: #fff;
         }

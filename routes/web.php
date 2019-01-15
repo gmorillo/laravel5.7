@@ -36,6 +36,8 @@ Route::prefix('profile')->group(
                 Route::get('/editar-rotador-principal/{id}', 'AdminController@getRotadorData')->middleware('verified');
                 Route::post('/edit-slider/{id}', 'SliderController@edit')->middleware('verified');
                 Route::get('/activar-publicacion/{id}', 'SliderController@activarPublicacion')->middleware('verified');
+                Route::get('/eliminar-publicidad/{id}', 'SliderController@delete')->middleware('verified');
+
             }
         );
     }

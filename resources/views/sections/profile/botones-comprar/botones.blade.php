@@ -154,7 +154,7 @@
 	    word-wrap: break-word;
 	    background-color: #fff;
 	    background-clip: border-box;
-	    border: 1px solid rgba(255, 0, 0, 0.23);
+	    border: 1px solid rgba(0, 0, 0, 0.23);
 	    border-radius: 0.25rem;
 	    box-shadow: 0 0 20px rgba(38,38,38,.2);
 	}
