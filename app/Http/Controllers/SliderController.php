@@ -80,7 +80,7 @@ class SliderController extends Controller
         if(Auth::getUser()->role_id == 2 || Auth::getUser()->role_id == 1){
             return redirect('/profile/administracion')->with('slider', 'Rotador principal creado con exito, proceda a realizar el pago para así activar el anuncio.');
         }else{
-            return redirect('/profile')->with('slider', 'Rotador principal creado con exito, proceda a realizar el pago para así activar el anuncio.');
+            return redirect('/profile')->with('slider', 'Anuncio con referencia '. $data->id .' creado con exito, proceda a realizar el pago para así activar el anuncio.');
         }
         
     }

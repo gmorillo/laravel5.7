@@ -6,6 +6,7 @@
 		<thead>
 			<tr>
 				<th scope="col">Referencia</th>
+				<th scope="col">publicidad</th>
 				<th scope="col">Estado</th>
 				<th scope="col">Tipo</th>
 				<th scope="col">Ciudad</th>
@@ -17,7 +18,17 @@
 			@foreach($inactive_publicities as $slider)
 				<tr>
 					<td scope="row"><strong>{{$slider->id}}</strong></td>
-
+					<td scope="row">
+						@if($slider->publicity_type == 1)
+							<small>Principal</small>
+						@endif
+						@if($slider->publicity_type == 2)
+							<small>Premium</small>
+						@endif
+						@if($slider->publicity_type == 3)
+							<small>Básica</small>
+						@endif
+					</td>
 					<td scope="row">
 						@if($slider->status) 
 							<a href="" title="Hacer click para desactivar publicación" style="text-decoration: none;" class="text-success">
@@ -50,7 +61,7 @@
 					<td scope="row">{{$slider->creation_date}}</td>
 					<td scope="row">
 						<a href="{{ url('profile/administracion/editar-rotador-principal/') }}/{{$slider->id}}" title="Editar anuncio"><i class="fas fa-edit"></i></a>
-						<a href="#" title="Eliminar anuncio"><i class="fas fa-trash-alt ml-3"></i></a>
+						<a href="{{ url('profile/administracion/eliminar-publicidad/') }}/{{$slider->id}}" title="Eliminar anuncio"><i class="fas fa-trash-alt ml-3"></i></a>
 					</td>
 				</tr>
 			@endforeach
