@@ -43,4 +43,11 @@ class HomeController extends Controller
         return view('sections.listado-por-categoria.main-listado-por-categoria',compact('sliders', 'photo'));
 
     }
+
+    public function getAnuncioPorCiudad($id){
+        $sliders = Slideshow::where('city_id', $id)->where('status', 1)->select('principal_img', 'id')->orderBy('id', 'desc')->paginate(50);
+        $photo = Photo::get();
+        return view('sections.listado-por-ciudad.main-listado-por-ciudad',compact('sliders', 'photo'));
+
+    }
 }

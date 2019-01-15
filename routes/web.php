@@ -66,5 +66,6 @@ Route::any('/search',function(){
 
 
 Route::get('/listado-por-categoria/{id}', 'HomeController@getAnuncioPorCategoria')->name('anunciosPorCategoria');
+Route::get('/listado-por-ciudad/{id}', 'HomeController@getAnuncioPorCiudad')->name('anunciosPorCiudad');
 
 

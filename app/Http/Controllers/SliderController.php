@@ -3,20 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Carbon\Carbon;
 use Image;
+use DB;
 use App\User;
 use App\Slideshow;
 use App\Photo;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
-use Carbon\Carbon;
-use DB;
-use Illuminate\Pagination\Paginator;
-use Illuminate\Pagination\LengthAwarePaginator;
 use App\City;
 use App\Country;
 use App\Category;
-use Illuminate\Support\Facades\Storage;
+use App\Mail\nuevoAnuncio;
+use App\Mail\nuevoAnuncioAdministrador;
+use App\Mail\activarAnuncio;
+
 
 class SliderController extends Controller
 {
@@ -78,9 +83,23 @@ class SliderController extends Controller
             }
         }
         if(Auth::getUser()->role_id == 2 || Auth::getUser()->role_id == 1){
-            return redirect('/profile/administracion')->with('slider', 'Rotador principal creado con exito, proceda a realizar el pago para así activar el anuncio.');
+            return redirect('/profile/administracion')->with('slider', 'Anuncio creado con éxito, recuerda activar el anuncio con referencia: ' . $data->id . '');
         }else{
-            return redirect('/profile')->with('slider', 'Anuncio con referencia '. $data->id .' creado con exito, proceda a realizar el pago para así activar el anuncio.');
+            $tipo_publicidad = $request->input('tipo_publicidad');
+            $titulo = $request->input('title');
+            $ciudad = City::where('id', $request->input('city_id'))->select('name')->first();
+            $categoria = Category::where('id', $request->input('category_id'))->select('name')->first();
+            $telefono = $request->input('phone');
+            $mail = $request->input('mail');
+            $idiomas = $request->input('langues');
+            $desc = $request->input('description');
+            $img = $filename;
+            $referencia = $data->id;
+
+            Mail::to(Auth::user()->email)->send(new nuevoAnuncio($tipo_publicidad, $titulo, $ciudad, $categoria, $telefono, $mail, $idiomas, $desc, $img, $referencia));
+            Mail::to('morilloguillermo5@gmail.com')->send(new nuevoAnuncioAdministrador($tipo_publicidad, $titulo, $ciudad, $categoria, $telefono, $mail, $idiomas, $desc, $img, $referencia));
+
+            return redirect('/profile')->with('slider', 'Anuncio con referencia '. $data->id .' creado con exito, proceda a realizar el pago para así activar el anuncio. Recuerda revisar la bandeja de entrada o spam tu correo electrónico.');
         }
         
     }
@@ -194,6 +213,10 @@ class SliderController extends Controller
         $Activarslider->publish_date = date("Y-m-d H:i:s");
         $Activarslider->save();
 
+        $fechaActivacion = $Activarslider->publish_date = date("d/m/Y");
+        $referencia = $Activarslider->id;
+
+        Mail::to($Activarslider->mail)->send(new activarAnuncio($fechaActivacion, $referencia));
         return redirect('/profile/administracion')->with('slider', 'Se ha activado la publicación con referencia '. $id . ' exitosamente!!'); 
     }
 

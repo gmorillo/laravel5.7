@@ -1,5 +1,16 @@
 @extends('layouts.app')
-<title>{{$info->phone}} - {{$info->title}}</title>
+<title>
+	@foreach($category as $cat)
+		@if($info->category_id == $cat->id)
+			{{$cat->name}} en
+		@endif
+	@endforeach
+	@foreach($city as $ciudad)
+		@if($info->city_id == $ciudad->id)
+			{{$ciudad->name}}
+		@endif
+	@endforeach
+</title>
 
 @section('content')
 	<div class="container mt-4">
@@ -8,10 +19,10 @@
 		</div>
 		<div class="row">
 			<div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12 mb-5">
-				<div class="bg-danger rounded">
-					<p class=" px-2 py-2">
-						<strong class="text-white">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque itaque consectetur ea inventore atque cumque id aperiam tempora officiis doloremque fugiat debitis odio accusamus reiciendis natus!
+				<div class="bg-info rounded">
+					<p class=" p-3">
+						<strong class="text-white ">
+							Cuando me contactes, recuerda decir que me viste en <strong>NOMBRE DE LA EMPRESA</strong>!
 						</strong>
 					</p>
 				</div>
@@ -52,7 +63,7 @@
 							<a class="text-white" href="{{ url('listado-por-ciudad') }}/{{$info->city_id}}">
 								@foreach($city as $ciudad)
 									@if($info->city_id == $ciudad->id)
-										Publicaciones en {{$ciudad->name}}
+										Anuncios en {{$ciudad->name}}
 									@endif
 								@endforeach
 							</a>
@@ -106,5 +117,6 @@ ul.thumb li img {
 	box-shadow: 0 5px 25px rgba(0,0,0,.5);
 	width:100%;
 	height:100%;
+    object-fit: cover;
 }
 </style>
