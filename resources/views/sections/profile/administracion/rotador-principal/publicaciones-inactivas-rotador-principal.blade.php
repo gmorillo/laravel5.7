@@ -6,7 +6,7 @@
 		<thead>
 			<tr>
 				<th scope="col">Referencia</th>
-				<th scope="col">publicidad</th>
+				<th scope="col">Publicidad</th>
 				<th scope="col">Estado</th>
 				<th scope="col">Tipo</th>
 				<th scope="col">Ciudad</th>

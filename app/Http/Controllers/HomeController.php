@@ -36,4 +36,11 @@ class HomeController extends Controller
         $photo = Photo::get();
         return view('sections.home.main-home',compact('sliders', 'premium', 'basic', 'photo'));
     }
+
+    public function getAnuncioPorCategoria($id){
+        $sliders = Slideshow::where('category_id', $id)->where('status', 1)->select('principal_img', 'id')->orderBy('id', 'desc')->paginate(50);
+        $photo = Photo::get();
+        return view('sections.listado-por-categoria.main-listado-por-categoria',compact('sliders', 'photo'));
+
+    }
 }

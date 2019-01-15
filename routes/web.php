@@ -64,3 +64,7 @@ Route::any('/search',function(){
         return view ('sections.home.filterbar.resultado')->withDetails($search)->withQuery($q)->withMessage('No existe ningun elemento que coincida con tu búsqueda, porfavor realiza una nueva búsqueda!');
 });
 
+
+Route::get('/listado-por-categoria/{id}', 'HomeController@getAnuncioPorCategoria')->name('anunciosPorCategoria');
+
+
