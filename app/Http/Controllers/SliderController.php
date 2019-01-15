@@ -236,5 +236,7 @@ class SliderController extends Controller
     
         $deletePublicidadData = Slideshow::where('id', $id)->delete();
         $deletePhotosData = Photo::where('slideshow_id', $id)->delete();
+
+        return redirect('/profile/administracion')->with('slider', 'Se ha eliminado el anuncio con referencia '. $id . ' exitosamente!!'); 
     }
 }
