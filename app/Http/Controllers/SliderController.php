@@ -16,6 +16,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 use App\City;
 use App\Country;
 use App\Category;
+use Illuminate\Support\Facades\Storage;
 
 class SliderController extends Controller
 {
@@ -214,14 +215,24 @@ class SliderController extends Controller
     }
 
     public function delete($id) {
-        $getPrincipalImageFile =   Slideshow::where('id', $id)->select('principal_img')->first();
-        $getNamePrincipalImgFile = explode(",", $getPrincipalImageFile->principal_img);
 
-        if(\File::exists(public_path('/img/rotador-principal/' . $getPrincipalImageFile->principal_img)))
-        {
-            \File::delete(public_path('/img/rotador-principal/' . $getPrincipalImageFile->principal_img));
-        }
+        //para eliminar una única imágen
+            $getPrincipalImageFile =   Slideshow::where('id', $id)->select('principal_img')->first();
+            $getNamePrincipalImgFile = explode(",", $getPrincipalImageFile->principal_img);
+            if(\File::exists(public_path('/img/rotador-principal/' . $getPrincipalImageFile->principal_img)))
+            {
+                \File::delete(public_path('/img/rotador-principal/' . $getPrincipalImageFile->principal_img));
+            }
+        //fin
 
+        //para eliminar multiples imágenes
+            $getSecondaryImageFile =   Photo::where('slideshow_id', $id)->select('img')->get();
+            $getNameSecondaryImgFile = explode(",", $getSecondaryImageFile);
+            
+            foreach ($getSecondaryImageFile as $images) {
+                \File::delete(public_path('/img/rotador-principal/imagenes_secundarias/' . $images->img));
+            }
+        //fin
     
         $deletePublicidadData = Slideshow::where('id', $id)->delete();
         $deletePhotosData = Photo::where('slideshow_id', $id)->delete();
