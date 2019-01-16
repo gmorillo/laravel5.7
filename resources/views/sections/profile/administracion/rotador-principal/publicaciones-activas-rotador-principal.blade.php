@@ -77,8 +77,8 @@
 				        <h5 class="modal-title" id="exampleModalLabel">¿Desea eliminar este anuncio?</h5>
 				      </div>
 				      <div class="modal-footer">
-				        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-				        <a href="{{ url('profile/administracion/eliminar-publicidad/') }}/{{$slider_active->id}}"  title="Eliminar anuncio"><i class="fas fa-trash-alt"></i> eliminar</a>
+				        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cerrar</button>
+				        <a class="btn btn-outline-success" href="{{ url('profile/administracion/eliminar-publicidad/') }}/{{$slider_active->id}}"  title="Eliminar anuncio"><i class="fas fa-trash-alt"></i> eliminar</a>
 				      </div>
 				    </div>
 				  </div>
