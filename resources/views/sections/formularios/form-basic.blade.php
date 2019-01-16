@@ -51,7 +51,7 @@
 			</div>
 		</div>
 		<div class="form-group py-3 dashborad-box" style="overflow: hidden;">
-			<h4 class="py-3">Imagen principal de tu anuncio</h4>
+			<h4 class="py-3">Imagen principal de tu anuncio <span><a tabindex="0" class="btn btn-md btn-primary" role="button" data-toggle="popover" data-trigger="focus" title="Información adicional" data-content="La imágen principal debe ser una imágen vertical para una mejor visualización del anuncio. se recomienda que las 5 imágenes secundarias tambien sean verticales. (Opcional)"><i class="fas fa-info"></i></a></span></h4>
 	    	<div class="input-group">
 	            <div class="mx-3">
 	            	<input type="file" name="principal_img"  id="basic" max="2">
@@ -64,7 +64,7 @@
     		<div class="row">
     			<div class="uploader__box js-uploader__box l-center-box">
 	                <div class="uploader__contents">
-	                    <label class="button button--secondary" for="fileinput">Select Files</label>
+	                    <label class="button button--secondary" for="fileinput">Seleccionar</label>
 	                    <input id="fileinput" class="uploader__file-input" type="file" multiple name="secondary_img[]">
 	                </div>
 	        	</div>
@@ -80,11 +80,16 @@
 	  	</div>
 	  	<div class="form-group dashborad-box py-3">
 	    	<label for="description" class="col-form-label "><h4>Rango de fechas del anuncio</h4></label>
-	    	<input 	type="text"
+	    	<div class="input-group mb-2 mr-sm-2">
+				<input 	type="text"
 				    data-range="true"
 				    data-multiple-dates-separator=" - "
 				    data-language="en"
-				    class="datepicker-here form-control" id="fecha-anuncios-basicos" readonly placeholder="Selecciona el rango de fecha en la que será visible tú anuncio" required="required"/>
+				    class="datepicker-here form-control" id="fecha-anuncios-basicos" required  placeholder="Selecciona el rango de fecha en la que será visible tú anuncio"/>
+			    <div class="input-group-prepend">
+					<div class="input-group-text"><i class="fas fa-calendar-alt"></i></div>
+				</div>
+			</div>
 	  	</div>
 		<div class="form-group dashborad-box py-3">
 	    	<label for="description" class="col-form-label "><h4>Rango de horas del anuncio</h4></label>
