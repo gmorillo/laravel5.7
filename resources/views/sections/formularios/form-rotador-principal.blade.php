@@ -74,11 +74,45 @@
 					<div class="gallery"></div>
 	            </div>-->
     		</div>
+    		
 	  	</div>
 	  	<div class="form-group dashborad-box py-3">
 	    	<label for="description" class="col-form-label "><h4>Descripción del anuncio</h4></label>
 	    	<textarea class="form-control" rows="5" id="description" name="description" required="required"></textarea>
 	  	</div>
+	  	<div class="form-group dashborad-box py-3">
+	    	<label for="description" class="col-form-label "><h4>Rango de fechas del anuncio</h4></label>
+	    	<input 	type="text"
+				    data-range="true"
+				    data-multiple-dates-separator=" - "
+				    data-language="en"
+				    class="datepicker-here form-control" id="fecha-anuncios-principal" readonly placeholder="Selecciona el rango de fecha en la que será visible tú anuncio" />
+	  	</div>
+		<div class="form-group dashborad-box py-3">
+	    	<label for="description" class="col-form-label "><h4>Rango de horas del anuncio</h4></label>
+	    	<div class="row">
+	    		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+	    			<div class="inputGroup" style="border:1px solid #cecccc;">
+					    <input id="12AM-6AM-RT" name="12AM-6AM-RT" type="checkbox" checked/>
+					    <label for="12AM-6AM-RT" class="m-0">DE 12:00AM a 6:00AM <br> <small>De 12 de la noche a 6 de la mañana</small></label>
+				  	</div>
+				  	<div class="inputGroup" style="border:1px solid #cecccc;">
+						<input id="6AM-12PM-RT" name="6AM-12PM-RT" type="checkbox"/>
+						<label for="6AM-12PM-RT" class="m-0">DE 6:00AM a 12:00PM <br> <small>De 6 de la mañana a 12 del medio día</small></label>
+					</div>
+	    		</div>
+	    		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+	    			<div class="inputGroup" style="border:1px solid #cecccc;">
+					    <input id="12PM-6PM-RT" name="12PM-6PM-RT" type="checkbox"/>
+					    <label for="12PM-6PM-RT" class="m-0">DE 12:00PM a 6:00PM <br> <small>De 12 del medio día a 6 de la tarde</small></label>
+				  	</div>
+				  	<div class="inputGroup" style="border:1px solid #cecccc;">
+						<input id="6PM-12AM-RT" name="6PM-12AM-RT" type="checkbox"/>
+						<label for="6PM-12AM-RT" class="m-0">DE 6:00PM a 12:00AM <br> <small>De 6 de la tarde a 12 de la noche</small></label>
+					</div>
+	    		</div>
+	    	</div>
+	    </div>
 	  	<div class="row justify-content-center">
 	  		<button class="btn btn-success btn-lg" type="submit">Tramitar pedido</button>
 	  	</div>
@@ -91,6 +125,84 @@
 	    margin-bottom: 30px;
 	    -webkit-box-shadow: 0 0 20px rgba(38,38,38,.2);
 	    box-shadow: 0 0 20px rgba(38,38,38,.2);
+	}
+
+	.inputGroup {
+	  background-color: #fff;
+	  display: block;
+	  margin: 10px 0;
+	  position: relative;
+	}
+	.inputGroup label {
+	  padding: 12px 30px;
+	  width: 100%;
+	  display: block;
+	  text-align: left;
+	  color: #3C454C;
+	  cursor: pointer;
+	  position: relative;
+	  z-index: 2;
+	  transition: color 200ms ease-in;
+	  overflow: hidden;
+	}
+	.inputGroup label:before {
+	  width: 10px;
+	  height: 10px;
+	  border-radius: 50%;
+	  content: '';
+	  background-color: #38c172;
+	  position: absolute;
+	  left: 50%;
+	  top: 50%;
+	  -webkit-transform: translate(-50%, -50%) scale3d(1, 1, 1);
+	          transform: translate(-50%, -50%) scale3d(1, 1, 1);
+	  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	  opacity: 0;
+	  z-index: -1;
+	}
+	.inputGroup label:after {
+	  width: 32px;
+	  height: 32px;
+	  content: '';
+	  border: 2px solid #D1D7DC;
+	  background-color: #fff;
+	  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+	  background-repeat: no-repeat;
+	  background-position: 2px 3px;
+	  border-radius: 50%;
+	  z-index: 2;
+	  position: absolute;
+	  right: 30px;
+	  top: 50%;
+	  -webkit-transform: translateY(-50%);
+	          transform: translateY(-50%);
+	  cursor: pointer;
+	  transition: all 200ms ease-in;
+	}
+	.inputGroup input:checked ~ label {
+	  color: #fff;
+	}
+	.inputGroup input:checked ~ label:before {
+	  -webkit-transform: translate(-50%, -50%) scale3d(56, 56, 1);
+	          transform: translate(-50%, -50%) scale3d(56, 56, 1);
+	  opacity: 1;
+	}
+	.inputGroup input:checked ~ label:after {
+	  background-color: #54E0C7;
+	  border-color: #54E0C7;
+	}
+	.inputGroup input {
+	  width: 32px;
+	  height: 32px;
+	  order: 1;
+	  z-index: 2;
+	  position: absolute;
+	  right: 30px;
+	  top: 50%;
+	  -webkit-transform: translateY(-50%);
+	          transform: translateY(-50%);
+	  cursor: pointer;
+	  visibility: hidden;
 	}
 
 </style>
@@ -127,3 +239,26 @@ $(function(){
     });
 });
 </script>
+
+<script type="text/javascript">
+	// Initialization
+	$('#fecha-anuncios-principal').datepicker([{
+		language: 'es',
+		range: true, 
+		toggleSelected: false,
+
+	}]);
+
+	$('#fecha-anuncios-principal').datepicker({
+	    language: 'es',
+	    minDate: new Date(), // Now can select only dates, which goes after today
+	    clearButton: true,
+	})
+
+	// Access instance of plugin
+	$('#fecha-anuncios-principal').data('datepicker');
+
+
+
+</script>
+

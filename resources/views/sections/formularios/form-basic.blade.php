@@ -78,6 +78,39 @@
 	    	<label for="description" class="col-form-label "><h4>Descripción del anuncio</h4></label>
 	    	<textarea class="form-control" rows="5" id="description" name="description" required="required"></textarea>
 	  	</div>
+	  	<div class="form-group dashborad-box py-3">
+	    	<label for="description" class="col-form-label "><h4>Rango de fechas del anuncio</h4></label>
+	    	<input 	type="text"
+				    data-range="true"
+				    data-multiple-dates-separator=" - "
+				    data-language="en"
+				    class="datepicker-here form-control" id="fecha-anuncios-basicos" readonly placeholder="Selecciona el rango de fecha en la que será visible tú anuncio" />
+	  	</div>
+		<div class="form-group dashborad-box py-3">
+	    	<label for="description" class="col-form-label "><h4>Rango de horas del anuncio</h4></label>
+	    	<div class="row">
+	    		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+	    			<div class="inputGroup" style="border:1px solid #cecccc;">
+					    <input id="12AM-6AM-BAS" name="12AM-6AM-BAS" type="checkbox" checked/>
+					    <label for="12AM-6AM-BAS" class="m-0">DE 12:00AM a 6:00AM <br> <small>De 12 de la noche a 6 de la mañana</small></label>
+				  	</div>
+				  	<div class="inputGroup" style="border:1px solid #cecccc;">
+						<input id="6AM-12PM-BAS" name="6AM-12PM-BAS" type="checkbox"/>
+						<label for="6AM-12PM-BAS" class="m-0">DE 6:00AM a 12:00PM <br> <small>De 6 de la mañana a 12 del medio día</small></label>
+					</div>
+	    		</div>
+	    		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+	    			<div class="inputGroup" style="border:1px solid #cecccc;">
+					    <input id="12PM-6PM-BAS" name="12PM-6PM-BAS" type="checkbox"/>
+					    <label for="12PM-6PM-BAS" class="m-0">DE 12:00PM a 6:00PM <br> <small>De 12 del medio día a 6 de la tarde</small></label>
+				  	</div>
+				  	<div class="inputGroup" style="border:1px solid #cecccc;">
+						<input id="6PM-12AM-BAS" name="6PM-12AM-BAS" type="checkbox"/>
+						<label for="6PM-12AM-BAS" class="m-0">DE 6:00PM a 12:00AM <br> <small>De 6 de la tarde a 12 de la noche</small></label>
+					</div>
+	    		</div>
+	    	</div>
+	    </div>
 	  	<div class="row justify-content-center">
 	  		<button class="btn btn-success btn-lg" type="submit">Tramitar pedido</button>
 	  	</div>
@@ -124,4 +157,23 @@
         imagesPreview(this, 'div.gallery');
     });
 });
+</script>
+
+<script type="text/javascript">
+	// Initialization
+	$('#fecha-anuncios-basicos').datepicker([{
+		language: 'es',
+		range: true, 
+		toggleSelected: false,
+
+	}]);
+
+	$('#fecha-anuncios-basicos').datepicker({
+	    language: 'es',
+	    minDate: new Date(), // Now can select only dates, which goes after today
+	    clearButton: true,
+	})
+
+	// Access instance of plugin
+	$('#fecha-anuncios-basicos').data('datepicker');
 </script>
