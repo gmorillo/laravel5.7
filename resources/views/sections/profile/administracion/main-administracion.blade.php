@@ -17,3 +17,7 @@
 	@endsection
 @endif
 
+@section('script')
+	<script src="{{ asset('js/datepicker.js') }}"></script>
+	<script src="{{ asset('js/datepicker.es.js') }}"></script>
+@endsection

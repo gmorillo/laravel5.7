@@ -86,7 +86,7 @@
 				    data-range="true"
 				    data-multiple-dates-separator=" - "
 				    data-language="en"
-				    class="datepicker-here form-control" id="fecha-anuncios-principal" readonly placeholder="Selecciona el rango de fecha en la que será visible tú anuncio" />
+				    class="datepicker-here form-control" id="fecha-anuncios-principal" readonly placeholder="Selecciona el rango de fecha en la que será visible tú anuncio" required />
 	  	</div>
 		<div class="form-group dashborad-box py-3">
 	    	<label for="description" class="col-form-label "><h4>Rango de horas del anuncio</h4></label>
@@ -114,7 +114,7 @@
 	    	</div>
 	    </div>
 	  	<div class="row justify-content-center">
-	  		<button class="btn btn-success btn-lg" type="submit">Tramitar pedido</button>
+	  		<button class="btn btn-success btn-lg" type="submit" >Tramitar pedido</button>
 	  	</div>
 	</form>
 </div>
