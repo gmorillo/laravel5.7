@@ -19,6 +19,7 @@ Route::prefix('profile')->group(
         Route::get('/anuncios-activos', 'SliderController@getListSliderActive')->middleware('verified');
         Route::get('/anuncios-caducados', 'SliderController@getListSliderInactive')->middleware('verified');
         Route::get('/editar-rotador-principal/{id}', 'SliderController@getRotadorData')->middleware('verified');
+        Route::get('/rebuy/{id}', 'SliderController@volverAcomprar')->middleware('verified');
         Route::prefix('/administracion')->group(
             function () {
                 Route::get('/', 'AdminController@getNewPublishData')->middleware('verified');

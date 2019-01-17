@@ -1,3 +1,11 @@
+@if (session('slider'))
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <p class="mb-0"><strong>{{ session('slider') }}</strong></p>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+@endif
 <div class="card-body align-self-center ">
 	<div class="w-100"><input type="text" id="myInputActive" onkeyup="myFunctionBasic()" placeholder="Buscar por número de referencia..." title="Número de referencia"></div>
 	<table class="table table-hover table-responsive" id="myTableActive">
@@ -51,8 +59,8 @@
 					</td>
 					<td scope="row"><small>{{$slider->unpublish_date}}</small></td>
 					<td scope="row">
-						@if($slider->unpublish_date != NULL)
-							<a href="{{ url('#') }}" title="Si quieres volver a reactivar este anuncio, haz click aqui!!!" class="text-white btn  btn-success"><i class="fas fa-redo-alt text-white"></i> <small>Volver a comprar</small></a>
+						@if($slider->unpublish_date != NULL && $slider->status == 0)
+							<a href="{{ url('/profile/rebuy') }}/{{$slider->id}}" title="Si quieres volver a reactivar este anuncio, haz click aqui!!!" class="text-white btn  btn-success"><i class="fas fa-redo-alt text-white"></i> <small>Volver a comprar</small></a>
 						@else
 						<p class="badge badge-warning w-100"><span class="py-2 px-1 "><i class="fas fa-pause-circle" ></i> en espera de pago</span></p>
 						@endif

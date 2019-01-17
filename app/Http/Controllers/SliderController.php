@@ -21,6 +21,7 @@ use App\Category;
 use App\Mail\nuevoAnuncio;
 use App\Mail\nuevoAnuncioAdministrador;
 use App\Mail\activarAnuncio;
+use App\Mail\recompraAnuncio;
 
 
 class SliderController extends Controller
@@ -267,5 +268,22 @@ class SliderController extends Controller
         $deletePhotosData = Photo::where('slideshow_id', $id)->delete();
 
         return redirect('/profile/administracion')->with('slider', 'Se ha eliminado el anuncio con referencia '. $id . ' exitosamente!!'); 
+    }
+
+    public function volverAcomprar($id)
+    {
+        $rebuy =  Slideshow::where('id', $id)->first();
+        $rebuy->unpublish_date = NULL;
+        $rebuy->created_at = now();
+        $rebuy->save();
+
+        $tipo_publicidad = $rebuy->publicity_type;
+        $mail = $rebuy->mail;
+        $telefono = $rebuy->phone;
+        $referencia = $rebuy->id;
+
+        Mail::to('morilloguillermo5@gmail.com')->send(new recompraAnuncio($tipo_publicidad, $telefono, $mail, $referencia));
+
+        return redirect('/profile/anuncios-caducados')->with('slider', 'Para proceder a la reactivación de este anuncio, deberá realizar el pago de la publicación. Pronto nuestro equipo se pondrá en contacto contigo. Su número de refencia del anuncio es: '. $id ); 
     }
 }
