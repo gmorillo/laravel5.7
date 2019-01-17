@@ -8,11 +8,15 @@
 	    @if(isset($details))
 	        <p class="mb-5"> Existen <span class="h3 bg-success text-white p-1">{{count($details)}}</span> publicaciones para la búsqueda <span class="h4 bg-success text-white p-1"><strong>{{ $query }}</strong></span> es :</p>
 		    <div id="products" class="row view-group">
-		        @foreach($details as $bas)  
+		        @foreach($details as $index => $bas)  
 		            <!-- @if ($loop->iteration == 2) col-md-6 col-sm-6 @else col-md-3 col-sm-6 @endif -->
 		            <div class="item col-xs-6 col-lg-2" style="max-height: 528px; overflow: hidden">
 		                <a href="{{ url('detalle/anuncios/') }}/{{$bas->id}}" style="text-decoration: none" class="text-dark">
 		                    <div class="thumbnail card">
+		                    	<div class="position-absolute p-2 " style="top: 0; right:0; z-index: 2; background-color: rgba(0,0,0,0.3)">
+				                    <p class="d-none">{{$diff[$index] = $bas->created_at}}</p>
+				                    <p class="m-0 text-right text-white"><small>{{$diff[$index]->diffForHumans()}}</small></p>
+				                </div>
 		                        <div class="img-event">
 		                            <img class="group list-group-image img-fluid mx-auto d-block" src="{{ url('img/rotador-principal/') }}/{{$bas->principal_img}}" alt="{{$bas->title}}" style="min-height: 370px;object-fit: cover;" />
 		                        </div>
@@ -107,3 +111,5 @@
 		}
 </style>
 @endsection
+
+
