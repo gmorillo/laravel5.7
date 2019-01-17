@@ -34,15 +34,13 @@
         @endforeach
     </div>--}}
     <div id="products" class="row view-group">
-        @foreach($basic as $bas)  
+        @foreach($basic as $index => $bas)  
         <!-- @if ($loop->iteration == 2) col-md-6 col-sm-6 @else col-md-3 col-sm-6 @endif -->
         <div class="item col-md-3 col-sm-6">
             <div class="product-grid9 position-relative">
                 <div class="position-absolute p-2 w-100" style="top: 0; z-index: 2; background-color: rgba(0,0,0,0.3)">
-                    @foreach($timeAgoPublicacionesBasicas as $ta)
-                        <p class="d-none">{{$diff = $ta->created_at}}</p>
-                        <p class="m-0 text-right text-white"><small>{{$diff->diffForHumans()}}</small></p>
-                    @endforeach
+                    <p class="d-none">{{$diff[$index] = $bas->created_at}}</p>
+                    <p class="m-0 text-right text-white"><small>{{$diff[$index]->diffForHumans()}}</small></p>
                 </div>
                 <div class="product-image9 thumbnail card">
                     <div class="img-event">

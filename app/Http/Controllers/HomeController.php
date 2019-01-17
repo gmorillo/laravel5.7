@@ -32,13 +32,13 @@ class HomeController extends Controller
     public function getSliders()
     {
         
-        $sliders = Slideshow::where('status', 1)->where('publicity_type', 1)->take(5)->orderBy('id', 'desc')->get();
-        $premium = Slideshow::where('status', 1)->where('publicity_type', 2)->select('principal_img', 'id')->take(18)->orderBy('id', 'desc')->get();
-        $basic = Slideshow::where('status', 1)->where('publicity_type', 3)->orderBy('id', 'desc')->paginate(50);
+        $sliders = Slideshow::where('status', 1)->where('publicity_type', 1)->select('principal_img', 'id', 'created_at')->take(5)->orderBy('id', 'desc')->get();
+        $premium = Slideshow::where('status', 1)->where('publicity_type', 2)->select('principal_img', 'id', 'created_at')->take(18)->orderBy('id', 'desc')->get();
+        $basic = Slideshow::where('status', 1)->where('publicity_type', 3)->select('principal_img', 'id', 'created_at')->orderBy('id', 'desc')->paginate(50);
         $photo = Photo::get();
         
-        $timeAgoPublicacionesBasicas = Slideshow::get()->where('publicity_type', 3);
-        $timeAgoPublicacionesPremium = Slideshow::get()->where('publicity_type', 2);
+        $timeAgoPublicacionesBasicas = Slideshow::where('publicity_type', 3)->get();
+        $timeAgoPublicacionesPremium = Slideshow::where('publicity_type', 2)->get();
         return view('sections.home.main-home',compact('sliders', 'premium', 'basic', 'photo', 'timeAgoPublicacionesBasicas', 'timeAgoPublicacionesPremium'));
     }
 
