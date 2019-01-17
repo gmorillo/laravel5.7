@@ -1,12 +1,24 @@
 <div class="container-fluid bg-danger">
-	<h3 class="text-white py-3 text-center">Listado por categoría</h3>
+	<h3 class="text-white py-3 text-center">Listado por categoría
+		@foreach($sliders as $per)
+			@foreach($category as $cat)
+				@if($per->category_id == $cat->id)
+					 <span class="bg-dark p-2">{{$cat->name}}</span>
+				@endif
+			@endforeach
+		@endforeach
+	</h3>
 </div>
 <div class="container-fluid-my-5 p-2" style="overflow: hidden">
 	<div class="row">
-		@foreach($sliders as $cat)  
+		@foreach($sliders as $index => $cat)  
 	        <!-- @if($loop->iteration == 2 || $loop->iteration == 6 || $loop->iteration == 8)col-xl-4 @else @endif-->
 	        <div class="item  col-xl-2 col-lg-2  col-md-4 col-sm-12 col-xs-12">
 	            <div class="product-grid9">
+	            	<div class="position-absolute p-2 w-100" style="top: 0; z-index: 2; background-color: rgba(0,0,0,0.3)">
+	                    <p class="d-none">{{$diff[$index] = $cat->created_at}}</p>
+	                    <p class="m-0 text-right text-white"><small>{{$diff[$index]->diffForHumans()}}</small></p>
+	                </div>
 	                <div class="product-image9 thumbnail card">
 	                    <div class="img-event">
 	                        <a href="{{ url('detalle/anuncios/') }}/{{$cat->id}}">
