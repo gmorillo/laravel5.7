@@ -6,7 +6,7 @@
 					{{ csrf_field() }}
 					<div class="card-body row no-gutters align-items-center bg-danger p-2">
 						<div class="col">
-							<input name="q" class="bg-danger w-100 form-control-lg form-control-borderless text-white" type="search" placeholder="Escribe algo para realizar búsqueda">
+							<input name="q" class="bg-danger w-100 form-control-lg form-control-borderless text-white" type="search" placeholder="Buscar por ciudad, sexualidad, etc.">
 						</div>
 						<!--end of col-->
 						<div class="col-auto">

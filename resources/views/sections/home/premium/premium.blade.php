@@ -12,9 +12,30 @@
       <div class="carousel-inner"> 
       @foreach($premium as $prem)      
         <div class="carousel-grid col-lg-2 col-md-2 col-sm-12 px-1">
-          <a href="{{ url('detalle/anuncios/') }}/{{$prem->id}}">
-            <img class="d-block w-100" src="{{ url('img/rotador-principal/') }}/{{$prem->principal_img}}" alt="{{$prem->title}}">
-          </a>
+          <div class="product-grid9 position-relative">
+            <div class="position-absolute p-2 w-100" style="top: 0; z-index: 2; background-color: rgba(0,0,0,0.3)">
+                @foreach($timeAgoPublicacionesPremium as $pp)
+                    <p class="d-none">{{$diffpp = $pp->created_at}}</p>
+                    <p class="m-0 text-right text-white"><small>{{$diffpp->diffForHumans()}}</small></p>
+                @endforeach
+            </div>
+            <div class="product-image9 thumbnail card m-0">
+                <div class="img-event">
+                    <a href="{{ url('detalle/anuncios/') }}/{{$prem->id}}">
+                        <img class="pic-1" src="{{ url('img/rotador-principal/') }}/{{$prem->principal_img}}" alt="{{$prem->title}}">
+                        @foreach($photo as $pic )
+                            @if($pic->slideshow_id == $prem->id)
+                                <img class="pic-2" src="{{ url('img/rotador-principal/imagenes_secundarias') }}/{{$pic->img}}">
+                            @endif
+                        @endforeach
+                    </a>
+                </div>
+                <a href="{{ url('detalle/anuncios/') }}/{{$prem->id}}" class="fa fa-search product-full-view"></a>
+                <div class="product-content">
+                <a class="add-to-cart" href="{{ url('detalle/anuncios/') }}/{{$prem->id}}">más imágenes</a>
+            </div>
+            </div>
+          </div>
         </div>
       @endforeach
       </div>

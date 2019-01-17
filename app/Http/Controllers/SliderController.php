@@ -216,6 +216,7 @@ class SliderController extends Controller
         $Activarslider->status = '1';
         $Activarslider->time_activated = date("Y-m-d H:i:s");
         $Activarslider->publish_date = date("Y-m-d H:i:s");
+        $Activarslider->created_at = now();
         $Activarslider->save();
 
         $fechaActivacion = $Activarslider->publish_date = date("d/m/Y");

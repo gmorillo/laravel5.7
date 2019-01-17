@@ -37,7 +37,13 @@
         @foreach($basic as $bas)  
         <!-- @if ($loop->iteration == 2) col-md-6 col-sm-6 @else col-md-3 col-sm-6 @endif -->
         <div class="item col-md-3 col-sm-6">
-            <div class="product-grid9">
+            <div class="product-grid9 position-relative">
+                <div class="position-absolute p-2 w-100" style="top: 0; z-index: 2; background-color: rgba(0,0,0,0.3)">
+                    @foreach($timeAgoPublicacionesBasicas as $ta)
+                        <p class="d-none">{{$diff = $ta->created_at}}</p>
+                        <p class="m-0 text-right text-white"><small>{{$diff->diffForHumans()}}</small></p>
+                    @endforeach
+                </div>
                 <div class="product-image9 thumbnail card">
                     <div class="img-event">
                         <a href="{{ url('detalle/anuncios/') }}/{{$bas->id}}">
