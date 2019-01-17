@@ -36,10 +36,7 @@ class HomeController extends Controller
         $premium = Slideshow::where('status', 1)->where('publicity_type', 2)->select('principal_img', 'id', 'created_at')->take(18)->orderBy('id', 'desc')->get();
         $basic = Slideshow::where('status', 1)->where('publicity_type', 3)->select('principal_img', 'id', 'created_at')->orderBy('id', 'desc')->paginate(50);
         $photo = Photo::get();
-        
-        $timeAgoPublicacionesBasicas = Slideshow::where('publicity_type', 3)->get();
-        $timeAgoPublicacionesPremium = Slideshow::where('publicity_type', 2)->get();
-        return view('sections.home.main-home',compact('sliders', 'premium', 'basic', 'photo', 'timeAgoPublicacionesBasicas', 'timeAgoPublicacionesPremium'));
+        return view('sections.home.main-home',compact('sliders', 'premium', 'basic', 'photo'));
     }
 
     public function getAnuncioPorCategoria($id){
