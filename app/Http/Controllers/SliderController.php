@@ -131,7 +131,8 @@ class SliderController extends Controller
         $data = Slideshow::where('user_id', Auth::getUser()->id)->where('status', 0)->paginate(15);
         $category = Category::get();
         $city = City::get();
-        return view('sections.profile.anuncios-caducados.main-anuncios-caducados',compact('data', 'category', 'city'));
+        $photos_slideshow = Photo::get();
+        return view('sections.profile.anuncios-caducados.main-anuncios-caducados',compact('data', 'category', 'city', 'photos_slideshow'));
         //return redirect('/profile');
 
     }
