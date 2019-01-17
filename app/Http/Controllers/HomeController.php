@@ -39,7 +39,6 @@ class HomeController extends Controller
         
         $timeAgoPublicacionesBasicas = Slideshow::get()->where('publicity_type', 3);
         $timeAgoPublicacionesPremium = Slideshow::get()->where('publicity_type', 2);
-        
         return view('sections.home.main-home',compact('sliders', 'premium', 'basic', 'photo', 'timeAgoPublicacionesBasicas', 'timeAgoPublicacionesPremium'));
     }
 
