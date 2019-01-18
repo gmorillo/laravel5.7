@@ -79,7 +79,10 @@
 	    	<textarea class="form-control" rows="5" id="description" name="description" required="required"></textarea>
 	  	</div>
 	  	<div class="form-group dashborad-box py-3">
-	    	<label for="description" class="col-form-label "><h4>Rango de fechas del anuncio</h4></label>
+	    	<label for="description" class="col-form-label ">
+	    		<h4>Rango de fechas del anuncio</h4>
+	    		<small>Selecciona los días que quieres que sea visible tu anuncio.</small>
+	    	</label>
 	    	<div class="input-group mb-2 mr-sm-2">
 				<input 	type="text"
 				    data-range="true"
@@ -92,7 +95,10 @@
 			</div>
 	  	</div>
 		<div class="form-group dashborad-box py-3">
-	    	<label for="description" class="col-form-label "><h4>Rango de horas del anuncio</h4></label>
+	    	<label for="description" class="col-form-label ">
+	    		<h4>Rango de horas del anuncio</h4>
+	    		<small>Selecciona las horas en las que quieres que sea visible tu anuncio.</small>
+	    	</label>
 	    	<div class="row">
 	    		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
 	    			<div class="inputGroup" style="border:1px solid #cecccc;">
