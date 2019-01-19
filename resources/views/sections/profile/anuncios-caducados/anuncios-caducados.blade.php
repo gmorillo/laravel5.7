@@ -132,7 +132,9 @@
 					            <div class="mx-3 ">
 					            	<img src="/img/rotador-principal/{{$slider->principal_img}}" alt="" class="img-fluid w-auto mt-3" style="height: 235px;">
 									@foreach($photos_slideshow as $secondary_img)
-									<img src="/img/rotador-principal/imagenes_secundarias/{{$secondary_img->img}}" class="w-auto mt-3" style="height: 235px;">
+										@if($secondary_img->slideshow_id == $slider->id)
+											<img src="/img/rotador-principal/imagenes_secundarias/{{$secondary_img->img}}" class="w-auto mt-3" style="height: 235px;">
+										@endif
 									@endforeach
 					            </div>
 					    	</div>

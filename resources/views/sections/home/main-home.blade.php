@@ -95,7 +95,7 @@
 .product-grid9,.product-grid9 .product-image9{position:relative}
 .product-grid9{font-family:Poppins,sans-serif;z-index:1}
 .product-grid9 .product-image9 a{display:block}
-.product-grid9 .product-image9 img{width:100%;height:100%;object-fit: cover;}
+.product-grid9 .product-image9 img{width:100%;height:400px;object-fit: cover;}
 .product-grid9 .pic-1{opacity:1;transition:all .5s ease-out 0s}
 .product-grid9:hover .pic-1{opacity:0}
 .product-grid9 .pic-2{position:absolute;top:0;left:0;opacity:0;transition:all .5s ease-out 0s}
