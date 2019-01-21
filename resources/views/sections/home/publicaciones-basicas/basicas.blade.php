@@ -36,7 +36,7 @@
     <div id="products" class="row view-group">
         @foreach($basic as $index => $bas)  
         <!-- @if ($loop->iteration == 2) col-md-6 col-sm-6 @else col-md-3 col-sm-6 @endif -->
-        <div class="item col-md-3 col-sm-6">
+        <div data-wow-delay="0.{{$loop->iteration}}s" class="item col-md-3 col-sm-6 wow fadeInLeft animated">
             <div class="product-grid9 position-relative">
                 <div class="position-absolute p-2 w-100" style="top: 0; z-index: 2; background-color: rgba(0,0,0,0.3)">
                     <p class="d-none">{{$diff[$index] = $bas->created_at}}</p>
@@ -45,10 +45,10 @@
                 <div class="product-image9 thumbnail card">
                     <div class="img-event">
                         <a href="{{ url('detalle/anuncios/') }}/{{$bas->id}}">
-                            <img class="pic-1" src="{{ url('img/rotador-principal/') }}/{{$bas->principal_img}}">
+                            <img class="pic-1 lozad" data-src="{{ url('img/rotador-principal/') }}/{{$bas->principal_img}}">
                             @foreach($photo as $pic )
                                 @if($pic->slideshow_id == $bas->id)
-                                    <img class="pic-2" src="{{ url('img/rotador-principal/imagenes_secundarias') }}/{{$pic->img}}">
+                                    <img class="pic-2 lozad " data-src="{{ url('img/rotador-principal/imagenes_secundarias') }}/{{$pic->img}}">
                                 @endif
                             @endforeach
                         </a>
@@ -68,3 +68,8 @@
         <div class="text-center" >{{ $basic->links() }}</div>
     </div>
 </div>
+
+<script type="text/javascript">
+    
+    new WOW().init();
+</script>

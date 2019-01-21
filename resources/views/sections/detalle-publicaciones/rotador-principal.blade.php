@@ -38,8 +38,13 @@
 					</p>
 				</div>
 				<div >
-					<div class="imgBox"><img src="{{ url('img/rotador-principal') }}/{{$info->principal_img}}" class="img-fluid mx-auto d-block"></div>
+					<div class="imgBox"><img src="{{ asset('img/rotador-principal') }}/{{$info->principal_img}}" class="img-fluid mx-auto d-block"></div>
 					<ul class="thumb">
+						<li>
+							<a href="{{ asset('img/rotador-principal') }}/{{$info->principal_img}}" target="imgBox">
+								<img src="{{ asset('img/rotador-principal') }}/{{$info->principal_img}}" width="120px" class="img-fluid mx-auto d-block">
+							</a>
+						</li>
 						@foreach($secondary_photos as $sp)
 							<li>
 								<a href="{{ asset('img/rotador-principal/imagenes_secundarias/') }}/{{$sp->img}}" target="imgBox">
@@ -96,7 +101,7 @@
 
 <style>
 	.imgBox {
-	max-width: 450px;
+	max-width: 730px;
 	margin: 50px auto 20px;
 }
 .imgBox img {

@@ -72688,6 +72688,8 @@ $("div[id^='']").mouseover(function () {
 $("div[id^='']").mouseout(function () {
   $("div[id^='']").removeClass('shadow');
 });
+var observer = lozad();
+observer.observe();
 
 /***/ }),
 

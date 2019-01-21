@@ -12,6 +12,9 @@
 	@include('sections.home.publicaciones-basicas.basicas')
 @endsection
 
+@section('script')
+
+@endsection
 @section('stylesheet')
 	<style>
 		

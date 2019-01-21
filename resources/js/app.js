@@ -59,3 +59,7 @@ $( "div[id^='']" ).mouseout(function() {
   $( "div[id^='']" ).removeClass('shadow')
 });
 
+
+
+const observer = lozad();
+observer.observe();

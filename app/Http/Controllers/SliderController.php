@@ -176,19 +176,28 @@ class SliderController extends Controller
                     \File::delete(public_path('/img/rotador-principal/' . $hasImage->principal_img));
                 }
             }
-
-            Image::make($profile_img)
-            ->resize(1920, 750, 
-                function ($constraint) {
-                    $constraint->aspectRatio();
-                    $constraint->upsize();
-                }
-            )->save(public_path('/img/rotador-principal/' . $filename));
+            //dd($request->input('publicity_type'));
+            $img = Image::make($profile_img);
+            if($request->input('publicity_type') == 1){
+                $img->resize(1920, 750, 
+                    function ($constraint) {
+                        $constraint->aspectRatio();
+                        $constraint->upsize();
+                    }
+                )->insert(public_path('img/watermark.png'), 'center')->save(public_path('/img/rotador-principal/' . $filename));
+            }elseif($request->input('publicity_type') == 2 || $request->input('publicity_type') == 3)
+            {
+                $img->crop(616, 815)->insert(public_path('img/watermark.png'), 'center')->save(public_path('/img/rotador-principal/' . $filename));
+            }
 
             $user = Slideshow::where('id', $id)->first();
             //return $user;
             $user->principal_img = $filename;
             $user->save();
+
+
+
+            
         }
 
         $slider =  Slideshow::where('id', $id)->first();

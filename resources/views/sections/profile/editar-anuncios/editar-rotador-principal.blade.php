@@ -12,6 +12,7 @@
 						@foreach($active_slideshow as $slider)
 							<form action="/profile/administracion/edit-slider/{{$slider->id}}" method="POST" enctype="multipart/form-data" style="background-color: white;">
 								@csrf
+								<input type="hidden" name="publicity_type" id="publicity_type" value="{{$slider->publicity_type}}">
 								<input type="text" class="form-control" hidden="hidden" id="country_id" value="1">
 								<div class="dashborad-box" >
 									<h4 class="py-3">Editar datos del anuncio</h4>
