@@ -46,9 +46,9 @@ class SliderController extends Controller
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     }
-                )->save(public_path('/img/rotador-principal/' . $filename));
+                )->insert(public_path('img/watermark.png'), 'center')->save(public_path('/img/rotador-principal/' . $filename));
             }elseif($request->input('tipo_publicidad') == 2 || $request->input('tipo_publicidad') == 3){
-                $img->crop(616, 815)->save(public_path('/img/rotador-principal/' . $filename));
+                $img->crop(616, 815)->insert(public_path('img/watermark.png'), 'center')->save(public_path('/img/rotador-principal/' . $filename));
             }
         }
 
@@ -178,8 +178,12 @@ class SliderController extends Controller
             }
 
             Image::make($profile_img)
-            ->crop(1920,850)
-            ->save(public_path('/img/rotador-principal/' . $filename));
+            ->resize(1920, 750, 
+                function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                }
+            )->save(public_path('/img/rotador-principal/' . $filename));
 
             $user = Slideshow::where('id', $id)->first();
             //return $user;
