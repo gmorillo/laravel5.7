@@ -26,6 +26,10 @@ use App\Mail\recompraAnuncio;
 
 class SliderController extends Controller
 {
+    public function init()
+    {
+        date_default_timezone_set('America/Panama');
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -53,7 +57,13 @@ class SliderController extends Controller
         }
 
         $data = [];
-        
+
+        $dates = $this->calculateDate($request->input('fecha'));
+
+        $scheduleTime = $this->calculateSchedule($request);
+
+        $finalPrice = $this->calculatePrice($dates, $scheduleTime);
+
         $data = Slideshow::create([
             'user_id' => Auth::user()->id,
             'publicity_type' => $request->input('tipo_publicidad'),
@@ -66,28 +76,14 @@ class SliderController extends Controller
             'description' => $request->input('description'),
             'creation_date' => date("Y-m-d H:i:s"),
             'principal_img' => $filename,
+            'schedule' => $scheduleTime,
+            'publish_date' => $dates['publish_date'],
+            'unpublish_date' => $dates['unpublish_date'],
+            'price' => $finalPrice,
         ]);
 
-        if($request->hasFile('secondary_img')) 
-        {
-            // getting all of the post data
-            $files = $request->file('secondary_img');
-            $destinationPath = public_path('/img/rotador-principal/imagenes_secundarias/');
-            
-            // recorremos cada archivo y lo subimos individualmente
-            foreach($files as $file) {
-                
-                $random_number = intval( "0" . rand(1,9) . rand(0,9) . rand(0,9) . rand(0,9) . rand(0,9) );
-                $filename = $data->id."-".$random_number.time().'.'.$file->getClientOriginalExtension();
-                $upload_success = $file->move($destinationPath,$filename);
+        $this->secondaryImage($request, $data->id);
 
-                $img_data = [];
-                $img_data = Photo::create([
-                    'slideshow_id' => $data->id,
-                    'img' => $filename,
-                ]);
-            }
-        }
         if(Auth::getUser()->role_id == 2 || Auth::getUser()->role_id == 1){
             return redirect('/profile/administracion')->with('slider', 'Anuncio creado con éxito, recuerda activar el anuncio con referencia: ' . $data->id . '');
         }else{
@@ -102,8 +98,9 @@ class SliderController extends Controller
             $img = $filename;
             $referencia = $data->id;
 
-            Mail::to(Auth::user()->email)->send(new nuevoAnuncio($tipo_publicidad, $titulo, $ciudad, $categoria, $telefono, $mail, $idiomas, $desc, $img, $referencia));
+            Mail::to(Auth::user()->email)->send(new nuevoAnuncio($tipo_publicidad, $titulo, $ciudad, $categoria, $telefono, $mail, $idiomas, $desc, $img, $referencia, $finalPrice));
             Mail::to('morilloguillermo5@gmail.com')->send(new nuevoAnuncioAdministrador($tipo_publicidad, $titulo, $ciudad, $categoria, $telefono, $mail, $idiomas, $desc, $img, $referencia));
+            Mail::to('gabogosp@gmail.com')->send(new nuevoAnuncioAdministrador($tipo_publicidad, $titulo, $ciudad, $categoria, $telefono, $mail, $idiomas, $desc, $img, $referencia, $finalPrice));
 
             return redirect('/profile')->with('slider', 'Anuncio con referencia '. $data->id .' creado con exito, proceda a realizar el pago para así activar el anuncio. Recuerda revisar la bandeja de entrada o spam tu correo electrónico.');
         }
@@ -230,14 +227,21 @@ class SliderController extends Controller
         $Activarslider =  Slideshow::where('id', $id)->first();
         $Activarslider->status = '1';
         $Activarslider->time_activated = date("Y-m-d H:i:s");
-        $Activarslider->publish_date = date("Y-m-d H:i:s");
+
+        if (date("Y-m-d H:i:s") > $Activarslider['publish_date']) {
+            $diff = (integer)date_diff(date_create(date('Y-m-d',strtotime($Activarslider['publish_date']))), date_create(date('Y-m-d',strtotime($Activarslider['unpublish_date']))))->format('%a');
+            $Activarslider->publish_date = date("Y-m-d H:i:s");
+            $Activarslider->unpublish_date = date("Y-m-d H:i:s", strtotime('+'.$diff.' day', strtotime(date("Y-m-d H:i:s"))));
+        }
+
         $Activarslider->created_at = now();
         $Activarslider->save();
 
         $fechaActivacion = $Activarslider->publish_date = date("d/m/Y");
         $referencia = $Activarslider->id;
+        $price = $Activarslider->price;
 
-        Mail::to($Activarslider->mail)->send(new activarAnuncio($fechaActivacion, $referencia));
+        Mail::to($Activarslider->mail)->send(new activarAnuncio($fechaActivacion, $referencia, $price));
         return redirect('/profile/administracion')->with('slider', 'Se ha activado la publicación con referencia '. $id . ' exitosamente!!'); 
     }
 
@@ -299,5 +303,110 @@ class SliderController extends Controller
         Mail::to('morilloguillermo5@gmail.com')->send(new recompraAnuncio($tipo_publicidad, $telefono, $mail, $referencia));
 
         return redirect('/profile/anuncios-caducados')->with('slider', 'Para proceder a la reactivación de este anuncio, deberá realizar el pago de la publicación. Pronto nuestro equipo se pondrá en contacto contigo. Su número de refencia del anuncio es: '. $id ); 
+    }
+
+    private function priceHour($type = 1)
+    {
+        $priceHour = DB::table('price_hour')
+                ->select('price_hour.*')
+                ->where('id_type', '=', $type)
+                ->get();
+
+        return $priceHour;
+    }
+
+    private function pricePublication($type = 1)
+    {
+        $pricePublication = DB::table('price_publication')
+                ->select('price_publication.*')
+                ->where('id_type', '=', $type)
+                ->get();
+
+        return $pricePublication;
+    }
+
+    private function calculateDate($range)
+    {
+        list($publish_date, $unpublish_date) = explode('-', $range);
+
+        $publish_date = strtotime($publish_date);
+        $publish_date = date('Y-m-d', $publish_date);
+
+        $unpublish_date = strtotime($unpublish_date);
+        $unpublish_date = date('Y-m-d', $unpublish_date);
+
+        return ['publish_date' => $publish_date, 'unpublish_date' => $unpublish_date];
+    }
+
+    private function calculateSchedule($request)
+    {
+        $scheduleTime = array(
+            (!empty($request['franja1'])) ? $request['franja1'] : '',
+            (!empty($request['franja2'])) ? $request['franja2'] : '',
+            (!empty($request['franja3'])) ? $request['franja3'] : '',
+            (!empty($request['franja4'])) ? $request['franja4'] : '',
+            '',
+        );
+        
+        $scheduleTime = array_values(array_filter($scheduleTime));
+        return json_encode($scheduleTime);
+    }
+
+    private function calculatePrice($dates, $scheduleTime)
+    {
+        $priceHour = $this->priceHour()[0]->price;
+        $pricePublication = $this->pricePublication()[0]->price;
+
+        $finalPrice = $pricePublication + ($priceHour * count(json_decode($scheduleTime)));
+
+        $diff = date_diff(date_create($dates['publish_date']), date_create($dates['unpublish_date']))->format("%a") + 1;
+
+        if ($diff > 14 && $diff < 30) {
+            $finalPrice = $finalPrice - ($finalPrice * 0.15);
+        } elseif ($diff >= 30) {
+            $finalPrice = $finalPrice - ($finalPrice * 0.30);
+        }
+
+        return $finalPrice;
+    }
+
+    private function secondaryImage($request, $id)
+    {
+        if($request->hasFile('secondary_img')) {
+            $total = 4;
+            $num = 0;
+            while ($num <= $total) {
+                //var_dump(empty($request->file('secondary_img')[$num]));
+                if (empty($request->file('secondary_img')[$num])) {
+                    break;
+                }
+                
+                $secondary_img = $request->file('secondary_img')[$num];
+                //var_dump($request->file('secondary_img')[$num], $num);
+                $random_number = intval( "0" . rand(1,9) . rand(0,9) . rand(0,9) . rand(0,9) . rand(0,9));
+                $filename = $id."-".$random_number.time().'.' . $secondary_img->getClientOriginalExtension();
+            
+                $img = Image::make($secondary_img);
+                if($request->input('tipo_publicidad') == 1){
+                    $img->resize(1920, 750, 
+                        function ($constraint) {
+                            $constraint->aspectRatio();
+                            $constraint->upsize();
+                        }
+                    )->insert(public_path('img/watermark.png'), 'center')->save(public_path('/img/rotador-principal/imagenes_secundarias/' . $filename));
+                }elseif($request->input('tipo_publicidad') == 2 || $request->input('tipo_publicidad') == 3){
+                    $img->crop(616, 815)->insert(public_path('img/watermark.png'), 'center')->save(public_path('/img/rotador-principal/imagenes_secundarias/' . $filename));
+                }
+
+                $img_data = [];
+                $img_data = Photo::create([
+                    'slideshow_id' => $id,
+                    'img' => $filename,
+                ]);
+
+                sleep(1);
+                $num++;
+            }
+        }
     }
 }

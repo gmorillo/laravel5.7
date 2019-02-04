@@ -63,7 +63,7 @@
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                    <td style="padding-bottom:19px;font-family:'Roboto';font-size:14px;color:#666666;text-align:left;font-weight:300" dir="ltr">
-																										<h2>Teléfono: {{$telefono}}</h2>
+																										<h2>Teléfono: {{$telefono}}, Precio: {{$finalPrice}}</h2>
                                                                                                    </td>
                                                                                                 </tr>
                                                                                             </tbody>

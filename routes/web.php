@@ -1,6 +1,7 @@
 <?php
 use App\Slideshow;
 use App\Category;
+
 use Illuminate\Support\Facades\Input;
 
 Auth::routes(['verify' => true]);
@@ -44,10 +45,15 @@ Route::prefix('detalle')->group(
 Route::any('/search',function(){
     $q = Input::get ( 'q' );
     $search = Slideshow::where('title','LIKE','%'.$q.'%')
+                        ->join ('cities', 'slideshows.city_id' , '=', 'cities.id')
+                        ->join ('categories', 'slideshows.category_id' , '=', 'categories.id')
                         ->where('status',1)
                         ->orWhere('description','LIKE','%'.$q.'%')
+                        ->orWhere('categories.name','LIKE','%'.$q.'%')
+                        ->orWhere('cities.name','LIKE','%'.$q.'%')
                         ->orWhere('langues','LIKE','%'.$q.'%')
                         ->paginate(50);
+
     if(count($search) > 0)
         return view('sections.home.filterbar.resultado')->withDetails($search)->withQuery($q);
     else 

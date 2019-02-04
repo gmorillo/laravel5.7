@@ -19,9 +19,9 @@ class nuevoAnuncio extends Mailable
     public $desc;
     public $img;
     public $referencia;
+    public $finalPrice;
 
-
-    public function __construct($tipo_publicidad, $titulo, $ciudad, $categoria, $telefono, $mail, $idiomas, $desc, $img, $referencia)
+    public function __construct($tipo_publicidad, $titulo, $ciudad, $categoria, $telefono, $mail, $idiomas, $desc, $img, $referencia, $finalPrice)
     {
        $this->tipo_publicidad = $tipo_publicidad;
        $this->titulo = $titulo;
@@ -33,6 +33,7 @@ class nuevoAnuncio extends Mailable
        $this->desc = $desc;
        $this->img = $img;
        $this->referencia = $referencia;
+       $this->finalPrice = $finalPrice;
     }
 
     public function build()

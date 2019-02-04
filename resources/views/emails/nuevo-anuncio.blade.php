@@ -63,7 +63,7 @@
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                    <td style="padding-bottom:19px;font-family:'Roboto';font-size:14px;color:#666666;text-align:left;font-weight:300" dir="ltr">
-																										La publicación estará activa una ves se realize la confirmación del pago y a partir de este momento empiezan a contar los días seleccionados a la hora de hacer el anuncio.
+																										La publicación estará activa una ves se realize la confirmación del pago y a partir de este momento empiezan a contar los días seleccionados a la hora de hacer el anuncio. MONTO A PAGAR {{$finalPrice}}
                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 <tr><br><br>

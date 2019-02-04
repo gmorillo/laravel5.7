@@ -11,12 +11,14 @@ class activarAnuncio extends Mailable
 
     public $fechaActivacion;
     public $referencia;
+    public $price;
 
 
-    public function __construct($fechaActivacion, $referencia)
+    public function __construct($fechaActivacion, $referencia, $price)
     {
        $this->fecha_activacion = $fechaActivacion;
        $this->referencia = $referencia;
+       $this->price = $price;
     }
 
     public function build()

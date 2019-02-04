@@ -88,7 +88,7 @@
 				    data-range="true"
 				    data-multiple-dates-separator=" - "
 				    data-language="en"
-				    class="datepicker-here form-control" id="fecha-anuncios-basicos" required  placeholder="Selecciona el rango de fecha en la que será visible tú anuncio"/>
+				    class="datepicker-here form-control" id="fecha-anuncios-basicos" name="fecha" required  placeholder="Selecciona el rango de fecha en la que será visible tú anuncio"/>
 			    <div class="input-group-prepend">
 					<div class="input-group-text"><i class="fas fa-calendar-alt"></i></div>
 				</div>
@@ -102,21 +102,21 @@
 	    	<div class="row">
 	    		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
 	    			<div class="inputGroup" style="border:1px solid #cecccc;">
-					    <input id="12AM-6AM-BAS" name="12AM-6AM-BAS" type="checkbox" checked/>
+					    <input id="12AM-6AM-BAS" name="franja1" type="checkbox" value = "1" checked/>
 					    <label for="12AM-6AM-BAS" class="m-0">DE 12:00AM a 6:00AM <br> <small>De 12 de la noche a 6 de la mañana</small></label>
 				  	</div>
 				  	<div class="inputGroup" style="border:1px solid #cecccc;">
-						<input id="6AM-12PM-BAS" name="6AM-12PM-BAS" type="checkbox"/>
+						<input id="6AM-12PM-BAS" name="franja2" type="checkbox" value = "2"/>
 						<label for="6AM-12PM-BAS" class="m-0">DE 6:00AM a 12:00PM <br> <small>De 6 de la mañana a 12 del medio día</small></label>
 					</div>
 	    		</div>
 	    		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
 	    			<div class="inputGroup" style="border:1px solid #cecccc;">
-					    <input id="12PM-6PM-BAS" name="12PM-6PM-BAS" type="checkbox"/>
+					    <input id="12PM-6PM-BAS" name="franja3" type="checkbox" value = "3"/>
 					    <label for="12PM-6PM-BAS" class="m-0">DE 12:00PM a 6:00PM <br> <small>De 12 del medio día a 6 de la tarde</small></label>
 				  	</div>
 				  	<div class="inputGroup" style="border:1px solid #cecccc;">
-						<input id="6PM-12AM-BAS" name="6PM-12AM-BAS" type="checkbox"/>
+						<input id="6PM-12AM-BAS" name="franja4" type="checkbox" value = "4"/>
 						<label for="6PM-12AM-BAS" class="m-0">DE 6:00PM a 12:00AM <br> <small>De 6 de la tarde a 12 de la noche</small></label>
 					</div>
 	    		</div>
