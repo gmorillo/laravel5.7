@@ -1,0 +1,102 @@
+
+<div id="verificador_edad">
+	<p>Bienvenido</p>
+	<div class="content">
+		<h4>Verifica que eres mayor de edad</h4>
+		<form id="fechaNacimiento" class="checkAgeForm">
+			<div class="inputs">
+				<ul>
+					<li><input id="day" type="number" pattern="[0-9]*" inputmode="numeric" class="dateField" placeholder="DD" value="" maxlength="2" name="day" autocomplete="off"></li>
+					<li><input id="month" type="number" pattern="[0-9]*" inputmode="numeric" class="dateField" placeholder="MM" value="" maxlength="2" name="month" autocomplete="off"></li>
+					<li><input id="year" type="number" pattern="[0-9]*" inputmode="numeric" class="dateField large" placeholder="AAAA" value="" maxlength="4" name="year" autocomplete="off"></li>
+				</ul>
+			</div>
+			<button id="enter" type="submit">ENTRAR</button>
+		</form>
+	</div>
+</div>
+
+
+<style type="text/css" media="screen">
+	#verificador_edad{
+	  width: 600px;
+	  margin: 0 auto;
+	  background: #d1e0e0;
+	  padding: 20px;
+	  margin-top: 40px;
+	}
+
+
+	p, h4 {
+	    text-transform: uppercase;
+	    font-size: 1.5em;
+	    margin: 0px;
+	    color:  #009999;
+	    font-family: 'Arial', sans-serif;
+	    text-align: center
+	}
+
+	ul{
+	  list-style-type: none;
+	  width: 100%;
+	}
+
+	li{
+	  display: inline-block;
+	  width: 32%
+	}
+
+	button{
+	  border: none;
+	  background: #009999;
+	  width: 100px;
+	  margin: 0 auto;
+	  padding: 10px;
+	  color: #fff;
+	  display: block;
+	}
+
+	input{
+	  padding: 10px;
+	  border: 1px solid #009999;
+	  color: #009999;
+	}
+</style>
+
+
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+  //Acciones a realizar al enviar el formulario
+	$("#fechaNacimiento").submit(function(){
+  //Obtenemos los valores de cada uno de los campos
+	var day = $("#day").val();
+	var month = $("#month").val();
+	var year = $("#year").val();
+  //Antes comprobamos que cada uno de los datos sean correctos para proseguir con la verificación
+   if(day<=31 && month<=12 && year >1900){
+      //En esta variable "age" se determina cual va a ser la edad mínima para visitantes
+      var age = 18;
+     //Construimos una fecha cone esos datos en formato de JS para compararla con la fecha actual
+      var mydate = new Date();
+      mydate.setFullYear(year, month-1, day);
+      console.log(mydate.setFullYear(year, month-1, day));
+     //Comparamos la fecha del formulario con la fecha actual
+      var currdate = new Date();
+      currdate.setFullYear(currdate.getFullYear() - age);
+      //Si el visitante es mayor de 18 años mostrará un alert dejándolo pasar
+      if ((currdate - mydate) < 0){
+        alert("Disculpa, a este sitio solo pueden accesar personas mayores de  " + age + " años");
+        return false;
+      }else{
+        alert("Puedes acceder al sitio");
+        return true;
+      }
+   } else{
+     alert("Uno o más datos son incorrectos, porfavor verifícalos e intenta de nuevo.");
+     return false;
+   }
+});
+});
+
+
+</script>
