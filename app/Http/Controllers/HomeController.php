@@ -57,7 +57,6 @@ class HomeController extends Controller
         $basic = Slideshow::where('status', 1)
         ->where('publicity_type', 3)
         ->whereRaw('"'.date("Y-m-d H:i:s").'" between `publish_date` and `unpublish_date`')
-        ->select('principal_img', 'id', 'created_at', 'schedule')
         ->orderBy('id', 'desc')
         ->paginate(50);
 
@@ -77,7 +76,7 @@ class HomeController extends Controller
     }
 
     public function getAnuncioPorCiudad($id){
-        $sliders = Slideshow::where('city_id', $id)->where('status', 1)->select('principal_img', 'id', 'created_at', 'city_id', 'category_id')->orderBy('id', 'desc')->paginate(50);
+        $sliders = Slideshow::where('city_id', $id)->where('status', 1)->whereRaw('"'.date("Y-m-d H:i:s").'" between `publish_date` and `unpublish_date`')->select('principal_img', 'id', 'created_at', 'city_id', 'category_id')->orderBy('id', 'desc')->paginate(50);
         $photo = Photo::get();
         $city = City::get();
         return view('sections.listado-por-ciudad.main-listado-por-ciudad',compact('sliders', 'photo', 'city'));

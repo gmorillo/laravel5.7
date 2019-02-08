@@ -21,7 +21,7 @@ class SlideshowsTableSeeder extends Seeder
             'city_id' => 1,
             'title' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam magni quod velit veniam magnam alias voluptas itaque natus odit. Unde?',
             'phone' => '666999988',
-            'mail' => 'escortuser@morilloguillermo.com',
+            'mail' => 'escortuser@bembosex.com',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum vitae maxime quidem, error nam reiciendis iste architecto optio, a, vero ea. Inventore, excepturi illo odio consequatur officia qui quidem deleniti recusandae veniam ipsum? Officia fugiat ea porro, veniam asperiores accusantium ex numquam neque commodi. Quaerat deleniti expedita, omnis soluta. Iusto soluta exercitationem doloremque, error porro, tempora quas cumque amet, vel debitis, earum sed quidem veniam. Dolorem laudantium nisi quisquam velit, cumque tenetur voluptates voluptatibus consequatur. Vero cumque, enim possimus facilis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias laudantium aperiam veritatis iusto impedit laboriosam nostrum, facere praesentium. Aliquam nam sequi eum, reiciendis voluptate quos.',
             'principal_img' => '',
             'creation_date' => date("Y-m-d H:i:s"),

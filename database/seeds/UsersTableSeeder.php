@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
             [
                 'role_id' => '1',
                 'name' => 'Super User',
-                'email' => 'superuser@morilloguillermo.com',
+                'email' => 'superuser@bembosex.com',
                 'password' => Hash::make('root'),
             ]
         );
@@ -26,7 +26,7 @@ class UsersTableSeeder extends Seeder
             [
                 'role_id' => '2',
                 'name' => 'Admin User',
-                'email' => 'adminuser@morilloguillermo.com',
+                'email' => 'adminuser@bembosex.com',
                 'password' => Hash::make('root'),
             ]
         );
@@ -34,7 +34,7 @@ class UsersTableSeeder extends Seeder
             [
                 'role_id' => '3',
                 'name' => 'Esc  User',
-                'email' => 'escortuser@morilloguillermo.com',
+                'email' => 'escortuser@bembosex.com',
                 'password' => Hash::make('root'),
             ]
         );
@@ -42,7 +42,7 @@ class UsersTableSeeder extends Seeder
             [
                 'role_id' => '4',
                 'name' => 'Ga  User',
-                'email' => 'gayuser@morilloguillermo.com',
+                'email' => 'gayuser@bembosex.com',
                 'password' => Hash::make('root'),
             ]
         );
@@ -50,7 +50,7 @@ class UsersTableSeeder extends Seeder
             [
                 'role_id' => '5',
                 'name' => 'Tra  User',
-                'email' => 'transuser@morilloguillermo.com',
+                'email' => 'transuser@bembosex.com',
                 'password' => Hash::make('root'),
             ]
         );
@@ -58,7 +58,7 @@ class UsersTableSeeder extends Seeder
             [
                 'role_id' => '6',
                 'name' => 'Agen  User',
-                'email' => 'agencyuser@morilloguillermo.com',
+                'email' => 'agencyuser@bembosex.com',
                 'password' => Hash::make('root'),
             ]
         );
@@ -66,7 +66,7 @@ class UsersTableSeeder extends Seeder
             [
                 'role_id' => '7',
                 'name' => 'Clu  User',
-                'email' => 'clubuser@morilloguillermo.com',
+                'email' => 'clubuser@bembosex.com',
                 'password' => Hash::make('root'),
             ]
         );

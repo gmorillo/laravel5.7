@@ -59,7 +59,7 @@
 					</td>
 					<td scope="row"><small>{{$slider->unpublish_date}}</small></td>
 					<td scope="row">
-						@if($slider->unpublish_date != NULL && $slider->status == 0)
+						@if($slider->time_activated != NULL && $slider->status == 0)
 							<a href="{{ url('/profile/rebuy') }}/{{$slider->id}}" title="Si quieres volver a reactivar este anuncio, haz click aqui!!!" class="text-white btn  btn-success"><i class="fas fa-redo-alt text-white"></i> <small>Volver a comprar</small></a>
 						@else
 						<p class="badge badge-warning w-100"><span class="py-2 px-1 "><i class="fas fa-pause-circle" ></i> en espera de pago</span></p>

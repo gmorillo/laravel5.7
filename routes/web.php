@@ -48,6 +48,7 @@ Route::any('/search',function(){
                         ->join ('cities', 'slideshows.city_id' , '=', 'cities.id')
                         ->join ('categories', 'slideshows.category_id' , '=', 'categories.id')
                         ->where('status',1)
+                        ->whereRaw('"'.date("Y-m-d H:i:s").'" between `publish_date` and `unpublish_date`')
                         ->orWhere('description','LIKE','%'.$q.'%')
                         ->orWhere('categories.name','LIKE','%'.$q.'%')
                         ->orWhere('cities.name','LIKE','%'.$q.'%')
