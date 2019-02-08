@@ -36,9 +36,22 @@
 </head>
 <body>
     <div id="app">
+        <div class="d-flex justify-content-center">
+            <a href="#">
+                <img src="/img/facebook.jpg" class="img-fluid d-block   m-0" alt="" style="width: auto; height: 30px;">
+            </a>
+            <a href="#">
+                <img src="/img/twitter.jpg" class="img-fluid d-block  m-0" alt="" style="width: auto; height: 30px;">
+            </a>
+            <a href="#">
+                <img src="/img/instagram.jpg" class="img-fluid d-block   m-0" alt="" style="width: auto; height: 30px;">
+            </a>
+        </div>
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel sticky-top">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">Laravel</a>
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    <img src="/img/watermark.png" class="img-fluid d-block   m-0" alt="" style="width: auto; height: 40px;">
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -50,6 +63,9 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+                        <li class="nav-item ">
+                                <a class="nav-link btn btn-danger text-white" data-toggle="modal" data-target="#exampleModal" style="cursor: pointer">{{ __('Contacto') }}</a>
+                            </li>
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
@@ -60,9 +76,7 @@
                                 @endif
                             </li>
                         @else
-                            <li class="nav-item ">
-                                <a class="nav-link btn btn-danger text-white" data-toggle="modal" data-target="#exampleModal" style="cursor: pointer">{{ __('Contacto') }}</a>
-                            </li>
+                            
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <img src="/img/profiles/{{ Auth::user()->profile_img}}" alt="" class="fluid-img float-left mr-1" style="height: 24px; width: 24px; border-radius: 50%; object-fit: contain;"> {{ Auth::user()->name }} <span class="caret"></span>

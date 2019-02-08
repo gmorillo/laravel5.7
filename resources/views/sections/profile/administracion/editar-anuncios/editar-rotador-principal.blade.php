@@ -108,7 +108,8 @@
 							    	<textarea class="form-control" rows="5" id="description" name="description">{{$slider->description}}</textarea>
 							  	</div>
 							  	<div class="row justify-content-center">
-							  		<button class="btn btn-success btn-lg" type="submit">Editar</button>
+							  		<a href="/profile/administracion" class=" mx-1 btn btn-warning btn-lg">Cancelar</a>
+							  		<button class="btn btn-success btn-lg" type="submit">Guardar</button>
 							  	</div>
 							</form>
 						@endforeach

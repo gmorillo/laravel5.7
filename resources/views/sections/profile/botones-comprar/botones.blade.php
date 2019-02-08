@@ -94,7 +94,7 @@
 	        	@include('sections.formularios.form-rotador-principal')
 	      	</div>
 	      	<div class="modal-footer">
-	        	<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+	        	<a href="/profile/administracion" type="button" class="btn btn-warning" >Cancelar</a>
 	      	</div>
 	    </div>
   	</div>
@@ -114,7 +114,7 @@
 	        	@include('sections.formularios.form-premium')
 	      	</div>
 	      	<div class="modal-footer">
-	        	<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+	        	<a href="/profile/administracion" type="button" class="btn btn-warning" >Cancelar</a>
 	      	</div>
 	    </div>
   	</div>
@@ -134,7 +134,7 @@
 	        	@include('sections.formularios.form-basic')
 	      	</div>
 	      	<div class="modal-footer">
-	        	<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+	        	<a href="/profile/administracion" type="button" class="btn btn-warning" >Cancelar</a>
 	      	</div>
 	    </div>
   	</div>
