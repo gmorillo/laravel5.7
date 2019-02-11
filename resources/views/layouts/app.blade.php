@@ -38,19 +38,19 @@
     <div id="app">
         <div class="d-flex justify-content-center">
             <a href="#">
-                <img src="/img/facebook.jpg" class="img-fluid d-block   m-0" alt="" style="width: auto; height: 30px;">
+                <img src="/public/img/facebook.jpg" class="img-fluid d-block   m-0" alt="" style="width: auto; height: 30px;">
             </a>
             <a href="#">
-                <img src="/img/twitter.jpg" class="img-fluid d-block  m-0" alt="" style="width: auto; height: 30px;">
+                <img src="/public/img/twitter.jpg" class="img-fluid d-block  m-0" alt="" style="width: auto; height: 30px;">
             </a>
             <a href="#">
-                <img src="/img/instagram.jpg" class="img-fluid d-block   m-0" alt="" style="width: auto; height: 30px;">
+                <img src="/public/img/instagram.jpg" class="img-fluid d-block   m-0" alt="" style="width: auto; height: 30px;">
             </a>
         </div>
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel sticky-top">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="/img/watermark.png" class="img-fluid d-block   m-0" alt="" style="width: auto; height: 40px;">
+                    <img src="/public/img/watermark.png" class="img-fluid d-block   m-0" alt="" style="width: auto; height: 40px;">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -79,7 +79,7 @@
                             
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <img src="/img/profiles/{{ Auth::user()->profile_img}}" alt="" class="fluid-img float-left mr-1" style="height: 24px; width: 24px; border-radius: 50%; object-fit: contain;"> {{ Auth::user()->name }} <span class="caret"></span>
+                                    <img src="/public/img/profiles/{{ Auth::user()->profile_img}}" alt="" class="fluid-img float-left mr-1" style="height: 24px; width: 24px; border-radius: 50%; object-fit: contain;"> {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -162,7 +162,7 @@
             </div>
             <div class="modal-body">
                 <h3>Quiénes somos</h3>
-                <p>SexyHotPanama.com es operado por SH Internacional. Esta política de privacidad describe cómo manejamos su información personal. Mediante el uso de SexyHotPanama.com (el “Sitio”) usted autoriza el almacenamiento, procesamiento, y uso de su información personal como se describe en esta política de privacidad. Esta política es efectiva a partir del 15 de julio de 2018.</p>
+                <p>bembosex.com es operado por SH Internacional. Esta política de privacidad describe cómo manejamos su información personal. Mediante el uso de bembosex.com (el “Sitio”) usted autoriza el almacenamiento, procesamiento, y uso de su información personal como se describe en esta política de privacidad. Esta política es efectiva a partir del 15 de julio de 2018.</p>
 
                 <h3>Qué datos personales recogemos y por qué los recogemos</h3>
                 <h3>Comentarios</h3>
@@ -247,43 +247,43 @@
             </div>
             <div class="modal-body">
                 <p>Modal body text goes here.</p>
-                <p>Antes de ingresar a la página de SexyHotPanama.com, usted debe leer atentamente los siguientes Términos y Condiciones.</p>
+                <p>Antes de ingresar a la página de bembosex.com, usted debe leer atentamente los siguientes Términos y Condiciones.</p>
 
                 <p>Al ingresar usted está aceptando los Términos y Condiciones aquí establecidos. Si no está de acuerdo, no debe ingresar ni utilizar dicha página para publicar productos, realizar transacciones y/o navegar en ella.</p>
 
                 <h3>1.- PROHIBICIÓN ACCESO DE MENORES.-</h3>
-                <p>En la página de SexyHotPanama.com se ofrecen productos, material y servicios cuyo contenido (texto y fotografía) es exclusivamente para adultos, por tanto, sólo deben ingresar personas mayores de 18 años.</p>
+                <p>En la página de bembosex.com se ofrecen productos, material y servicios cuyo contenido (texto y fotografía) es exclusivamente para adultos, por tanto, sólo deben ingresar personas mayores de 18 años.</p>
 
                 <p>El ingreso de menores de edad a esta página, es de exclusiva responsabilidad de los padres, representantes o responsables. Es deber de los padres orientar la conducta de sus hijos menores de edad controlando o evitando el acceso a estas páginas mediante programas de protección como Surf Watch, Net Nannyo Cyber Patrol, a los cuales estamos registrados, así como educándolos adecuadamente a que respeten la naturaleza de estas páginas.</p>
 
                 <h3>2.- BIENES Y SERVICIOS PROHIBIDOS.-</h3>
-                <p>La página de SexyHotPanama.com se acoge a la prohibición de la oferta y demanda de artículos, bienes y/o servicios que: Impliquen pornografía infantil, prostitución infantil, explotación sexual infantil o incluyan la mención en singular o plural de “niña”, “niño” y/o “adolescente”; y/o que presenten apología a la violencia o al delito; y/o que inciten a la discriminación, al odio o racismo.</p>
+                <p>La página de bembosex.com se acoge a la prohibición de la oferta y demanda de artículos, bienes y/o servicios que: Impliquen pornografía infantil, prostitución infantil, explotación sexual infantil o incluyan la mención en singular o plural de “niña”, “niño” y/o “adolescente”; y/o que presenten apología a la violencia o al delito; y/o que inciten a la discriminación, al odio o racismo.</p>
 
                 <h3>3.- LIMITACIÓN DE RESPONSABILIDAD POR CONTENIDO.-</h3>
-                <p>La página de SexyHotPanama.com es exclusivamente una Guía Publicitaria, por ello, la responsabilidad de la página de SexyHotPanama.com se limita a informar.</p>
+                <p>La página de bembosex.com es exclusivamente una Guía Publicitaria, por ello, la responsabilidad de la página de bembosex.com se limita a informar.</p>
 
-                <p>Todo contenido de los avisos (texto y fotografía) que se publican en la página de SexyHotPanama.com son de la única y exclusiva responsabilidad del anunciante y de ninguna manera la empresa conoce, participa o interfiere en las actividades que realiza el anunciante.</p>
+                <p>Todo contenido de los avisos (texto y fotografía) que se publican en la página de bembosex.com son de la única y exclusiva responsabilidad del anunciante y de ninguna manera la empresa conoce, participa o interfiere en las actividades que realiza el anunciante.</p>
 
                 <p>La empresa no se hace responsable por la exactitud, veracidad, fidelidad o legalidad del contenido de los avisos.</p>
 
                 <p>Es responsabilidad de la parte interesada hacer las averiguaciones correspondientes sobre el origen, características, condición, funcionamiento y demás propiedades inherentes a los bienes y/o servicios ofrecidos por los anunciantes.</p>
 
-                <p>La página de SexyHotPanama.com no guarda ningún tipo de relación laboral con las personas naturales o jurídicas que aquí se publicitan. Es de la exclusiva responsabilidad del anunciante de servicios el personal que tenga empleado. En consecuencia, estarán a cargo de este todos los pagos a que hubiere lugar, de conformidad con la legislación laboral que resultare aplicable según el caso, sin que tuviere los creadores, los diseñadores y/o los propietarios de la página de SexyHotPanama.com, ningún tipo de responsabilidad u obligación frente a dicho personal.</p>
+                <p>La página de bembosex.com no guarda ningún tipo de relación laboral con las personas naturales o jurídicas que aquí se publicitan. Es de la exclusiva responsabilidad del anunciante de servicios el personal que tenga empleado. En consecuencia, estarán a cargo de este todos los pagos a que hubiere lugar, de conformidad con la legislación laboral que resultare aplicable según el caso, sin que tuviere los creadores, los diseñadores y/o los propietarios de la página de bembosex.com, ningún tipo de responsabilidad u obligación frente a dicho personal.</p>
 
-                <p>Con el acceso a la página, el usuario declara estar conforme con lo mencionado y exonera a la página de SexyHotPanama.com de cualquier responsabilidad legal que pudiera derivarse de las transacciones originadas en este sitio Web.</p>
+                <p>Con el acceso a la página, el usuario declara estar conforme con lo mencionado y exonera a la página de bembosex.com de cualquier responsabilidad legal que pudiera derivarse de las transacciones originadas en este sitio Web.</p>
 
                 <p>En virtud de lo antes expresado, declaro que:</p>
 
                 <p>Tengo más de 18 años y tengo capacidad legal para adquirir y/o contratar los bienes y/o servicios ofrecidos en esta página.</p>
-                <p>No permitiré acceder a ninguna persona menor de 18 años a la página de SexyHotPanama.com ni a los productos que en ella estén publicados.</p>
-                <p>El usuario de la página de SexyHotPanama.com, entiende y acepta la responsabilidad por sus propias acciones y conductas, así como las de sus hijos menores transgresores por su no diligencia y cuido.
-                    Ingreso a la página de SexyHotPanama.com por mi decisión voluntaria y personal, porque quiero ver, ofertar, comprar o vender los productos y/o bienes y servicios que en ella se publican y con mi declaración de voluntad, no considero ofensivas o lesivas las imágenes o mensajes de connotación erótica, sexual o pornográfica que pudiera encontrar en la página de SexyHotPanama.com.</p>
-                <p>Soy exclusivamente responsable por la legalidad de los productos, bienes y/o servicios que adquiero, y libero a la página de SexyHotPanama.com de toda responsabilidad relacionada con la exactitud, veracidad, fidelidad o legalidad del contenido de los avisos.</p>
-                <p>Entiendo y acepto que la página de SexyHotPanama.com se limita a prestar un servicio de publicidad.
-                    No considero ofensivas o lesivas las imágenes o mensajes que pudiera encontrar en la página de SexyHotPanama.com.</p>
+                <p>No permitiré acceder a ninguna persona menor de 18 años a la página de bembosex.com ni a los productos que en ella estén publicados.</p>
+                <p>El usuario de la página de bembosex.com, entiende y acepta la responsabilidad por sus propias acciones y conductas, así como las de sus hijos menores transgresores por su no diligencia y cuido.
+                    Ingreso a la página de bembosex.com por mi decisión voluntaria y personal, porque quiero ver, ofertar, comprar o vender los productos y/o bienes y servicios que en ella se publican y con mi declaración de voluntad, no considero ofensivas o lesivas las imágenes o mensajes de connotación erótica, sexual o pornográfica que pudiera encontrar en la página de bembosex.com.</p>
+                <p>Soy exclusivamente responsable por la legalidad de los productos, bienes y/o servicios que adquiero, y libero a la página de bembosex.com de toda responsabilidad relacionada con la exactitud, veracidad, fidelidad o legalidad del contenido de los avisos.</p>
+                <p>Entiendo y acepto que la página de bembosex.com se limita a prestar un servicio de publicidad.
+                    No considero ofensivas o lesivas las imágenes o mensajes que pudiera encontrar en la página de bembosex.com.</p>
                 <p>La empresa se reserva el derecho de permitir o no la publicación para ofertar o demandar bienes y/o servicios en esta página web.</p>
-                <p>El diseño general de estas páginas son propiedad exclusiva y absoluta de los creadores de la página de SexyHotPanama.com y en ningún momento y bajo ningún concepto podrán ser utilizadas sin previa autorización por escrito sus creadores.</p>
-                <p>Los creadores y los propietarios de la página de SexyHotPanama.com, así como nuestro proveedor de servicio, aportan las normas aquí señaladas, liberándose así como consecuencia de acción u omisión de los usuarios, de toda obligación y/o responsabilidad legal.</p>
+                <p>El diseño general de estas páginas son propiedad exclusiva y absoluta de los creadores de la página de bembosex.com y en ningún momento y bajo ningún concepto podrán ser utilizadas sin previa autorización por escrito sus creadores.</p>
+                <p>Los creadores y los propietarios de la página de bembosex.com, así como nuestro proveedor de servicio, aportan las normas aquí señaladas, liberándose así como consecuencia de acción u omisión de los usuarios, de toda obligación y/o responsabilidad legal.</p>
                 <p>Usted está aceptando completamente estos términos, siendo la única prueba necesaria para ello su acceso</p>
             </div>
             <div class="modal-footer">

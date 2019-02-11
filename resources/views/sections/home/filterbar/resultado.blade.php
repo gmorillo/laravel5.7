@@ -11,7 +11,7 @@
 		        @foreach($details as $index => $bas)  
 		            <!-- @if ($loop->iteration == 2) col-md-6 col-sm-6 @else col-md-3 col-sm-6 @endif -->
 		            <div class="item col-xs-6 col-lg-2" style="max-height: 528px; overflow: hidden">
-		                <a href="{{ url('detalle/anuncios/') }}/{{$bas->id}}" style="text-decoration: none" class="text-dark">
+		                <a href="{{url('detalle/anuncios/')}}/{{$bas->id}}" style="text-decoration: none" class="text-dark">
 		                    <div class="thumbnail card">
 		                    	<div class="position-absolute p-2 " style="top: 0; right:0; z-index: 2; background-color: rgba(0,0,0,0.3)">
 				                    <p class="d-none">{{$diff[$index] = $bas->created_at}}</p>

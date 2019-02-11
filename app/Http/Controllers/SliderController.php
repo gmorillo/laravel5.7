@@ -99,7 +99,7 @@ class SliderController extends Controller
             $referencia = $data->id;
 
             Mail::to(Auth::user()->email)->send(new nuevoAnuncio($tipo_publicidad, $titulo, $ciudad, $categoria, $telefono, $mail, $idiomas, $desc, $img, $referencia, $finalPrice));
-            Mail::to('administrator@bembosex.com')->send(new nuevoAnuncioAdministrador($tipo_publicidad, $titulo, $ciudad, $categoria, $telefono, $mail, $idiomas, $desc, $img, $referencia, $finalPrice));
+            Mail::to('bembosex.com@bembosex.com')->send(new nuevoAnuncioAdministrador($tipo_publicidad, $titulo, $ciudad, $categoria, $telefono, $mail, $idiomas, $desc, $img, $referencia, $finalPrice));
 
             return redirect('/profile')->with('slider', 'Anuncio con referencia '. $data->id .' creado con exito, proceda a realizar el pago para así activar el anuncio. Recuerda revisar la bandeja de entrada o spam tu correo electrónico.');
         }
@@ -299,7 +299,7 @@ class SliderController extends Controller
         $telefono = $rebuy->phone;
         $referencia = $rebuy->id;
 
-        Mail::to('administrator@bembosex.com')->send(new recompraAnuncio($tipo_publicidad, $telefono, $mail, $referencia));
+        Mail::to('bembosex.com@bembosex.com')->send(new recompraAnuncio($tipo_publicidad, $telefono, $mail, $referencia));
 
         return redirect('/profile/anuncios-caducados')->with('slider', 'Para proceder a la reactivación de este anuncio, deberá realizar el pago de la publicación. Pronto nuestro equipo se pondrá en contacto contigo. Su número de refencia del anuncio es: '. $id ); 
     }

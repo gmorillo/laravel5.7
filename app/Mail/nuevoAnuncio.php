@@ -39,7 +39,7 @@ class nuevoAnuncio extends Mailable
     public function build()
     {
         return $this->view('emails.nuevo-anuncio')
-            ->from('info@nombreempresa.com', "Formulario Web NOMBRE EMPRESA")
-            ->subject("Tú Nuevo anuncio aún no está disponible (en espera de pago)");
+            ->from('bembosex.com@bembosex.com', "Compraste un anuncio en bembosex.com")
+            ->subject("Nuestro equipo se pondrá en contacto contigo (en espera de pago)");
     }
 }

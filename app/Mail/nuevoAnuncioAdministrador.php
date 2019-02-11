@@ -40,7 +40,7 @@ class nuevoAnuncioAdministrador extends Mailable
     public function build()
     {
         return $this->view('emails.nuevo-anuncio-administrador')
-            ->from('info@nombreempresa.com', "NOMBRE EMPRESA")
+            ->from('bembosex.com@bembosex.com', "Han comprado un anuncio")
             ->subject("Nueva compra, Referencia: ".$this->referencia. ", Tlf: " .$this->telefono."". ", Precio: ".$this->finalPrice);
     }
 }
