@@ -17,13 +17,13 @@
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">Sexualidad</label>
                             <div class="col-md-6 ">
-                                <select class="form-control" name="role" id="">
+                                <select class="form-control" name="role" id="role">
                                     <option>Seleccionar sexualidad</option>
-                                    <option value="2">Escort</option>
-                                    <option value="3">Gay</option>
-                                    <option value="4">Trans</option>
-                                    <option value="5">Club</option>
-                                    <option value="6">Agencia</option>
+                                    <option value="3">Escort</option>
+                                    <option value="4">Gay</option>
+                                    <option value="5">Trans</option>
+                                    <option value="6">Club</option>
+                                    <option value="7">Agencia</option>
                                 </select>
                             </div>
                         </div>

@@ -22,7 +22,7 @@
 				<div class="bg-info rounded">
 					<p class=" p-3">
 						<strong class="text-white ">
-							Cuando me contactes, recuerda decir que me viste en <strong>NOMBRE DE LA EMPRESA</strong>!
+							Cuando me contactes, recuerda decir que me viste en BEMBOSEX.COM
 						</strong>
 					</p>
 				</div>

@@ -48,7 +48,7 @@
                                                                                             <tbody>																			 	
                                                                                                 <tr>
                                                                                                     <td style="padding-bottom:26px;font-family:'Roboto';font-size:30px;color:#000000;text-align:left;font-weight:300" dir="ltr">
-                                                                                                        vemos que está interesad@ en publicarse en nuestra web y requiere comprar el tipo de publicidad de  
+                                                                                                        Vemos que está interesad@ en publicarse en nuestra web y requiere comprar el tipo de publicidad de  
 																										@if( $tipo_publicidad == 1)
 																											Rotador Principal en {{$ciudad->name}}
 																										@endif
@@ -66,34 +66,7 @@
 																										La publicación estará activa una ves se realize la confirmación del pago y a partir de este momento empiezan a contar los días seleccionados a la hora de hacer el anuncio. MONTO A PAGAR {{$finalPrice}}
                                                                                                    </td>
                                                                                                 </tr>
-                                                                                                <tr><br><br>
-                                                                                                   <td style="padding-bottom:19px;font-family:'Roboto';font-size:14px;color:#666666;text-align:left;font-weight:300" dir="ltr">
-																										EJEMPLO: Realizó la publicación el día 25/01/2018 pero se realizó el pago el dia 03/02/2018, los días que empezará a estar activa la publicación será a partir del 03/02/2018
-                                                                                                   </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                   <td style="padding-bottom:19px;font-family:'Roboto';font-size:14px;color:#666666;text-align:left;font-weight:300" dir="ltr">
-																										Para que su publicación sea visible en el sitio web, es necesario realizar el pago mediante transferencia bancaria a:
-                                                                                                   </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                   <td style="padding-bottom:19px;font-family:'Roboto';font-size:14px;color:#666666;text-align:left;font-weight:300" dir="ltr">
-																										Banco: Te lo guardo
-                                                                                                   </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                   <td style="padding-bottom:19px;font-family:'Roboto';font-size:14px;color:#666666;text-align:left;font-weight:300" dir="ltr">
-																										Número de cuenta: 0000 0000 0000 0000 0000
-                                                                                                   </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                   <td style="padding-bottom:19px;font-family:'Roboto';font-size:14px;color:#666666;text-align:left;font-weight:300" dir="ltr">
-																										A nombre de: Guarda dinero
-                                                                                                   </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <td style="padding-top:18px;font-family:'Roboto';text-align:center;font-size:14px;color:#666666;font-weight:300" dir="ltr">bembosex.com</td>
-                                                                                                </tr>
+                                                                                                
                                                                                             </tbody>
                                                                                         </table>
                                                                                     </td>

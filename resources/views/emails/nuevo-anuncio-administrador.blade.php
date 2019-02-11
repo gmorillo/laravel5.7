@@ -48,7 +48,7 @@
                                                                                             <tbody>																			 	
                                                                                                 <tr>
                                                                                                     <td style="padding-bottom:26px;font-family:'Roboto';font-size:30px;color:#000000;text-align:left;font-weight:300" dir="ltr">
-                                                                                                        {{$mail}} está interesa@ en publicarse en nuestra web y requiere comprar el tipo de publicidad de  
+                                                                                                        {{$mail}} le interesa publicarse en bembosex.com y desea pagar el tipo de publicidad de  
 																										@if( $tipo_publicidad == 1)
 																											Rotador Principal en {{$ciudad->name}}
 																										@endif
@@ -63,7 +63,7 @@
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                    <td style="padding-bottom:19px;font-family:'Roboto';font-size:14px;color:#666666;text-align:left;font-weight:300" dir="ltr">
-																										<h2>Teléfono: {{$telefono}}, Precio: {{$finalPrice}}</h2>
+																										<h2>Teléfono: {{$telefono}}, Total a pagar: <strong>{{$finalPrice}}</strong></h2>
                                                                                                    </td>
                                                                                                 </tr>
                                                                                             </tbody>

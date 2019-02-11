@@ -39,7 +39,7 @@ class nuevoAnuncio extends Mailable
     public function build()
     {
         return $this->view('emails.nuevo-anuncio')
-            ->from('bembosex.com@bembosex.com', "Compraste un anuncio en bembosex.com")
-            ->subject("Nuestro equipo se pondrá en contacto contigo (en espera de pago)");
+            ->from('creation@bembosex.com', "Detalle de compra en bembosex.com")
+            ->subject("Gracias por tu compra, nuestro equipo se pondrá en contacto contigo");
     }
 }
