@@ -6,6 +6,7 @@
 	
 @endsection
 @section('content')
+	@include('sections.home.filterbar.filter-bar')
 	@include('sections.listado-por-categoria.body-listado-por-categoria')
 @endsection
 @section('stylesheet')

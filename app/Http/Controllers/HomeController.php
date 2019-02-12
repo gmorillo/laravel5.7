@@ -63,15 +63,17 @@ class HomeController extends Controller
         $basic = !empty($basic[0]) ? $this->filterSchudeleAds($basic) : $basic;
 
         $photo = Photo::get();
-
-        return view('sections.home.main-home',compact('sliders', 'premium', 'basic', 'photo'));
+        $category = Category::get();
+        $city = City::get();
+        return view('sections.home.main-home',compact('sliders', 'premium', 'basic', 'photo', 'city', 'category'));
     }
 
     public function getAnuncioPorCategoria($id){
         $sliders = Slideshow::where('category_id', $id)->where('status', 1)->select('principal_img', 'id', 'created_at', 'city_id', 'category_id')->orderBy('id', 'desc')->paginate(50);
         $photo = Photo::get();
         $category = Category::get();
-        return view('sections.listado-por-categoria.main-listado-por-categoria',compact('sliders', 'photo', 'category'));
+        $city = City::get();
+        return view('sections.listado-por-categoria.main-listado-por-categoria',compact('sliders', 'photo', 'category', 'city'));
 
     }
 
@@ -79,7 +81,8 @@ class HomeController extends Controller
         $sliders = Slideshow::where('city_id', $id)->where('status', 1)->whereRaw('"'.date("Y-m-d H:i:s").'" between `publish_date` and `unpublish_date`')->select('principal_img', 'id', 'created_at', 'city_id', 'category_id')->orderBy('id', 'desc')->paginate(50);
         $photo = Photo::get();
         $city = City::get();
-        return view('sections.listado-por-ciudad.main-listado-por-ciudad',compact('sliders', 'photo', 'city'));
+         $category = Category::get();
+        return view('sections.listado-por-ciudad.main-listado-por-ciudad',compact('sliders', 'photo', 'city','category'));
 
     }
 
