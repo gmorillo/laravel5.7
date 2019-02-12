@@ -17,8 +17,8 @@
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">Sexualidad</label>
                             <div class="col-md-6 ">
-                                <select class="form-control" name="role" id="role">
-                                    <option>Seleccionar sexualidad</option>
+                                <select class="form-control" name="role" id="role" required="require">
+                                    <option></option>
                                     <option value="3">Escort</option>
                                     <option value="4">Gay</option>
                                     <option value="5">Trans</option>
