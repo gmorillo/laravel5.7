@@ -2,11 +2,11 @@
     <div class="header clearfix">
         <h2>Bienvenido, </h2>
         <h4 class="ng-binding">{{ Auth::user()->name}}</h4>
-        <img src="/img/profiles/{{ Auth::user()->profile_img}}" alt="avatar" class="img-fluid profile-img">
+        <img src="/public/img/profiles/{{ Auth::user()->profile_img}}" alt="avatar" class="img-fluid profile-img">
     </div>
     <div class="detail clearfix">
         <div class="container">
-            <form action="/profile" method="POST" enctype="multipart/form-data">
+            <form action="/public/profile" method="POST" enctype="multipart/form-data">
                 @csrf
                 <p class="m-0">Cambiar imágen de perfil</p>
                 <div class="input-group">
