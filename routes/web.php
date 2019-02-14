@@ -2,6 +2,7 @@
 use App\Slideshow;
 use App\Category;
 use App\City;
+use App\Http\Controllers\HomeController;
 
 use Illuminate\Support\Facades\Input;
 
@@ -42,14 +43,13 @@ Route::prefix('detalle')->group(
 
 
 
-/*Route::any('/search', function () {
+Route::any('/search', function () {
     $q = Input::get('q');
     $city_id = Input::get('city_id');
     $category_id = Input::get('category_id');
-    $search = Slideshow::where('title', 'LIKE', '%'.$q.'%')
-                        ->join('cities', 'slideshows.city_id', '=', 'cities.id')
-                        ->join('categories', 'slideshows.category_id', '=', 'categories.id')
-                        ->where('status', 1);
+
+    $search = Slideshow::where('status', 1)
+                        ->whereRaw('"'.date("Y-m-d H:i:s").'" between `publish_date` and `unpublish_date`');
 
     if (!empty($city_id)) {
         $search = $search->where('city_id', $city_id);
@@ -60,14 +60,18 @@ Route::prefix('detalle')->group(
     }
 
     if (!empty($q)) {
-        $search = $search->whereRaw('"'.date("Y-m-d H:i:s").'" between `publish_date` and `unpublish_date`')    
-                    ->orWhere('description', 'LIKE', '%'.$q.'%')
+        $search = $search->orWhere('description', 'LIKE', '%'.$q.'%')
+                    ->orWhere('title', 'LIKE', '%'.$q.'%')
                     ->orWhere('categories.name', 'LIKE', '%'.$q.'%')
                     ->orWhere('cities.name', 'LIKE', '%'.$q.'%')
                     ->orWhere('langues', 'LIKE', '%'.$q.'%');
     }
-
+   
     $search = $search->paginate(50);
+
+    $filter = new HomeController();
+    $searh = $filter->filterSchudeleAds($search);
+
     $city = City::get();
     $category = Category::get();
 
@@ -76,9 +80,9 @@ Route::prefix('detalle')->group(
     } else {
         return view('sections.home.filterbar.resultado',compact('city', 'category'))->withDetails($search)->withQuery($q)->withMessage('No existe ningun elemento que coincida con tu búsqueda, porfavor realiza una nueva búsqueda!');
     }
-});*/
+});
 
-Route::any('/search',function(){
+/*Route::any('/search',function(){
     $city = City::get();
     $category = Category::get();
     $q = Input::get ( 'q' );
@@ -92,7 +96,7 @@ Route::any('/search',function(){
     } else {
         return view('sections.home.filterbar.resultado',compact('city', 'category'))->withDetails($search)->withQuery($q)->withMessage('No existe ningun elemento que coincida con tu búsqueda, porfavor realiza una nueva búsqueda!');
     }
-});
+});*/
 
 
 Route::get('/listado-por-categoria/{id}', 'HomeController@getAnuncioPorCategoria')->name('anunciosPorCategoria');

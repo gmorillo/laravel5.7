@@ -86,7 +86,7 @@ class HomeController extends Controller
 
     }
 
-    private function filterSchudeleAds ($ad)
+    public function filterSchudeleAds ($ad)
     {
         //Recorro el Array de todos los Anuncios que tiene la BD
         foreach ($ad as $key => $value) {
