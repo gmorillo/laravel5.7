@@ -36,7 +36,7 @@
 </head>
 <body>
     <div id="app">
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center " >
             <a href="#">
                 <img src="/public/img/facebook.jpg" class="img-fluid d-block   m-0" alt="" style="width: auto; height: 30px;">
             </a>
@@ -47,10 +47,10 @@
                 <img src="/public/img/instagram.jpg" class="img-fluid d-block   m-0" alt="" style="width: auto; height: 30px;">
             </a>
         </div>
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel sticky-top">
+        <nav class="navbar navbar-expand-md navbar-dark navbar-laravel sticky-top " style="background-color:rgba(52,58,64,0.8)">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="/public/img/watermark.png" class="img-fluid d-block   m-0" alt="" style="width: auto; height: 40px;">
+                    <img src="/public/img/watermark.png" class="img-fluid d-block   m-0" alt="" style="width: auto; height: 73px;">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

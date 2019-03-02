@@ -21,7 +21,7 @@
 		.product-grid9,.product-grid9 .product-image9{position:relative}
 		.product-grid9{font-family:Poppins,sans-serif;z-index:1}
 		.product-grid9 .product-image9 a{display:block}
-		.product-grid9 .product-image9 img{width:100%;height:400px;object-fit: cover;}
+		
 		.product-grid9 .pic-1{opacity:1;transition:all .5s ease-out 0s}
 		.product-grid9:hover .pic-1{opacity:0}
 		.product-grid9 .pic-2{position:absolute;top:0;left:0;opacity:0;transition:all .5s ease-out 0s}
@@ -40,8 +40,7 @@
 		.product-grid9:hover .price{opacity:0}
 		.product-grid9 .add-to-cart{display:block;color:#c0392b;font-weight:600;font-size:14px;opacity:0;position:absolute;left:10px;bottom:-20px;transition:all .5s ease 0s}
 		.product-grid9:hover .add-to-cart{opacity:1;bottom:0}
-		@media only screen and (max-width:990px){.product-grid9{margin-bottom:30px}
-		}
+		
 	</style>
 @endsection
 

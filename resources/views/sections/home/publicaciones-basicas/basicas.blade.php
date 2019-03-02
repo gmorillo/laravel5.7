@@ -108,10 +108,7 @@
     padding: 0 1rem;
     border: 0;
 }
-.item.list-group-item .img-event {
-    float: left;
-    width: 10%;
-}
+
 
 .item.list-group-item .list-group-image
 {
@@ -122,12 +119,7 @@
     margin-bottom: 0px;
     display: inline-block;
 }
-.item.list-group-item .caption
-{
-    float: left;
-    width: 90%;
-    margin: 0;
-}
+
 
 .item.list-group-item:before, .item.list-group-item:after
 {

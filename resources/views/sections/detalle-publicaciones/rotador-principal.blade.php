@@ -56,6 +56,11 @@
 				</div>
 			</div>
 			<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+				<div class="mb-1 text-white text-center rounded d-xl-block d-lg-block d-md-none d-sm-none d-xs-none d-none" style="background-color: red;">
+					<div class="p-3">
+						<a href="tel:{{$info->phone}}" class="text-white h4" style="text-decoration: none;"><i class="fas fa-phone"></i> Llámame</a>
+					</div>
+				</div>
 				<div class="bg-success mb-1 text-white text-center rounded">
 					<div class="py-3">
 						<i class="fab fa-whatsapp h4 mb-0"></i>
@@ -94,6 +99,11 @@
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
+	<div class="fixed-bottom text-center d-xl-none d-lg-none d-md-block d-sm-block d-xs-block" style="background-color: red;">
+		<div class="p-3">
+			<a href="tel:{{$info->phone}}" class="text-white"> <strong><i class="fas fa-phone"></i> Llámame</strong></a>
 		</div>
 	</div>
 @endsection
